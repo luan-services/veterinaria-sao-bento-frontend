@@ -1,15 +1,19 @@
 "use client";
 
-import { useSession, signOut } from "@/src/lib/auth-client"; 
+import { useSession, signOut, updateUser } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function DashboardPage() {
-  const router = useRouter();
+  	const router = useRouter();
+
+	/* field to show update example */
+	const [newName, setNewName] = useState<string>("");
   
 	const { 
 		data: session, 
 		isPending,
+		refetch, /* used to refresh a session data */
 		error
 	} = useSession(); /* this better auth hook searches on the backend for an active session */
 
@@ -41,6 +45,16 @@ export default function DashboardPage() {
 		});
 	};
 
+	const handleUpdateUser = async () => {
+		if (newName !== "") {
+			await updateUser({ /* calls better auth function to update user table */
+				name: newName
+			});
+
+			await refetch(); /* calls refetch to updated session */
+		}
+	};
+
 	return (
 		<div className="flex min-h-screen items-center justify-center bg-slate-50 p-4">
 			<div className="w-full space-y-2 max-w-md bg-white p-8 border text-slate-700">
@@ -49,8 +63,9 @@ export default function DashboardPage() {
 				</div>
 
 				<p className="">id: {session.session.userId}</p>
-				<p className="">id: {session.session.token}</p>
+				<p className="">token: {session.session.token}</p>
 				<p className="">name: {session.user.name}</p>
+				<p className="">role: {session.user.role}</p>
 				<p className="">email: {session.user.email}</p>
 				<p className="">{session.user.emailVerified ? "Verificado ✅" : "Pendente ⚠️"}</p>
 				
@@ -59,6 +74,22 @@ export default function DashboardPage() {
 					className="w-full border bg-slate-50"
 				>
 					Sair do Sistema
+				</button>
+
+
+				<input
+					type="text"
+					placeholder="novo nome"
+					value={newName}
+					onChange={(e) => setNewName(e.target.value)}
+					className="w-full border bg-slate-50"
+				/>
+
+				<button
+					onClick={handleUpdateUser}
+					className="w-full border bg-slate-50"
+				>
+					Mudar Nome
 				</button>
 			</div>
 		</div>

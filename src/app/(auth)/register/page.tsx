@@ -9,6 +9,7 @@ export default function RegisterPage() {
 	const router = useRouter(); /* router is next routing state, the same as useNavigation() on SPA react */
 
 	const [name, setName] = useState("");
+	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [loading, setLoading] = useState(false);
@@ -20,6 +21,7 @@ export default function RegisterPage() {
 				email,
 				password,
 				name,
+				lastName 
 			}, 
 			{
 				onSuccess: () => { /* if everything works, route to /dasbhoard page where it will get the session data */
@@ -41,6 +43,14 @@ export default function RegisterPage() {
 					placeholder="nome"
 					value={name}
 					onChange={(e) => setName(e.target.value)}
+					className="w-full border bg-slate-50"
+				/>
+
+				<input
+					type="text"
+					placeholder="sobrenome"
+					value={lastName}
+					onChange={(e) => setLastName(e.target.value)}
 					className="w-full border bg-slate-50"
 				/>
 
