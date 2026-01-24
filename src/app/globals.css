@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
+/* primitives, usually only change primary based on website theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--neutral-0: #ffffff;
+	--neutral-50:  #fafafa;
+	--neutral-100: #f5f5f5;
+	--neutral-200: #e5e5e5;
+	--neutral-300: #d4d4d4;
+	--neutral-400: #a3a3a3;
+	--neutral-500: #737373;
+	--neutral-600: #525252;
+	--neutral-700: #404040;
+	--neutral-800: #262626;
+	--neutral-900: #171717;
+	--neutral-950: #0a0a0a;
+
+	--primary-50:  #FFF2F2;
+	--primary-100: #FFE1E2;
+	--primary-200: #FFC4C6;
+	--primary-300: #FFA0A3;
+	--primary-400: #FF7578;
+	--primary-500: #FF4D52;
+	--primary-600: #EE2A2C; /* main brand color (dog) */
+	--primary-700: #C91F22;
+	--primary-800: #A31619;
+	--primary-900: #7F1012;
+	--primary-950: #450506;
+
+	--danger-500: #ef4444;
+	--danger-600: #dc2626;
+	
+	--success-500: #22c55e;
+	--success-600: #16a34a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* light mode mapping, edit here to add custom color for components */
+:root {
+	/* css for default bg */
+	--bg-default: var(--neutral-50); 
+	
+	/* css mainly for text */
+	--fg-default: var(--neutral-900);     
+	--fg-muted:   var(--neutral-500);     
+	--fg-brand:   var(--primary-600); 
+
+	/* custom css for components bg and fg*/
+	--bg-btn-primary: var(--primary-600);
+	--fg-btn-primary: var(--neutral-0);
+
+	--bg-btn-danger:  var(--danger-600);
+	--fg-btn-danger:  var(--neutral-0);
+
+	--bg-card:    var(--neutral-0);          
+	--bg-input:   var(--neutral-0);    
+	
+	/* css for borders, rings, outline, etc */
+	--border-default: var(--neutral-200); 
+	--border-input:   var(--neutral-300);    
 }
 
+
+/* dark mode override */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		/* css for default bg */
+		--bg-default: var(--neutral-950); 
+	
+		/* css mainly for text */
+		--fg-default: var(--neutral-50);    
+		--fg-muted:   var(--neutral-400);  
+		--fg-brand:   var(--primary-400);
+
+		/* custom css for components bg and fg */
+		--bg-btn-primary: var(--primary-500);
+		--fg-btn-primary: var(--neutral-0);
+
+		--bg-btn-danger:  var(--danger-500);
+		--fg-btn-danger:  var(--neutral-0);
+
+		--bg-card:    var(--neutral-900);   
+		--bg-input:   var(--neutral-900);
+
+		/* css for borders, rings, outline, etc */
+		--border-default: var(--neutral-800);
+		--border-input:   var(--neutral-700);
+	}
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* configuration for tailwindcss classes */
+@theme {
+	/* css for default bg */
+	--color-default:    var(--bg-default); /* use className="bg-default" */
+	
+	/* css mainly for text */
+	--color-default-fg: var(--fg-default); /* use className="text-default-fg" */
+	--color-muted-fg:   var(--fg-muted);
+	--color-brand-fg:   var(--fg-brand);
+
+	/* custom css for elements */
+	--color-card:  var(--bg-card); /* use className="bg-card" */
+	
+	--color-input: var(--bg-input); /* use className="bg-input" */
+
+	--color-btn-primary:    var(--bg-btn-primary); /* use className="bg-btn-primary" */
+	--color-btn-primary-fg: var(--fg-btn-primary);
+	
+	--color-btn-danger:     var(--bg-btn-danger); /* use className="bg-btn-danger" */
+	--color-btn-danger-fg:  var(--fg-btn-danger);
+
+	/* css for borders, rings, outline, etc */
+	--color-default-border: var(--border-default); /* use className="border-default-border" */
+	--color-input-border:   var(--border-input); /* use className="border-input-border" */
 }
