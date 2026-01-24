@@ -49,6 +49,11 @@ export default function DashboardPage() {
 		if (newName !== "") {
 			await updateUser({ /* calls better auth function to update user table */
 				name: newName
+			},
+			{
+				onError: (ctx) => {
+					alert(ctx.error.message);
+				}
 			});
 
 			await refetch(); /* calls refetch to updated session */
