@@ -21,11 +21,13 @@ export default function RegisterPage() {
 				email,
 				password,
 				name,
-				lastName 
+				lastName,
+				callbackURL: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/email-verified`
 			}, 
 			{
 				onSuccess: () => { /* if everything works, route to /dasbhoard page where it will get the session data */
-					router.push("/dashboard");
+					const safeEmail = encodeURIComponent(email);
+					router.push(`/check-email?email=${safeEmail}`);
 				},
 				onError: (ctx) => {
 					alert(ctx.error.message);
