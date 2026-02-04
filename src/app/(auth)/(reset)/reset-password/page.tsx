@@ -37,11 +37,13 @@ export default function EmailVerifiedPage() {
         setLoading(true);
 
         if (!newPassword || !confirmPassword) {
+            setLoading(false);
             return setError("Preencha todos os campos");
         }
 
 
         if (newPassword !== confirmPassword) {
+            setLoading(false);
             return setError("Senhas nao coincidem");
         }
         const { data, error: apiError } = await resetPassword({
@@ -51,6 +53,7 @@ export default function EmailVerifiedPage() {
 
 
         if (apiError?.message) {
+            setLoading(false);
             return setError(apiError.message);
         } else {
             alert("alterado com sucesso, redirecionando para login");
