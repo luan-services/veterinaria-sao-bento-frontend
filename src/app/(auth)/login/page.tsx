@@ -126,6 +126,15 @@ export default function LoginPage() {
 
                     <div className="pt-4 text-center">
                         <button
+                            onClick={() => router.push("/forgot-password")}
+                            className="text-sm text-slate-500 hover:underline"
+                        >
+                            Esqueceu sua senha? Clique aqui
+                        </button>
+                    </div>
+
+                    <div className="pt-4 text-center">
+                        <button
                             onClick={() => router.push("/register")}
                             className="text-sm text-slate-500 hover:underline"
                         >
