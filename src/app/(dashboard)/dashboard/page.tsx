@@ -73,6 +73,7 @@ export default function DashboardPage() {
 				<p className="">role: {session.user.role}</p>
 				<p className="">email: {session.user.email}</p>
 				<p className="">{session.user.emailVerified ? "Verificado ✅" : "Pendente ⚠️"}</p>
+				<p className="">{session.user.profileCompleted ? "Perfil Completo ✅" : "Perfil Incompleto ⚠️"}</p>
 				
 				<button
 					onClick={handleLogout}

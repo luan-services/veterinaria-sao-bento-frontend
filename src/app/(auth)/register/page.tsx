@@ -11,6 +11,8 @@ export default function RegisterPage() {
 	const [name, setName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
+	const [cpf, setCpf] = useState("");
+	const [phone, setPhone] = useState("");
 	const [password, setPassword] = useState("");
 	const [loading, setLoading] = useState(false);
 
@@ -21,6 +23,8 @@ export default function RegisterPage() {
 				email,
 				password,
 				name,
+				cpf,
+				phone,
 				lastName,
 				callbackURL: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/email-verified`
 			}, 
@@ -53,6 +57,22 @@ export default function RegisterPage() {
 					placeholder="sobrenome"
 					value={lastName}
 					onChange={(e) => setLastName(e.target.value)}
+					className="w-full border bg-slate-50"
+				/>
+
+				<input
+					type="text"
+					placeholder="phone"
+					value={phone}
+					onChange={(e) => setPhone(e.target.value)}
+					className="w-full border bg-slate-50"
+				/>
+
+				<input
+					type="text"
+					placeholder="cpf"
+					value={cpf}
+					onChange={(e) => setCpf(e.target.value)}
 					className="w-full border bg-slate-50"
 				/>
 

@@ -35,6 +35,12 @@ export const authClient = createAuthClient({
                     required: false,
                     input: true,
                     returned: false
+                },
+                profileCompleted: { 
+                    type: "boolean", 
+                    returned: true, 
+                    defaultValue: false,
+                    required: false
                 }
             },
         }),
