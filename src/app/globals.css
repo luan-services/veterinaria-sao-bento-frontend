@@ -46,7 +46,7 @@
 	--fg-brand:   var(--primary-600); 
 
 	/* custom css for components bg and fg*/
-	--bg-btn-primary: var(--primary-600);
+	--bg-btn-primary: var(--primary-500);
 	--fg-btn-primary: var(--neutral-0);
 
 	--bg-btn-danger:  var(--danger-600);
@@ -57,12 +57,13 @@
 	
 	/* css for borders, rings, outline, etc */
 	--border-default: var(--neutral-200); 
+	--border-primary: var(--primary-200);
 	--border-input:   var(--neutral-300);    
 }
 
 
 /* dark mode override */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: asdkoas) {
 	:root {
 		/* css for default bg */
 		--bg-default: var(--neutral-950); 
@@ -79,7 +80,7 @@
 		--bg-btn-danger:  var(--danger-500);
 		--fg-btn-danger:  var(--neutral-0);
 
-		--bg-card:    var(--neutral-900);   
+		--bg-card:    var(--neutral-600);   
 		--bg-input:   var(--neutral-900);
 
 		/* css for borders, rings, outline, etc */
@@ -100,7 +101,6 @@
 
 	/* custom css for elements */
 	--color-card:  var(--bg-card); /* use className="bg-card" */
-	
 	--color-input: var(--bg-input); /* use className="bg-input" */
 
 	--color-btn-primary:    var(--bg-btn-primary); /* use className="bg-btn-primary" */
@@ -111,5 +111,6 @@
 
 	/* css for borders, rings, outline, etc */
 	--color-default-border: var(--border-default); /* use className="border-default-border" */
+	--color-primary-border: var(--border-primary);
 	--color-input-border:   var(--border-input); /* use className="border-input-border" */
 }
