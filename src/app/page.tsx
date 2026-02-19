@@ -5,7 +5,16 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen items-center justify-center bg-default p-2">
 				<Card className="max-w-120" size="xl">
+					<Button className="w-full" type="button" disabled={false}>
+						Entrar
+					</Button>
 					<Button className="w-full" type="button" disabled={false} variant="primary">
+						Entrar
+					</Button>
+					<Button className="w-full" type="button" disabled={false} variant="outline">
+						Entrar
+					</Button>
+					<Button className="w-full" type="button" disabled={false} variant="ghost">
 						Entrar
 					</Button>
 				</Card>

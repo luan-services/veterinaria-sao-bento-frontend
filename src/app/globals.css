@@ -86,21 +86,29 @@
 	--border-danger:  var(--danger-500);
 
 	/* custom css for components bg and fg */
+    --bg-btn-default: var(--neutral-900);
+    --fg-btn-default: var(--neutral-50);
+
 	--bg-btn-primary: var(--primary-500);
-	--fg-btn-primary: var(--neutral-0);
+    --fg-btn-primary: var(--neutral-0);
 
-	--bg-btn-danger:  var(--danger-500);
-	--fg-btn-danger:  var(--neutral-0);
+    --bg-btn-danger:  var(--danger-500);
+    --fg-btn-danger:  var(--neutral-0);
 
-	--bg-btn-outline: var(--primary-500);
-	--fg-btn-outline: var(--neutral-0);
+    --bg-btn-outline: transparent;
+    --fg-btn-outline: var(--primary-500);
+
+    --bg-btn-ghost: transparent;
+    --fg-btn-ghost: var(--neutral-900);
+	
+	--bg-btn-accent: var(--primary-50);
+    --fg-btn-accent: var(--primary-500);
 
 	--bg-card:    var(--neutral-0);         
 }
 
-
 /* dark mode override */
-@media (prefers-color-scheme: dfdsad) {
+@media (prefers-color-scheme: blue) {
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
@@ -125,11 +133,23 @@
 		/* -------------------------------------------- */
 
 		/* custom css for components bg and fg */
+		--bg-btn-default: var(--neutral-50);
+		--fg-btn-default: var(--neutral-900);
+
 		--bg-btn-primary: var(--primary-500);
 		--fg-btn-primary: var(--neutral-0);
 
 		--bg-btn-danger:  var(--danger-600);
 		--fg-btn-danger:  var(--neutral-0);
+
+		--bg-btn-accent: var(--primary-900); 
+        --fg-btn-accent: var(--primary-50);
+
+        --bg-btn-outline: transparent;
+        --fg-btn-outline: var(--primary-400);
+        
+        --bg-btn-ghost: transparent;
+        --fg-btn-ghost: var(--primary-400);
 
 		--bg-card:    var(--neutral-800);   
 	}
@@ -173,10 +193,22 @@
 	--color-card:  var(--bg-card); /* use className="bg-card" */
 
 	--color-btn-primary:    var(--bg-btn-primary); /* use className="bg-btn-primary" */
-	--color-btn-primary-fg: var(--fg-btn-primary);
-	
-	--color-btn-danger:     var(--bg-btn-danger); /* use className="bg-btn-danger" */
-	--color-btn-danger-fg:  var(--fg-btn-danger);
+    --color-btn-primary-fg: var(--fg-btn-primary);
+    
+    --color-btn-danger:     var(--bg-btn-danger); 
+    --color-btn-danger-fg:  var(--fg-btn-danger);
+
+    --color-btn-default:    var(--bg-btn-default); 
+    --color-btn-default-fg: var(--fg-btn-default);
+
+    --color-btn-outline:    var(--bg-btn-outline); 
+    --color-btn-outline-fg: var(--fg-btn-outline);
+
+	--color-btn-accent:     var(--bg-btn-accent); 
+    --color-btn-accent-fg:  var(--fg-btn-accent);
+
+    --color-btn-ghost:      var(--bg-btn-ghost); 
+    --color-btn-ghost-fg:   var(--fg-btn-ghost);
 
 	/* -------------------------------------------- */
 }
