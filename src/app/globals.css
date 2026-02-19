@@ -76,13 +76,14 @@
 	/* css for shadow rings */
 	--focus-ring-primary: var(--focus-ring-primary-500);
 	--focus-ring-danger: var(--focus-ring-danger-500);
-	--focus-ring-gray: var(--focus-ring-gray);
 
 	/* -------------------------------------------- */
 
 	/* css for borders */
 	--border-default: var(--neutral-200); 
+	--border-default-accent: var(--neutral-500); 
 	--border-primary: var(--primary-200); 
+	--border-primary-accent: var(--primary-500); 
 	--border-danger:  var(--danger-500);
 
 	/* custom css for components bg and fg */
@@ -120,7 +121,9 @@
 		
 		/* css for borders, rings, outline, etc */
 		--border-default: var(--neutral-700);
+		--border-default-accent: var(--neutral-600); 
 		--border-primary: var(--primary-800);
+		--border-primary-accent: var(--primary-700); 
 		--border-danger:  var(--danger-500);
 
 		/* -------------------------------------------- */
@@ -128,7 +131,6 @@
 		/* css for shadow rings */
 		--focus-ring-primary: var(--focus-ring-primary-600);
 		--focus-ring-danger: var(--focus-ring-danger-600);
-		--focus-ring-gray: var(--focus-ring-gray);
 
 		/* -------------------------------------------- */
 
@@ -167,7 +169,9 @@
 
 	/* css for border colors */
 	--color-default-border: var(--border-default); /* use className="border-default-border" */
+	--color-default-accent-border: var(--border-default-accent);
 	--color-primary-border: var(--border-primary);
+	--color-primary-accent-border: var(--border-primary-accent);
 	--color-danger-border:   var(--border-danger);
 
 	/* -------------------------------------------- */

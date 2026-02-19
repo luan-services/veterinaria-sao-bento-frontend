@@ -1,5 +1,6 @@
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
+import { Input } from "../components/ui/Input";
 
 export default function Home() {
 	return (
@@ -17,6 +18,9 @@ export default function Home() {
 					<Button className="w-full" type="button" disabled={false} variant="ghost">
 						Entrar
 					</Button>
+					<Input placeholder="email"></Input>
+					<Input placeholder="password" type="password"></Input>
+					<Input placeholder="file" type="file"></Input>
 				</Card>
 		</main>
 	);
