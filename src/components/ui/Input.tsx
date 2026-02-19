@@ -26,20 +26,19 @@ export const Input = ({ className = "", variant = "default", type, ...props }: I
                 <input
                     type={showPassword ? "text" : "password"}
                     className={`flex w-full rounded-md border bg-transparent text-default-fg placeholder:text-muted-fg pr-12
-                        transition-all duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 
+                        transition-all duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-default 
                         ${colors} ${sizing} ${className}`} 
                     {...props}
                 />
                 <button
                     type="button" 
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 text-muted-fg hover:text-default-fg focus:outline-none disabled:opacity-50"
+                    className="absolute right-3 text-muted-fg hover:text-default-fg focus:outline-none disabled:opacity-50 cursor-pointer 
+                    disabled:cursor-not-allowed text-muted-fg hover:disabled:text-muted-fg transition-colors duration-200"
                     aria-label={showPassword ? "Hide password" : "Show password"}
                     disabled={props.disabled}
                 >
-                    <span className="cursor-pointer text-muted-fg hover:text-default-fg transition-colors duration-200">
-                        {showPassword ? <EyeClosedIcon size={20} /> : <EyeIcon size={20} />}
-                    </span>
+                    {showPassword ? <EyeClosedIcon size={20} /> : <EyeIcon size={20} />}
                 </button>
             </div>
         );
@@ -49,11 +48,11 @@ export const Input = ({ className = "", variant = "default", type, ...props }: I
         return (
             <input
                 type="file"
-                className={`flex w-full rounded-md border bg-transparent text-default-fg placeholder:text-muted-fg transition-all 
-                    duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer p-0 pr-4 
-                    file:mr-4 file:h-full file:cursor-pointer file:border-0 file:border-r file:border-default-border 
-                    file:bg-transparent file:px-4 file:py-2 file:text-sm file:font-medium file:text-default-fg 
-                    hover:file:bg-default-border/50 ${colors} ${sizing} ${className}`}
+                className={`flex w-full items-center rounded-md border border-dashed bg-transparent text-default-fg placeholder:text-muted-fg transition-all 
+                    duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-default cursor-pointer 
+                    file:mr-2 file:cursor-pointer disabled:file:cursor-not-allowed file:rounded-md text-sm file:py-1 file:px-4 file:text-xs file:font-semibold 
+                    file:bg-btn-primary file:text-btn-primary-fg hover:file:opacity-90 file:transition-opacity
+                    ${colors} py-2 px-3 ${className}`}
                 {...props}
             />
         );
@@ -61,8 +60,9 @@ export const Input = ({ className = "", variant = "default", type, ...props }: I
 
     return (
         <input
-            className={`flex w-full rounded-md border bg-transparent text-default-fg placeholder:text-muted-fg 
-                transition-all duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 ${colors} ${sizing} ${className}`}
+            className={`flex w-full rounded-md border bg-transparent text-default-fg placeholder:text-muted-fg
+                transition-all duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 
+                ${colors} ${sizing} ${className}`}
             {...props}
         />
     );
