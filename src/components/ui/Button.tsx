@@ -30,7 +30,7 @@ export const Button = ({ children, className = "", variant = "default", size = "
 
     return (
         <button 
-            className={`flex items-center justify-center rounded-md font-medium transition-colors duration-200 border
+            className={`flex items-center justify-center rounded-md font-medium transition duration-200 border
                 focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer 
                 ${colors} ${sizing} ${className}`}
             {...props}
