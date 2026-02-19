@@ -16,11 +16,11 @@ const sizeVariants = {
 };
 
 const colorVariants = {
-    default: "bg-btn-default text-btn-default-fg border-transparent hover:opacity-90",
-    primary: "bg-btn-primary text-btn-primary-fg border-transparent hover:opacity-90",
-    danger:  "bg-btn-danger text-btn-danger-fg border-transparent hover:opacity-90",
-    outline: "bg-btn-outline text-btn-outline-fg border-primary-border hover:bg-btn-accent hover:text-btn-accent-fg",
-    ghost:   "bg-btn-ghost text-btn-ghost-fg border-transparent hover:bg-btn-accent hover:text-btn-accent-fg",
+    default: "bg-btn-default text-btn-default-fg border-transparent hover:opacity-90 focus-visible:shadow-ring-gray",
+    primary: "bg-btn-primary text-btn-primary-fg border-transparent hover:opacity-90 focus-visible:shadow-ring-primary",
+    danger:  "bg-btn-danger text-btn-danger-fg border-transparent hover:opacity-90 focus-visible:shadow-ring-danger",
+    outline: "bg-btn-outline text-btn-outline-fg border-primary-border hover:bg-btn-accent hover:text-btn-accent-fg focus-visible:shadow-ring-primary",
+    ghost:   "bg-btn-ghost text-btn-ghost-fg border-transparent hover:bg-btn-accent hover:text-btn-accent-fg focus-visible:shadow-ring-primary",
 };
 
 export const Button = ({ children, className = "", variant = "default", size = "md", ...props }: ButtonProps) => {
