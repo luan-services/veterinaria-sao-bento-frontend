@@ -19,7 +19,7 @@ export default function Home() {
 						Entrar
 					</Button>
 					<Input placeholder="email"></Input>
-					<Input placeholder="password" type="password" disabled={true}></Input>
+					<Input placeholder="password" type="password"></Input>
 					<Input placeholder="file" type="file"></Input>
 				</Card>
 		</main>

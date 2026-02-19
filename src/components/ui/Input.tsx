@@ -6,11 +6,12 @@ import { EyeIcon } from "../icons/EyeIcon";
 import { EyeClosedIcon } from "../icons/EyeClosedIcon";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    variant?: 'default' | 'danger';
+    variant?: 'default' | 'primary' | 'danger';
 }
 
 const variantStyles = {
     default: "border-default-border focus:border-default-accent-border focus:shadow-ring-gray",
+    primary: "border-primary-border focus:border-primary-accent-border focus:shadow-ring-primary",
     danger:  "border-danger-border focus:border-danger-border focus:shadow-ring-danger",
 };
 
