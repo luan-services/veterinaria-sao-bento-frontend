@@ -2,6 +2,7 @@ import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { GoogleSignInButton } from "../components/ui/GoogleSignInButton";
 import { Input } from "../components/ui/Input";
+import { Label } from "../components/ui/Label";
 
 export default function Home() {
 	return (
@@ -22,7 +23,8 @@ export default function Home() {
 					<Button className="w-full" type="button" disabled={false} variant="ghost">
 						Entrar
 					</Button>
-					<Input placeholder="email"></Input>
+					<Label htmlFor="email">Email</Label>
+					<Input id="email" placeholder="email"></Input>
 					<Input placeholder="password" type="password"></Input>
 					<Input placeholder="file" type="file" variant="default"></Input>
 				</Card>
