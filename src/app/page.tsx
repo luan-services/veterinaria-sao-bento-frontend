@@ -3,12 +3,12 @@ import { Card } from "../components/ui/Card";
 
 export default function Home() {
 	return (
-		<div className="flex min-h-screen items-center justify-center">
-			<main className="min-h-screen w-full">
-				<Card>
-					<Button type="button" disabled={false} variant="ghost">oi</Button>
+		<main className="flex min-h-screen items-center justify-center bg-default p-2">
+				<Card className="max-w-120" size="xl">
+					<Button className="w-full" type="button" disabled={false} variant="primary">
+						Entrar
+					</Button>
 				</Card>
-			</main>
-		</div>
+		</main>
 	);
 }

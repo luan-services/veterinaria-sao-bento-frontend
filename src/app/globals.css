@@ -32,76 +32,145 @@
 	
 	--success-500: #22c55e;
 	--success-600: #16a34a;
-}
 
+	/* radius */
+	--radius-xs: 4px;
+	--radius-sm: 6px;
+	--radius-md: 8px;
+	--radius-lg: 10px;
+	--radius-xl: 12px;
+
+	/* border */
+	--border-width-xs: 1px;
+	--border-width-sm: 2px;
+	--border-width-md: 3px;
+	--border-width-lg: 4px;
+
+	/* outline ring */
+	--focus-ring-none: none;
+	--focus-ring-sm: 0 0 0 3px;
+	--focus-ring-md: 0 0 0 4px;
+	--focus-ring-lg: 0 0 0 6px;
+	
+	--focus-ring-primary-500: rgba(59, 130, 246, 0.35);
+	--focus-ring-primary-600: rgba(59, 130, 246, 0.6);
+	
+	--focus-ring-danger-500: rgba(239, 68, 68, 0.5); 
+	--focus-ring-danger-600: rgba(239, 68, 68, 0.6);
+
+	--focus-ring-gray: rgba(107, 114, 128, 0.35);
+}
 
 /* light mode mapping, edit here to add custom color for components */
 :root {
 	/* css for default bg */
-	--bg-default: var(--neutral-50); 
+	--background-default: var(--neutral-50); 
 	
 	/* css mainly for text */
-	--fg-default: var(--neutral-900);     
-	--fg-muted:   var(--neutral-500);     
-	--fg-brand:   var(--primary-600); 
+	--foreground-default: var(--neutral-900);     
+	--foreground-muted:   var(--neutral-500);  
+	--foreground-brand:   var(--primary-600); 
 
-	/* custom css for components bg and fg*/
+	/* ------------------------------------------------ */
+
+	/* css for shadow rings */
+	--focus-ring-primary: var(--focus-ring-primary-500);
+	--focus-ring-danger: var(--focus-ring-danger-500);
+	--focus-ring-gray: var(--focus-ring-gray);
+
+	/* -------------------------------------------- */
+
+	/* css for borders */
+	--border-default: var(--neutral-200); 
+	--border-primary: var(--primary-200); 
+	--border-danger:  var(--danger-500);
+
+	/* custom css for components bg and fg */
 	--bg-btn-primary: var(--primary-500);
 	--fg-btn-primary: var(--neutral-0);
 
-	--bg-btn-danger:  var(--danger-600);
+	--bg-btn-danger:  var(--danger-500);
 	--fg-btn-danger:  var(--neutral-0);
 
-	--bg-card:    var(--neutral-0);          
-	--bg-input:   var(--neutral-0);    
-	
-	/* css for borders, rings, outline, etc */
-	--border-default: var(--neutral-200); 
-	--border-primary: var(--primary-200);
-	--border-input:   var(--neutral-300);    
+	--bg-btn-outline: var(--primary-500);
+	--fg-btn-outline: var(--neutral-0);
+
+	--bg-card:    var(--neutral-0);         
 }
 
 
 /* dark mode override */
-@media (prefers-color-scheme: asdkoas) {
+@media (prefers-color-scheme: dfdsad) {
 	:root {
 		/* css for default bg */
-		--bg-default: var(--neutral-950); 
+		--background-default: var(--neutral-900); 
 	
 		/* css mainly for text */
-		--fg-default: var(--neutral-50);    
-		--fg-muted:   var(--neutral-400);  
-		--fg-brand:   var(--primary-400);
+		--foreground-default: var(--neutral-50);    
+		--foreground-muted:   var(--neutral-400);  
+		--foreground-brand:   var(--primary-400);
+		
+		/* css for borders, rings, outline, etc */
+		--border-default: var(--neutral-700);
+		--border-primary: var(--primary-800);
+		--border-danger:  var(--danger-500);
+
+		/* -------------------------------------------- */
+
+		/* css for shadow rings */
+		--focus-ring-primary: var(--focus-ring-primary-600);
+		--focus-ring-danger: var(--focus-ring-danger-600);
+		--focus-ring-gray: var(--focus-ring-gray);
+
+		/* -------------------------------------------- */
 
 		/* custom css for components bg and fg */
 		--bg-btn-primary: var(--primary-500);
 		--fg-btn-primary: var(--neutral-0);
 
-		--bg-btn-danger:  var(--danger-500);
+		--bg-btn-danger:  var(--danger-600);
 		--fg-btn-danger:  var(--neutral-0);
 
-		--bg-card:    var(--neutral-600);   
-		--bg-input:   var(--neutral-900);
-
-		/* css for borders, rings, outline, etc */
-		--border-default: var(--neutral-800);
-		--border-input:   var(--neutral-700);
+		--bg-card:    var(--neutral-800);   
 	}
 }
 
 /* configuration for tailwindcss classes */
 @theme {
 	/* css for default bg */
-	--color-default:    var(--bg-default); /* use className="bg-default" */
+	--color-default:    var(--background-default); /* use className="bg-default" */
 	
 	/* css mainly for text */
-	--color-default-fg: var(--fg-default); /* use className="text-default-fg" */
-	--color-muted-fg:   var(--fg-muted);
-	--color-brand-fg:   var(--fg-brand);
+	--color-default-fg: var(--foreground-default); /* use className="text-default-fg" */
+	--color-muted-fg:   var(--foreground-muted);
+	--color-brand-fg:   var(--foreground-brand);
+
+	/* css for border colors */
+	--color-default-border: var(--border-default); /* use className="border-default-border" */
+	--color-primary-border: var(--border-primary);
+	--color-danger-border:   var(--border-danger);
+
+	/* -------------------------------------------- */
+
+	/* classes for radius and border size */
+	--radius-xs: var(--radius-xs); /* usage className="rounded-xs rounded-t-xs" */
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+
+	--border-width-xs: var(--border-width-xs); /* usage className="border-xs border-b-xs" */
+    --border-width-sm: var(--border-width-sm);
+    --border-width-md: var(--border-width-md);
+    --border-width-lg: var(--border-width-lg);
+
+	/* classes for shadow rings */
+	--shadow-ring-primary: var(--focus-ring-sm) var(--focus-ring-primary); /* usage className="shadow-ring-sm shadow-ring-primary" */
+	--shadow-ring-danger:  var(--focus-ring-sm) var(--focus-ring-danger);
+	--shadow-ring-gray:    var(--focus-ring-sm) var(--focus-ring-gray);
 
 	/* custom css for elements */
 	--color-card:  var(--bg-card); /* use className="bg-card" */
-	--color-input: var(--bg-input); /* use className="bg-input" */
 
 	--color-btn-primary:    var(--bg-btn-primary); /* use className="bg-btn-primary" */
 	--color-btn-primary-fg: var(--fg-btn-primary);
@@ -109,8 +178,5 @@
 	--color-btn-danger:     var(--bg-btn-danger); /* use className="bg-btn-danger" */
 	--color-btn-danger-fg:  var(--fg-btn-danger);
 
-	/* css for borders, rings, outline, etc */
-	--color-default-border: var(--border-default); /* use className="border-default-border" */
-	--color-primary-border: var(--border-primary);
-	--color-input-border:   var(--border-input); /* use className="border-input-border" */
+	/* -------------------------------------------- */
 }
