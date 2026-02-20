@@ -4,6 +4,13 @@ import { useState } from "react";
 import { signIn, sendVerificationEmail } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
 
+import Image from "next/image";
+import sao_bento_logo from "@/public/sao-bento-logo.svg"
+import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
+
+import { Card } from "@/src/components/ui/Card";
+import { GoogleSignInButton } from "@/src/components/ui/GoogleSignInButton";
+
 export default function LoginPage() {
 
 	const router = useRouter(); /* router is next routing state, the same as useNavigation() on SPA react */
@@ -11,6 +18,9 @@ export default function LoginPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [loading, setLoading] = useState(false);
+
+    /* google sign in must have its own loading state to set the loading text */
+    const [googleSignInLoading, setGoogleSignInLoading] = useState(false);
 
 	/* state to handle unverified login and show send email button */
 	const [isUnverified, setIsUnverified] = useState(false);
@@ -46,6 +56,7 @@ export default function LoginPage() {
 	};
 
 	const handleGoogleLogin = async () => {
+        setGoogleSignInLoading(true);
 		await signIn.social({
 			provider: "google",
 			callbackURL: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/dashboard` /* this is the redirect after successfull auth on google */
@@ -71,16 +82,55 @@ export default function LoginPage() {
         });
     };
 
+    return (
+        <main className="flex min-h-screen items-center justify-center bg-default p-2">
+                <Card className="max-w-120" size="xl">
+                    {/* logo container */}
+                    <div className="flex w-full justify-center">
+                        {/* must revert classnames after testing */}
+                        <Image
+                            src={sao_bento_logo}
+                            alt="Logo"
+                            className="hidden dark:block w-full max-w-50 h-auto mb-8"
+                        />
+                        <Image
+                            src={sao_bento_logo_dark}
+                            alt="Logo"
+                            className="dark:hidden w-full max-w-50 h-auto mb-8"
+                        />
+                    </div>
+
+                    <h1 className="text-center text-lg text-default-fg font-semibold">
+                        Entrar em Veterinária São Bento
+                    </h1>
+
+                    <p className="text-center text-sm text-muted-fg font-medium"> 
+                        Faça login para acessar o painel do usuário
+                    </p>
+
+                    <div>login aq</div>
+
+                    <div className="flex py-4 px-2 items-center">
+                        <div className="grow border-b border-muted-fg"></div>
+                        <span className="shrink px-4 text-muted-fg text-sm">ou</span>
+                        <div className="grow border-b border-muted-fg"></div>
+                    </div>
+
+                    <GoogleSignInButton
+                        onClick={handleGoogleLogin}
+                        disabled={googleSignInLoading}
+                    >
+                       {googleSignInLoading ? "Carregando..." : "Continue com o Google"}
+                    </GoogleSignInButton>
+                </Card>
+        </main>
+    );
+
 	return (
         <div className="flex min-h-screen items-center justify-center bg-slate-50 p-4">
             <div className="w-full space-y-2 max-w-md bg-white p-8 border text-slate-700">
                     
-                    <button
-                        onClick={handleGoogleLogin}
-                        className="w-full border text-slate-700 text-sm bg-slate-50 py-2"
-                    >
-                        Login com Google
-                    </button>
+
 
                     <div className="text-center text-sm py-2">ou login com e-mail</div>
 
