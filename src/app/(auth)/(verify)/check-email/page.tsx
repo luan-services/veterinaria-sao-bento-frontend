@@ -3,6 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
+import { Card } from "@/src/components/ui/Card";
+import { TextButton } from "@/src/components/ui/TextButton";
+
 export default function CheckEmailPage() {
     const router = useRouter();
 
@@ -12,12 +15,12 @@ export default function CheckEmailPage() {
     useEffect(() => {
         /* update time left */
         const interval = setInterval(() => {
-            setTimeLeft((prev) => prev - 1);
+            setTimeLeft((prev) => prev > 0 ? prev - 1 : prev);
         }, 1000);
 
         /* trigger countdown */
         const timeout = setTimeout(() => {
-            router.push("/login");
+            router.replace("/login");
         }, 5000);
 
         /* cleanup functions */
@@ -29,33 +32,32 @@ export default function CheckEmailPage() {
     }, [router]);
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-slate-50 p-4 font-sans">
-            <div className="w-full space-y-4 max-w-md bg-white p-8 border text-slate-700 text-center">
-                
-                <h1 className="text-2xl font-semibold text-slate-800">
+        <main className="flex min-h-screen items-center justify-center bg-default p-2 sm:p-8 md:p-12">
+            <Card className="max-w-200" size="xl">
+                <h1 className="p-4 text-center text-2xl font-semibold text-default-fg">
                     Verifique seu E-mail
                 </h1>
 
-                <p className="text-slate-600">
-                    Enviamos um link de confirmação para o seu endereço de e-mail. 
-                    Por favor, clique no link para ativar sua conta.
+                <p className="pb-2 text-muted-fg text-center">
+                    Enviamos um link de confirmação para o seu endereço de e-mail. Por favor, clique no link para ativar sua conta.
                 </p>
 
-                <div className="p-4 bg-slate-50 rounded text-sm text-slate-500">
+                <p className="pb-8 text-sm text-muted-fg text-center">
                     Não recebeu? Verifique sua pasta de spam ou lixo eletrônico.
-                </div>
+                </p>
 
-                <p className="text-sm text-slate-400">
+                <p className="pb-2 text-sm text-default-fg text-center">
                     Redirecionando para login em {timeLeft}s...
                 </p>
 
-                <button
-                    onClick={() => router.push('/login')}
-                    className="w-full border bg-slate-50 py-2 mt-4 hover:bg-slate-100 transition-colors"
+                <TextButton
+                    className="w-full justify-center mb-2"
+                    onClick={() => router.replace('/login')}
+                    variant="primary"
                 >
                     Voltar para login agora
-                </button>
-            </div>
-        </div>
+                </TextButton>
+            </Card>
+        </main>
     );
 }
