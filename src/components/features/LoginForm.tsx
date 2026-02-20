@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "@/src/lib/auth-client";
+import { signIn, sendVerificationEmail } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
 
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
 import { Label } from "../ui/Label";
+import { TextLink } from "../ui/TextLink";
+import { TextButton } from "../ui/TextButton";
 
 export function LoginForm() {
 
@@ -18,6 +20,7 @@ export function LoginForm() {
 
     /* state to handle unverified login and show send email button */
 	const [isUnverified, setIsUnverified] = useState(false);
+    const [resendLoading, setResendLoading] = useState(false);
 
     const handleEmailLogin = async (e: React.FormEvent) => {
             e.preventDefault();
@@ -46,6 +49,25 @@ export function LoginForm() {
                 }
             );
     };
+
+    const handleResendVerification = async () => {
+        setResendLoading(true);
+        
+        await sendVerificationEmail({
+            email,
+            callbackURL: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/email-verified`
+        }, {
+            onSuccess: () => {
+                alert("Novo link enviado! Verifique sua caixa de entrada.");
+                setResendLoading(false);
+                setIsUnverified(false); /* reset so they can login again */
+            },
+            onError: (ctx) => {
+                alert(ctx.error.message);
+                setResendLoading(false);
+            }
+        });
+    };
     
     return (
         <form 
@@ -67,9 +89,15 @@ export function LoginForm() {
                 />
             </div>
             <div className="pb-2"> 
-                <Label htmlFor="password">
-                    Senha
-                </Label>
+                <div className="flex w-full justify-between mb-1">
+                    <Label htmlFor="password">
+                        Senha
+                    </Label>
+                    
+                    <TextLink href="/forgot-password" variant="primary" size="sm">
+                        Esqueceu sua senha?
+                    </TextLink>
+                </div>
                 <Input
                     id="password"
                     type="password"
@@ -87,6 +115,20 @@ export function LoginForm() {
             >
                 {loading ? "Entrando..." : "Entrar na conta"}
             </Button>
+
+            {isUnverified &&
+                <div className="w-full text-center">
+                    <span className="text-sm font-medium text-danger-fg">Conta ainda não verificada. </span>
+                    <TextButton
+                        onClick={handleResendVerification}
+                        disabled={resendLoading}
+                        variant="danger"
+                        size="md"
+                    >
+                        {resendLoading ? "Enviando..." : "Reenviar e-mail de verificação"}
+                    </TextButton>
+                </div>
+            }
         </form>
     );
 }
