@@ -70,6 +70,7 @@
 	--foreground-default: var(--neutral-900);     
 	--foreground-muted:   var(--neutral-500);  
 	--foreground-brand:   var(--primary-600); 
+	--foreground-danger:   var(--danger-600); 
 
 	/* ------------------------------------------------ */
 
@@ -84,7 +85,7 @@
 	--border-default-accent: var(--neutral-500); 
 	--border-primary: var(--primary-200); 
 	--border-primary-accent: var(--primary-500); 
-	--border-danger:  var(--danger-500);
+	--border-danger:  var(--danger-600);
 
 	/* custom css for components bg and fg */
     --bg-btn-default: var(--neutral-900);
@@ -118,6 +119,7 @@
 		--foreground-default: var(--neutral-50);    
 		--foreground-muted:   var(--neutral-400);  
 		--foreground-brand:   var(--primary-400);
+		--foreground-danger:   var(--danger-500); 
 		
 		/* css for borders, rings, outline, etc */
 		--border-default: var(--neutral-700);
@@ -166,6 +168,7 @@
 	--color-default-fg: var(--foreground-default); /* use className="text-default-fg" */
 	--color-muted-fg:   var(--foreground-muted);
 	--color-brand-fg:   var(--foreground-brand);
+	--color-danger-fg: var(--foreground-danger);
 
 	/* css for border colors */
 	--color-default-border: var(--border-default); /* use className="border-default-border" */
