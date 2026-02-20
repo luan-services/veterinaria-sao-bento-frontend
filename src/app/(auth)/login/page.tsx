@@ -27,20 +27,19 @@ export default function LoginPage() {
 	};
 
     return (
-        <main className="flex min-h-screen items-center justify-center bg-default p-2">
+        <main className="flex min-h-screen items-center justify-center bg-default p-2 sm:p-8 md:p-12">
                 <Card className="max-w-120" size="xl">
                     {/* logo container */}
                     <div className="flex w-full justify-center">
-                        {/* must revert classnames after testing */}
                         <Image
                             src={sao_bento_logo}
                             alt="Logo"
-                            className="hidden dark:block w-full max-w-50 h-auto mb-8"
+                            className="dark:hidden w-full max-w-50 h-auto mb-8"
                         />
                         <Image
                             src={sao_bento_logo_dark}
                             alt="Logo"
-                            className="dark:hidden w-full max-w-50 h-auto mb-8"
+                            className="hidden dark:block w-full max-w-50 h-auto mb-8"
                         />
                     </div>
 
