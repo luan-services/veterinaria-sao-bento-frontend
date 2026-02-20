@@ -10,6 +10,7 @@ import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
 
 import { Card } from "@/src/components/ui/Card";
 import { GoogleSignInButton } from "@/src/components/ui/GoogleSignInButton";
+import { LoginForm } from "@/src/components/features/LoginForm";
 
 export default function LoginPage() {
 
@@ -104,13 +105,15 @@ export default function LoginPage() {
                         Entrar em Veterinária São Bento
                     </h1>
 
-                    <p className="text-center text-sm text-muted-fg font-medium"> 
+                    <p className="text-center text-xs text-muted-fg font-medium"> 
                         Faça login para acessar o painel do usuário
                     </p>
 
-                    <div>login aq</div>
+                    <div className="py-4">
+                        <LoginForm></LoginForm>
+                    </div>
 
-                    <div className="flex py-4 px-2 items-center">
+                    <div className="flex pb-4 px-2 items-center">
                         <div className="grow border-b border-muted-fg"></div>
                         <span className="shrink px-4 text-muted-fg text-sm">ou</span>
                         <div className="grow border-b border-muted-fg"></div>
