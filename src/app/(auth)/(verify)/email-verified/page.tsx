@@ -61,17 +61,19 @@ const EmailVerifiedContent = () => {
             setTimeLeft((prev) => prev > 0 ? prev - 1 : prev);
         }, 1000);
 
-        if (timeLeft === 0) {
-            router.replace(targetUrl);
-            return;
-        }
-
         /* cleanup functions */
         return () => {
             clearInterval(interval);
         };
         
-    }, [initialLoadPending, router, timeLeft, targetUrl]);
+    }, [initialLoadPending]);
+
+    useEffect(() => {
+        if (timeLeft === 0) {
+            router.replace(targetUrl);
+            return;
+        }
+    }, [router, timeLeft, targetUrl]);
 
     if (initialLoadPending) {
         return (

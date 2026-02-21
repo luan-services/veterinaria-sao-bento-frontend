@@ -17,21 +17,20 @@ export default function CheckEmailPage() {
     const [timeLeft, setTimeLeft] = useState(5);
 
     useEffect(() => {
-        /* update time left */
+        /* add a countdown to timeLeft */
         const interval = setInterval(() => {
-            setTimeLeft((prev) => prev > 0 ? prev - 1 : prev);
+            setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
         }, 1000);
 
+        /* cleanup function */
+        return () => clearInterval(interval);
+    }, []); /* runs only once on mount */
+
+    useEffect(() => {
         if (timeLeft === 0) {
             router.replace("/login");
             return;
         }
-
-        /* cleanup functions */
-        return () => {
-            clearInterval(interval);
-        };
-        
     }, [router, timeLeft]);
 
     return (
