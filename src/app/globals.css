@@ -70,7 +70,8 @@
 	--foreground-default: var(--neutral-900);     
 	--foreground-muted:   var(--neutral-500);  
 	--foreground-brand:   var(--primary-600); 
-	--foreground-danger:   var(--danger-600); 
+	--foreground-danger:  var(--danger-600); 
+	--foreground-success: var(--success-600); 
 
 	/* ------------------------------------------------ */
 
@@ -120,6 +121,7 @@
 		--foreground-muted:   var(--neutral-400);  
 		--foreground-brand:   var(--primary-400);
 		--foreground-danger:   var(--danger-500); 
+		--foreground-success: var(--success-500); 
 		
 		/* css for borders, rings, outline, etc */
 		--border-default: var(--neutral-700);
@@ -169,6 +171,7 @@
 	--color-muted-fg:   var(--foreground-muted);
 	--color-brand-fg:   var(--foreground-brand);
 	--color-danger-fg: var(--foreground-danger);
+	--color-success-fg: var(--foreground-success);
 
 	/* css for border colors */
 	--color-default-border: var(--border-default); /* use className="border-default-border" */

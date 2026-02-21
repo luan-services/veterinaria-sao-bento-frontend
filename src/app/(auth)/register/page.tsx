@@ -1,112 +1,62 @@
 "use client"; /* we use client here because register page does not need SEO */
 
-import { useState } from "react";
-import { signUp } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
+
+import Image from "next/image";
+import sao_bento_logo from "@/public/sao-bento-logo.svg"
+import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
+
+import { Card } from "@/src/components/ui/Card";
+import { RegisterForm } from "@/src/components/features/RegisterForm";
+import { TextLink } from "@/src/components/ui/TextLink";
 
 export default function RegisterPage() {
 
 	const router = useRouter(); /* router is next routing state, the same as useNavigation() on SPA react */
 
-	const [name, setName] = useState("");
-	const [lastName, setLastName] = useState("");
-	const [email, setEmail] = useState("");
-	const [cpf, setCpf] = useState("");
-	const [phone, setPhone] = useState("");
-	const [password, setPassword] = useState("");
-	const [loading, setLoading] = useState(false);
-
-	const handleRegister = async () => {
-		setLoading(true);
-		await signUp.email( /* try to call registration route */
-			{
-				email,
-				password,
-				name,
-				cpf,
-				phone,
-				lastName,
-				callbackURL: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/email-verified`
-			}, 
-			{
-				onSuccess: () => { /* if everything works, route to /dasbhoard page where it will get the session data */
-					const safeEmail = encodeURIComponent(email);
-					router.push(`/check-email?email=${safeEmail}`);
-				},
-				onError: (ctx) => {
-					alert(ctx.error.message);
-					setLoading(false);
-				}
-			}
-		);
-	};
-
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-slate-50 p-4 font-sans">
-			<div className="w-full space-y-2 max-w-md bg-white p-8 border text-slate-700">
-				<input
-					type="text"
-					placeholder="nome"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-					className="w-full border bg-slate-50"
-				/>
+		<main className="flex min-h-screen items-center justify-center bg-default p-2 sm:p-8 md:p-12">
+			<Card className="max-w-120" size="xl">
+				{/* logo container */}
+				<div className="flex w-full justify-center">
+					{/* must revert classnames after testing */}
+					<Image
+						src={sao_bento_logo}
+						alt="Logo"
+						className="dark:hidden w-full max-w-50 h-auto mb-8"
+					/>
+					<Image
+						src={sao_bento_logo_dark}
+						alt="Logo"
+						className="hidden dark:block w-full max-w-50 h-auto mb-8"
+					/>
+				</div>
 
-				<input
-					type="text"
-					placeholder="sobrenome"
-					value={lastName}
-					onChange={(e) => setLastName(e.target.value)}
-					className="w-full border bg-slate-50"
-				/>
+				<h1 className="text-center text-lg text-default-fg font-semibold">
+					Cadastrar em Veterinária São Bento
+				</h1>
 
-				<input
-					type="text"
-					placeholder="phone"
-					value={phone}
-					onChange={(e) => setPhone(e.target.value)}
-					className="w-full border bg-slate-50"
-				/>
+				<p className="text-center text-xs text-muted-fg font-medium"> 
+					Crie uma conta em nosso site para acessar a área do cliente
+				</p>
 
-				<input
-					type="text"
-					placeholder="cpf"
-					value={cpf}
-					onChange={(e) => setCpf(e.target.value)}
-					className="w-full border bg-slate-50"
-				/>
+				<div className="py-4">
+					<RegisterForm></RegisterForm>
+				</div>
 
-				<input
-					type="email"
-					placeholder="seu@email.com"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					className="w-full border bg-slate-50"
-				/>
+				<div className="w-full text-center py-2">
+					<span className="text-sm font-medium text-default-fg">Já possui uma conta? </span>
+					<TextLink href="/login" variant="primary">
+						Faça o login
+					</TextLink>
+				</div>
 
-				<input
-					type="password"
-					placeholder="Crie uma senha segura"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					className="w-full border bg-slate-50"
-				/>
-
-				<button
-					onClick={handleRegister}
-					disabled={loading}
-					className="w-full border bg-slate-50"
-				>
-					{loading ? "Criando conta..." : "Cadastrar"}
-				</button>
-			
-				<button 
-					onClick={() => router.push('/login')}
-					className="w-full border bg-slate-50"
-				>
-					Já tem conta? Fazer Login
-				</button>
-			</div>
-		</div>
+				<div className="w-full text-center py-2">
+					<TextLink href="/" variant="default">
+						Voltar para o site
+					</TextLink>
+				</div>
+			</Card>
+		</main>
 	);
 }

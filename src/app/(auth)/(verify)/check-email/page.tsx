@@ -3,6 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
+import Image from "next/image";
+import sao_bento_logo from "@/public/sao-bento-logo.svg"
+import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
+
 import { Card } from "@/src/components/ui/Card";
 import { TextButton } from "@/src/components/ui/TextButton";
 
@@ -18,24 +22,36 @@ export default function CheckEmailPage() {
             setTimeLeft((prev) => prev > 0 ? prev - 1 : prev);
         }, 1000);
 
-        /* trigger countdown */
-        const timeout = setTimeout(() => {
+        if (timeLeft === 0) {
             router.replace("/login");
-        }, 5000);
+            return;
+        }
 
         /* cleanup functions */
         return () => {
             clearInterval(interval);
-            clearTimeout(timeout);
         };
         
-    }, [router]);
+    }, [router, timeLeft]);
 
     return (
         <main className="flex min-h-screen items-center justify-center bg-default p-2 sm:p-8 md:p-12">
             <Card className="max-w-200" size="xl">
+                <div className="flex w-full justify-center">
+                    {/* must revert classnames after testing */}
+                    <Image
+                        src={sao_bento_logo}
+                        alt="Logo"
+                        className="dark:hidden w-full max-w-50 h-auto mb-2"
+                    />
+                    <Image
+                        src={sao_bento_logo_dark}
+                        alt="Logo"
+                        className="hidden dark:block w-full max-w-50 h-auto mb-2"
+                    />
+                </div>
                 <h1 className="p-4 text-center text-2xl font-semibold text-default-fg">
-                    Verifique seu E-mail
+                    Verifique seu e-mail
                 </h1>
 
                 <p className="pb-2 text-muted-fg text-center">
