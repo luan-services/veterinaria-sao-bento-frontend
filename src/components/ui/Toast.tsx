@@ -60,7 +60,7 @@ export function Toast({ id, title, message, variant = 'info', icon, action }: To
                 {icon || defaultIcons[variant]}
             </div>
 
-            <div className="flex flex-col w-full gap-1">
+            <div className="flex flex-col w-full gap-1 justify-center">
                 <div className="flex justify-between items-center">
                     <h1 className="font-medium text-sm text-default-fg">{title}</h1>
                     <button 
