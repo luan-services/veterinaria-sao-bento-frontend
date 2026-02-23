@@ -130,7 +130,7 @@
 }
 
 /* dark mode override */
-@media (prefers-color-scheme: ble) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
@@ -145,25 +145,25 @@
 		
 		/* css for borders, rings, outline, etc */
 		--border-default: var(--neutral-700);
-		--border-default-accent: var(--neutral-600); 
+		--border-default-accent: var(--neutral-500); 
 
-		--border-primary: var(--primary-800);
-		--border-primary-accent: var(--primary-700); 
+		--border-primary: var(--primary-700);
+		--border-primary-accent: var(--primary-500); 
 
-		--border-danger: var(--danger-800);
+		--border-danger: var(--danger-700);
         --border-danger-accent: var(--danger-500);
 
-        --border-alert: var(--alert-800);
+        --border-alert: var(--alert-700);
         --border-alert-accent: var(--alert-500);
 
-        --border-success: var(--success-800);
+        --border-success: var(--success-600);
         --border-success-accent: var(--success-500);
 
 		/* -------------------------------------------- */
 
 		/* css for shadow rings */
-		--focus-ring-primary: var(--focus-ring-primary-600);
-		--focus-ring-danger: var(--focus-ring-danger-600);
+		--focus-ring-primary: var(--focus-ring-primary-500);
+		--focus-ring-danger: var(--focus-ring-danger-500);
 
 		/* -------------------------------------------- */
 
@@ -171,20 +171,20 @@
 		--bg-btn-default: var(--neutral-50);
 		--fg-btn-default: var(--neutral-900);
 
-		--bg-btn-primary: var(--primary-500);
+		--bg-btn-primary: var(--primary-600);
 		--fg-btn-primary: var(--neutral-0);
 
 		--bg-btn-danger:  var(--danger-600);
 		--fg-btn-danger:  var(--neutral-0);
 
-		--bg-btn-accent: var(--primary-900); 
+		--bg-btn-accent: var(--primary-800); 
         --fg-btn-accent: var(--primary-50);
 
         --bg-btn-outline: transparent;
         --fg-btn-outline: var(--primary-400);
         
         --bg-btn-ghost: transparent;
-        --fg-btn-ghost: var(--primary-400);
+        --fg-btn-ghost: var(--neutral-50);
 
 		--bg-card:    var(--neutral-800);   
 	}
