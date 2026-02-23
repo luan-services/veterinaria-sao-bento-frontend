@@ -1,8 +1,7 @@
 "use client"; /* we use client here because login page does not need SEO */
 
 import { useState } from "react";
-import { signIn, sendVerificationEmail } from "@/src/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { signIn } from "@/src/lib/auth-client";
 
 import Image from "next/image";
 import sao_bento_logo from "@/public/sao-bento-logo.svg"
