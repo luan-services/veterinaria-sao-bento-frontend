@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Noto_Sans } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/src/components/ui/Toaster"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${notoSans.className} antialiased min-h-screen w-full`}
       >
         {children}
+        <Toaster/>
       </body>
     </html>
   );
