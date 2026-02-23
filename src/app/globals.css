@@ -27,14 +27,20 @@
 	--primary-900: #7F1012;
 	--primary-950: #450506;
 
-	--danger-500: #ef4444;
-	--danger-600: #dc2626;
+	--danger-200: #fecaca;
+    --danger-500: #ef4444;
+    --danger-600: #dc2626;
+    --danger-800: #991b1b;
 
-	--alert-500: #f59e0b;
+    --alert-200: #fde68a;
+    --alert-500: #f59e0b;
     --alert-600: #d97706;
-	
-	--success-500: #22c55e;
-	--success-600: #16a34a;
+    --alert-800: #92400e;
+
+    --success-200: #a1f1bd;
+    --success-500: #22c55e;
+    --success-600: #16a34a;
+    --success-800: #166534;
 
 	/* radius */
 	--radius-xs: 4px;
@@ -88,9 +94,18 @@
 	/* css for borders */
 	--border-default: var(--neutral-200); 
 	--border-default-accent: var(--neutral-500); 
+
 	--border-primary: var(--primary-200); 
 	--border-primary-accent: var(--primary-500); 
-	--border-danger:  var(--danger-600);
+
+	--border-danger: var(--danger-200);
+    --border-danger-accent: var(--danger-500);
+
+    --border-alert: var(--alert-200);
+    --border-alert-accent: var(--alert-500);
+
+    --border-success: var(--success-200);
+    --border-success-accent: var(--success-500);
 
 	/* custom css for components bg and fg */
     --bg-btn-default: var(--neutral-900);
@@ -115,7 +130,7 @@
 }
 
 /* dark mode override */
-@media (prefers-color-scheme: blue) {
+@media (prefers-color-scheme: ble) {
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
@@ -131,9 +146,18 @@
 		/* css for borders, rings, outline, etc */
 		--border-default: var(--neutral-700);
 		--border-default-accent: var(--neutral-600); 
+
 		--border-primary: var(--primary-800);
 		--border-primary-accent: var(--primary-700); 
-		--border-danger:  var(--danger-500);
+
+		--border-danger: var(--danger-800);
+        --border-danger-accent: var(--danger-500);
+
+        --border-alert: var(--alert-800);
+        --border-alert-accent: var(--alert-500);
+
+        --border-success: var(--success-800);
+        --border-success-accent: var(--success-500);
 
 		/* -------------------------------------------- */
 
@@ -184,7 +208,12 @@
 	--color-default-accent-border: var(--border-default-accent);
 	--color-primary-border: var(--border-primary);
 	--color-primary-accent-border: var(--border-primary-accent);
-	--color-danger-border:   var(--border-danger);
+	--color-danger-border: var(--border-danger);
+    --color-danger-accent-border: var(--border-danger-accent);
+    --color-alert-border: var(--border-alert);
+    --color-alert-accent-border: var(--border-alert-accent);
+    --color-success-border: var(--border-success);
+    --color-success-accent-border: var(--border-success-accent);
 
 	/* -------------------------------------------- */
 
