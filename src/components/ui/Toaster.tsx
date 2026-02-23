@@ -3,7 +3,7 @@
 
 import { useSyncExternalStore } from 'react';
 import { toastStore } from '@/src/lib/toastStore';
-import { WebToast } from '@/src/components/ui/WebToast'; 
+import { Toast } from '@/src/components/ui/Toast'; 
 
 const emptyToasts: any[] = [];
 
@@ -35,7 +35,7 @@ export function Toaster({ position = 'bottom-right' }: ToasterProps) {
 
     return (
         <div 
-            className={`fixed z-[9999] flex flex-col w-[350px] pointer-events-none ${positionVariants[position]} ${isTop ? 'justify-start' : 'justify-end'}`}
+            className={`fixed z-[9999] flex flex-col w-[400px] pointer-events-none ${positionVariants[position]} ${isTop ? 'justify-start' : 'justify-end'}`}
         >
             {toasts.map((toast, index) => {
                 if (index > 2) return null;
@@ -54,7 +54,7 @@ export function Toaster({ position = 'bottom-right' }: ToasterProps) {
                         {toast.variant === 'custom' && toast.customComponent ? (
                             toast.customComponent
                         ) : (
-                            <WebToast 
+                            <Toast 
                                 id={toast.id} 
                                 title={toast.title} 
                                 variant={toast.variant as any} 

@@ -2,8 +2,8 @@
 import { ReactNode } from 'react';
 import { toastStore } from '@/src/lib/toastStore';
 
-interface WebToastProps {
-    id: number;
+interface ToastProps {
+    id: string;
     title: string;
     message?: string;
     variant?: 'success' | 'danger' | 'warning' | 'info';
@@ -37,7 +37,7 @@ const defaultIcons = {
     ),
 };
 
-export function WebToast({ id, title, message, variant = 'info', icon, action }: WebToastProps) {
+export function Toast({ id, title, message, variant = 'info', icon, action }: ToastProps) {
 
     const styles = {
         success: 'bg-white border-green-200 text-slate-800',

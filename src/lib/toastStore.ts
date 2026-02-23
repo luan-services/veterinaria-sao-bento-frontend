@@ -9,7 +9,7 @@ export interface ToastOptions {
 }
 
 export interface ToastData extends ToastOptions {
-    id: number;
+    id: string;
     title: string;
     variant: ToastVariant;
 }
@@ -17,21 +17,24 @@ export interface ToastData extends ToastOptions {
 let toasts: ToastData[] = [];
 let listeners: Array<() => void> = [];
 
+const randomizeId = () => 'toast-' + Math.random().toString(36).slice(2, 8);
+
 export const toastStore = {
 	getSnapshot: () => toasts,
+
 	subscribe: (listener: () => void) => {
 		listeners.push(listener);
 		return () => { listeners = listeners.filter((l) => l !== listener); };
 	},
 	
 	add: (data: Omit<ToastData, 'id'>) => {
-		const id = Date.now();
+		const id = randomizeId();
 		toasts = [{ id, ...data }, ...toasts]; 
 		listeners.forEach((l) => l());
 		setTimeout(() => toastStore.dismiss(id), 4000);
 	},
 	
-	dismiss: (id: number) => {
+	dismiss: (id: string) => {
 		toasts = toasts.filter((t) => t.id !== id);
 		listeners.forEach((l) => l());
 	},
