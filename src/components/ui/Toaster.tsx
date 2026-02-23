@@ -37,17 +37,19 @@ export function Toaster({ position = 'bottom-right' }: ToasterProps) {
             className={`fixed z-[9999] flex flex-col w-[400px] pointer-events-none ${positionVariants[position]} ${isTop ? 'justify-start' : 'justify-end'}`}
         >
             {toasts.map((toast, index) => {
-                if (index > 2) return null;
+                if (index > 2) {
+                    return null;
+                }
 
                 return (
                     <div
                         key={toast.id}
-                        className={`absolute w-full transition-all duration-300 ease-out pointer-events-auto left-0 ${isTop ? 'top-0' : 'bottom-0'}`}
+                        className={`absolute w-full transition-all duration-300 ease-out pointer-events-auto 
+                            left-0 ${isTop ? 'top-0' : 'bottom-0'}`}
                         style={{
                             transform: `translateY(${index * 16 * yDirection}px) scale(${1 - index * 0.05})`,
                             transformOrigin: isTop ? 'top center' : 'bottom center',
                             zIndex: 100 - index,
-                            opacity: 1 - index * 0.2,
                         }}
                     >
 						<Toast 

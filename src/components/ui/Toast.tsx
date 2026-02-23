@@ -55,7 +55,7 @@ export function Toast({ id, title, message, variant = 'info', icon, action }: To
     };
 
     return (
-        <div className={`w-full p-4 border rounded-md shadow-lg flex gap-4 ${styles[variant]}`}>
+        <div className={`w-full p-4 border rounded-md flex gap-4 ${styles[variant]}`}>
             <div className="flex items-center">
                 {icon || defaultIcons[variant]}
             </div>
