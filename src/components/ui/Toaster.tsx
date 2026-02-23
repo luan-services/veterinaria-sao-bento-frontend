@@ -1,4 +1,3 @@
-// src/components/ui/Toaster.tsx
 'use client';
 
 import { useSyncExternalStore } from 'react';
@@ -51,18 +50,14 @@ export function Toaster({ position = 'bottom-right' }: ToasterProps) {
                             opacity: 1 - index * 0.2,
                         }}
                     >
-                        {toast.variant === 'custom' && toast.customComponent ? (
-                            toast.customComponent
-                        ) : (
-                            <Toast 
-                                id={toast.id} 
-                                title={toast.title} 
-                                variant={toast.variant as any} 
-                                message={toast.message}
-                                action={toast.action}
-                                icon={toast.icon}
-                            />
-                        )}
+						<Toast 
+							id={toast.id} 
+							title={toast.title} 
+							variant={toast.variant} 
+							message={toast.message}
+							action={toast.action}
+							icon={toast.icon}
+						/>
                     </div>
                 );
             })}
