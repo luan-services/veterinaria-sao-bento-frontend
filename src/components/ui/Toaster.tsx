@@ -9,41 +9,63 @@ const emptyToasts: any[] = [];
 
 const getServerSnapshot = () => emptyToasts;
 
-export function Toaster() {
-	const toasts = useSyncExternalStore(toastStore.subscribe, toastStore.getSnapshot, getServerSnapshot);
+interface ToasterProps {
+    position?: 'top-center' | 'bottom-center' | 'top-right' | 'bottom-right' | 'top-left' | 'bottom-left';
+}
 
-	if (toasts.length === 0) return null;
+const positionVariants = {
+    'top-left': 'top-4 left-4',
+    'top-center': 'top-4 left-1/2 -translate-x-1/2',
+    'top-right': 'top-4 right-4',
+    'bottom-left': 'bottom-4 left-4',
+    'bottom-center': 'bottom-4 left-1/2 -translate-x-1/2',
+    'bottom-right': 'bottom-4 right-4',
+};
 
-	return (
-		<div className="fixed bottom-4 right-4 z-[9999] flex flex-col justify-end w-[350px] pointer-events-none">
-		{toasts.map((toast, index) => {
-			if (index > 2) return null;
+export function Toaster({ position = 'bottom-right' }: ToasterProps) {
+    const toasts = useSyncExternalStore(toastStore.subscribe, toastStore.getSnapshot, getServerSnapshot);
 
-			return (
-			<div
-				key={toast.id}
-				className="absolute bottom-0 right-0 w-full transition-all duration-300 ease-out pointer-events-auto"
-				style={{
-				transform: `translateY(-${index * 16}px) scale(${1 - index * 0.05})`,
-				zIndex: 100 - index,
-				opacity: 1 - index * 0.2,
-				}}
-			>
-				{toast.variant === 'custom' && toast.customComponent ? (
-				toast.customComponent
-				) : (
-				<WebToast 
-					id={toast.id} 
-					title={toast.title} 
-					variant={toast.variant as any} 
-					message={toast.message}
-					action={toast.action}
-					icon={toast.icon}
-				/>
-				)}
-			</div>
-			);
-		})}
-		</div>
-	);
+    if (toasts.length === 0) {
+        return null;
+    }
+
+    const isTop = position.startsWith('top');
+    
+    const yDirection = isTop ? 1 : -1;
+
+    return (
+        <div 
+            className={`fixed z-[9999] flex flex-col w-[350px] pointer-events-none ${positionVariants[position]} ${isTop ? 'justify-start' : 'justify-end'}`}
+        >
+            {toasts.map((toast, index) => {
+                if (index > 2) return null;
+
+                return (
+                    <div
+                        key={toast.id}
+                        className={`absolute w-full transition-all duration-300 ease-out pointer-events-auto left-0 ${isTop ? 'top-0' : 'bottom-0'}`}
+                        style={{
+                            transform: `translateY(${index * 16 * yDirection}px) scale(${1 - index * 0.05})`,
+                            transformOrigin: isTop ? 'top center' : 'bottom center',
+                            zIndex: 100 - index,
+                            opacity: 1 - index * 0.2,
+                        }}
+                    >
+                        {toast.variant === 'custom' && toast.customComponent ? (
+                            toast.customComponent
+                        ) : (
+                            <WebToast 
+                                id={toast.id} 
+                                title={toast.title} 
+                                variant={toast.variant as any} 
+                                message={toast.message}
+                                action={toast.action}
+                                icon={toast.icon}
+                            />
+                        )}
+                    </div>
+                );
+            })}
+        </div>
+    );
 }

@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${notoSans.className} antialiased min-h-screen w-full`}
       >
         {children}
-        <Toaster/>
+        <Toaster position="top-center"/>
       </body>
     </html>
   );
