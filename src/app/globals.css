@@ -29,6 +29,9 @@
 
 	--danger-500: #ef4444;
 	--danger-600: #dc2626;
+
+	--alert-500: #f59e0b;
+    --alert-600: #d97706;
 	
 	--success-500: #22c55e;
 	--success-600: #16a34a;
@@ -71,6 +74,7 @@
 	--foreground-muted:   var(--neutral-500);  
 	--foreground-brand:   var(--primary-600); 
 	--foreground-danger:  var(--danger-600); 
+	--foreground-alert: var(--alert-600); 
 	--foreground-success: var(--success-600); 
 
 	/* ------------------------------------------------ */
@@ -120,7 +124,8 @@
 		--foreground-default: var(--neutral-50);    
 		--foreground-muted:   var(--neutral-400);  
 		--foreground-brand:   var(--primary-400);
-		--foreground-danger:   var(--danger-500); 
+		--foreground-danger:   var(--danger-500);
+		--foreground-alert: var(--alert-500);  
 		--foreground-success: var(--success-500); 
 		
 		/* css for borders, rings, outline, etc */
@@ -170,7 +175,8 @@
 	--color-default-fg: var(--foreground-default); /* use className="text-default-fg" */
 	--color-muted-fg:   var(--foreground-muted);
 	--color-brand-fg:   var(--foreground-brand);
-	--color-danger-fg: var(--foreground-danger);
+	--color-danger-fg:  var(--foreground-danger);
+	--color-alert-fg:   var(--foreground-alert);
 	--color-success-fg: var(--foreground-success);
 
 	/* css for border colors */

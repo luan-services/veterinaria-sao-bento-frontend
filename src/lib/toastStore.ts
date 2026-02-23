@@ -49,3 +49,17 @@ export const toast = {
 	warning: (title: string, options?: ToastOptions) => toastStore.add({ id: randomizeId(), title, variant: 'warning', ...options }),
 	info: (title: string, options?: ToastOptions) => toastStore.add({ id: randomizeId(), title, variant: 'info', ...options }),
 };
+
+/* usage example:
+
+	const callToast = () => {
+		toast.warning("Alerta!", {
+			message: "DASD",
+			action: {
+				label: "aa", 
+				onClick: () => { console.log("A"); } // Added "onClick:" here
+			},
+			icon: <GoogleIcon/>
+		});
+	}
+*/
