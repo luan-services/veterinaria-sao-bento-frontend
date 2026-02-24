@@ -13,6 +13,8 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cpf } from 'cpf-cnpj-validator'; 
 import * as z from "zod";
+import { toast } from "@/src/lib/toastStore";
+import { translateError } from "@/src/lib/errorMap";
 
 /* makes a zod schema almost identical to the backend one, with a few changes */
 const registerSchema = z.object({
@@ -90,7 +92,7 @@ export function RegisterForm() {
                     router.push(`/check-email?email=${safeEmail}`);
                 },
                 onError: (ctx) => {
-                    alert(ctx.error.message);
+                    toast.danger(translateError(ctx.error.code));
                     setLoading(false);
                 }
             }

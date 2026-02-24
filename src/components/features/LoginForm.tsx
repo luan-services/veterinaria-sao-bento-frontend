@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { signIn, sendVerificationEmail } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
+import { toast } from "@/src/lib/toastStore";
+import { translateError } from "@/src/lib/errorMap";
 
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
@@ -41,9 +43,13 @@ export function LoginForm() {
                         /* this is the status for when user login and is not verified */
                         if(ctx.error.status === 403) {
                             setIsUnverified(true);
+                            toast.warning(translateError(ctx.error.code), {
+                                message: "Verifique seu e-mail para continuar"
+                            }); /* ctx is the backend response from better auth routes */
+                            setLoading(false);
+                            return;
                         }
-    
-                        alert(ctx.error.message); /* ctx is the backend response from better auth routes */
+                        toast.danger(translateError(ctx.error.code)); /* ctx is the backend response from better auth routes */
                         setLoading(false);
                     }
                 }
@@ -58,12 +64,12 @@ export function LoginForm() {
             callbackURL: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/email-verified`
         }, {
             onSuccess: () => {
-                alert("Novo link enviado! Verifique sua caixa de entrada.");
+                toast.info("Novo link enviado! Verifique sua caixa de entrada.");
                 setResendLoading(false);
                 setIsUnverified(false); /* reset so they can login again */
             },
             onError: (ctx) => {
-                alert(ctx.error.message);
+                toast.danger(translateError(ctx.error.code));
                 setResendLoading(false);
             }
         });
