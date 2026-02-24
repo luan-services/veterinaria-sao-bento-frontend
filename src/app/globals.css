@@ -150,10 +150,10 @@
 		--border-primary: var(--primary-700);
 		--border-primary-accent: var(--primary-500); 
 
-		--border-danger: var(--danger-700);
+		--border-danger: var(--danger-600);
         --border-danger-accent: var(--danger-500);
 
-        --border-alert: var(--alert-700);
+        --border-alert: var(--alert-600);
         --border-alert-accent: var(--alert-500);
 
         --border-success: var(--success-600);
