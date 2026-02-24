@@ -3,6 +3,18 @@
 import { useState } from "react";
 import { requestPasswordReset } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
+import { toast } from "@/src/lib/toastStore";
+import { translateError } from "@/src/lib/errorMap";
+
+import Image from "next/image";
+import sao_bento_logo from "@/public/sao-bento-logo.svg"
+import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
+
+import { Card } from "@/src/components/ui/Card";
+import { Button } from "@/src/components/ui/Button";
+import { Label } from "@/src/components/ui/Label";
+import { Input } from "@/src/components/ui/Input";
+import { TextLink } from "@/src/components/ui/TextLink";
 
 export default function ForgotPasswordPage() {
 
@@ -10,9 +22,9 @@ export default function ForgotPasswordPage() {
 
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
-    const [success, Setsuccess] = useState(false);
 
-    const handleRequestReset = async () => {
+    const handleRequestReset = async (e: React.FormEvent) => {
+        e.preventDefault();
         setLoading(true);
         
         await requestPasswordReset({
@@ -20,39 +32,71 @@ export default function ForgotPasswordPage() {
             redirectTo: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/reset-password`
         }, {
             onSuccess: () => {
-                Setsuccess(true);
+                toast.success("E-mail de verificação enviado", {
+                    message: "Enviaremos um e-mail com o passo a passo para o reset de sua senha caso seu e-mail esteja cadastrado no nosso sistema."
+                })
                 setLoading(false);
             },
             onError: (ctx) => {
-                alert(ctx.error.message);
+                toast.danger(translateError(ctx.error.message));
                 setLoading(false);
             }
         });
     };
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-slate-50 p-4">
-            <div className="w-full space-y-2 max-w-md bg-white p-8 border text-slate-700">
-                    <div className="text-center text-sm py-2">reset de password</div>
-                    {success &&
-                        <div className="text-green-600 text-center"> enviamos um email com as instruções para reset da senha </div>
-                    }
-                    <input
-                        type="email"
-                        placeholder="seu@email.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full border bg-slate-50 p-2"
-                    />
-
-                    <button
-                        onClick={handleRequestReset}
-                        disabled={loading}
-                        className="w-full border bg-slate-50 py-2 mt-2 hover:bg-slate-100 transition-colors"
+        <main className="flex min-h-screen items-center justify-center bg-default p-2 sm:p-8 md:p-12">
+            <Card className="max-w-200" size="xl">
+                <div className="flex w-full justify-center">
+					<Image
+						src={sao_bento_logo}
+						alt="Logo"
+						className="dark:hidden w-full max-w-50 h-auto mb-8"
+					/>
+					<Image
+						src={sao_bento_logo_dark}
+						alt="Logo"
+						className="hidden dark:block w-full max-w-50 h-auto mb-8"
+					/>
+				</div>
+                <h1 className="text-center text-lg text-default-fg font-semibold pb-1">
+                    Esqueci minha senha
+                </h1>
+                <p className="text-center text-xs text-muted-fg font-medium pb-8"> 
+                    Informe seu e-mail cadastrado no sistema.
+                </p>
+                <form 
+                    onSubmit={handleRequestReset} 
+                    className="flex flex-col gap-2 w-full max-w-120 justify-self-center"
+                >
+                    <div className="pb-2"> 
+                        <Label htmlFor="email">
+                            E-mail
+                        </Label>
+                        <Input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="seu@email.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>      
+                    <Button 
+                        className="w-full"
+                        type="submit"
+                        variant="primary"
                     >
-                        {loading ? "Enviando..." : "Enviar e-mail"}
-                    </button>
-            </div>
-        </div>
+                        {loading ? "Enviando..." : "Enviar"}
+                    </Button>       
+                    <div className="w-full text-center py-2">
+                        <TextLink href="/login" variant="primary">
+                            Voltar para login
+                        </TextLink>
+                    </div>     
+                </form>
+            </Card>
+        </main>
     );
 }
