@@ -16,7 +16,7 @@ export default function RegisterPage() {
 
 	return (
 		<main className="flex min-h-screen items-center justify-center bg-default p-2 sm:p-8 md:p-12">
-			<Card className="max-w-120" size="xl">
+			<Card className="max-w-200" size="xl">
 				{/* logo container */}
 				<div className="flex w-full justify-center">
 					{/* must revert classnames after testing */}
@@ -40,7 +40,7 @@ export default function RegisterPage() {
 					Crie uma conta em nosso site para acessar a área do cliente
 				</p>
 
-				<div className="py-4">
+				<div className="w-full max-w-120 justify-self-center py-4">
 					<RegisterForm></RegisterForm>
 				</div>
 

@@ -118,6 +118,7 @@ export function RegisterForm() {
                             type="text" 
                             placeholder="Ex: Vitor"
                             {...field}
+                            variant={errors.name ? "danger" : "default"}
                         />
                     )}
                 />
@@ -136,6 +137,7 @@ export function RegisterForm() {
                             type="text"
                             placeholder="Ex: Nascimento" 
                             {...field}
+                            variant={errors.lastName ? "danger" : "default"}
                         />
                     )}
                 />
@@ -154,6 +156,7 @@ export function RegisterForm() {
                             type="email"
                             placeholder="seu@email.com"
                             {...field}
+                            variant={errors.email ? "danger" : "default"}
                         />
                     )}
                 />
@@ -172,6 +175,7 @@ export function RegisterForm() {
                             type="password"
                             placeholder="••••••••"
                             {...field}
+                            variant={errors.password ? "danger" : "default"}
                         />
                     )}
                 />
@@ -190,6 +194,7 @@ export function RegisterForm() {
                             type="password"
                             placeholder="••••••••"
                             {...field}
+                            variant={errors.confirmPassword ? "danger" : "default"}
                         />
                     )}
                 />
@@ -208,6 +213,7 @@ export function RegisterForm() {
                             type="tel"
                             placeholder="(00) 00000-0000 ou 00000000000"
                             {...field}
+                            variant={errors.phone ? "danger" : "default"}
                         />
                     )}
                 />
@@ -226,6 +232,7 @@ export function RegisterForm() {
                             type="text"
                             placeholder="000.000.000-00 ou 00000000000"
                             {...field}
+                            variant={errors.cpf ? "danger" : "default"}
                         />
                     )}
                 />
