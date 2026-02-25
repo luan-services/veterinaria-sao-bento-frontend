@@ -1,4 +1,4 @@
-import ProfileGuard from "@/src/components/features/ProfileGuard"
+import ProfileGuard from "@/src/components/features/auth/ProfileGuard"
 
 /* can export metadata here if want because this is a server component */
 

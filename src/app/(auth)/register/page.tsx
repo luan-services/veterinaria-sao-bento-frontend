@@ -7,7 +7,7 @@ import sao_bento_logo from "@/public/sao-bento-logo.svg"
 import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
 
 import { Card } from "@/src/components/ui/Card";
-import { RegisterForm } from "@/src/components/features/RegisterForm";
+import { RegisterForm } from "@/src/components/features/auth/RegisterForm";
 import { TextLink } from "@/src/components/ui/TextLink";
 
 export default function RegisterPage() {

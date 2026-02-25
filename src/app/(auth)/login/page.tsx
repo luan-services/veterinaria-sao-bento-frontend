@@ -9,7 +9,7 @@ import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
 
 import { Card } from "@/src/components/ui/Card";
 import { GoogleSignInButton } from "@/src/components/ui/GoogleSignInButton";
-import { LoginForm } from "@/src/components/features/LoginForm";
+import { LoginForm } from "@/src/components/features/auth/LoginForm";
 import { TextLink } from "@/src/components/ui/TextLink";
 
 export default function LoginPage() {

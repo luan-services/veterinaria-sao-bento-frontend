@@ -13,8 +13,8 @@ import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
 import { Card } from "@/src/components/ui/Card";
 import { TextButton } from "@/src/components/ui/TextButton";
 import { Loading } from "@/src/components/layout/Loading";
-import { CompleteProfileForm } from "@/src/components/features/CompleteProfileForm";
-import type { CompleteProfileFormData } from "@/src/components/features/CompleteProfileForm";
+import { CompleteProfileForm } from "@/src/components/features/auth/CompleteProfileForm";
+import type { CompleteProfileFormData } from "@/src/components/features/auth/CompleteProfileForm";
 
 export default function CompleteProfilePage() {
     const router = useRouter();

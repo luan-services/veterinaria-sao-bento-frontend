@@ -4,9 +4,9 @@ import { useState } from "react";
 import { signUp } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
 
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
-import { Label } from "../ui/Label";
+import { Input } from "@/src/components/ui/Input";
+import { Button } from "@/src/components/ui/Button";
+import { Label } from "@/src/components/ui/Label";
 
 /* import zod and react-hook-form */
 import { useForm, Controller } from "react-hook-form";

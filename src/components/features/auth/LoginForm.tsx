@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 import { toast } from "@/src/lib/toastStore";
 import { translateError } from "@/src/lib/errorMap";
 
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
-import { Label } from "../ui/Label";
-import { TextLink } from "../ui/TextLink";
-import { TextButton } from "../ui/TextButton";
+import { Input } from "@/src/components/ui/Input";
+import { Button } from "@/src/components/ui/Button";
+import { Label } from "@/src/components/ui/Label";
+import { TextLink } from "@/src/components/ui/TextLink";
+import { TextButton } from "@/src/components/ui/TextButton";
 
 export function LoginForm() {
 

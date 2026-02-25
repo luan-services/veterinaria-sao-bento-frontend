@@ -12,8 +12,8 @@ import sao_bento_logo_dark from "@/public/sao-bento-logo-dark.svg"
 
 import { Card } from "@/src/components/ui/Card";
 import { Loading } from "@/src/components/layout/Loading";
-import { ResetPasswordForm } from "@/src/components/features/ResetPasswordForm";
-import type { ResetPasswordFormData } from "@/src/components/features/ResetPasswordForm";
+import { ResetPasswordForm } from "@/src/components/features/auth/ResetPasswordForm";
+import type { ResetPasswordFormData } from "@/src/components/features/auth/ResetPasswordForm";
 
 /* even though this is a client component, next.js still tries to pre-render it on the server at build time to generate a fast, 
 static HTML file to send to the user immediately 
