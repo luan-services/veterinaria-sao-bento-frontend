@@ -13,7 +13,6 @@ import { LoginForm } from "@/src/components/features/LoginForm";
 import { TextLink } from "@/src/components/ui/TextLink";
 
 export default function LoginPage() {
-
     /* google sign in must have its own loading state to set the loading text */
     const [googleSignInLoading, setGoogleSignInLoading] = useState(false);
 

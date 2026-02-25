@@ -16,8 +16,6 @@ import { Loading } from "@/src/components/layout/Loading";
 import { CompleteProfileForm } from "@/src/components/features/CompleteProfileForm";
 import type { CompleteProfileFormData } from "@/src/components/features/CompleteProfileForm";
 
-
-
 export default function CompleteProfilePage() {
     const router = useRouter();
   

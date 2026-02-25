@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { requestPasswordReset } from "@/src/lib/auth-client";
-import { useRouter } from "next/navigation";
 import { toast } from "@/src/lib/toastStore";
 import { translateError } from "@/src/lib/errorMap";
 
@@ -17,9 +16,6 @@ import { Input } from "@/src/components/ui/Input";
 import { TextLink } from "@/src/components/ui/TextLink";
 
 export default function ForgotPasswordPage() {
-
-    const router = useRouter(); /* router is next routing state, the same as useNavigation() on SPA react */
-
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
 

@@ -11,7 +11,6 @@ import { RegisterForm } from "@/src/components/features/RegisterForm";
 import { TextLink } from "@/src/components/ui/TextLink";
 
 export default function RegisterPage() {
-
 	const router = useRouter(); /* router is next routing state, the same as useNavigation() on SPA react */
 
 	return (
