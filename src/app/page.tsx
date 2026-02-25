@@ -10,7 +10,6 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<div className="h-40 bg-red-100"></div>
 			<main className="flex min-h-screen items-center justify-center bg-default p-2">
 					<Card className="max-w-120" size="xl">
 						<GoogleSignInButton>

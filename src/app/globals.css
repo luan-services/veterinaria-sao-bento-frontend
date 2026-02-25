@@ -74,6 +74,7 @@
 :root {
 	/* css for default bg */
 	--background-default: var(--neutral-50); 
+	--background-primary: var(--primary-50); 
 	
 	/* css mainly for text */
 	--foreground-default: var(--neutral-900);     
@@ -135,6 +136,7 @@
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
+		--background-primary: var(--primary-400); 
 	
 		/* css mainly for text */
 		--foreground-default: var(--neutral-50);    
@@ -196,7 +198,8 @@
 @theme {
 	/* css for default bg */
 	--color-default:    var(--background-default); /* use className="bg-default" */
-	
+	--color-primary:    var(--background-primary); 
+
 	/* css mainly for text */
 	--color-default-fg: var(--foreground-default); /* use className="text-default-fg" */
 	--color-muted-fg:   var(--foreground-muted);
