@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Link, { LinkProps } from "next/link";
+import Link from "next/link";
 
-interface NavLinkProps extends LinkProps {
+interface NavLinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
     children: React.ReactNode;
     href: string;
     className?: string;
