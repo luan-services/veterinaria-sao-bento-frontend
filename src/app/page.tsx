@@ -1,3 +1,5 @@
+import { Header } from "../components/layout/Header";
+
 import { Button } from "../components/ui/Button";
 import { Card } from "../components/ui/Card";
 import { GoogleSignInButton } from "../components/ui/GoogleSignInButton";
@@ -6,28 +8,32 @@ import { Label } from "../components/ui/Label";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen items-center justify-center bg-default p-2">
-				<Card className="max-w-120" size="xl">
-					<GoogleSignInButton>
-						Entrar com o Google
-					</GoogleSignInButton>
-					<Button className="w-full" type="button" disabled={false}>
-						Entrar
-					</Button>
-					<Button className="w-full" type="button" disabled={false} variant="primary">
-						Entrar
-					</Button>
-					<Button className="w-full" type="button" disabled={false} variant="outline">
-						Entrar
-					</Button>
-					<Button className="w-full" type="button" disabled={false} variant="ghost">
-						Entrar
-					</Button>
-					<Label htmlFor="email">Email</Label>
-					<Input id="email" placeholder="email"></Input>
-					<Input placeholder="password" type="password"></Input>
-					<Input placeholder="file" type="file" variant="default"></Input>
-				</Card>
-		</main>
+		<>
+			<Header />
+			<div className="h-40 bg-red-100"></div>
+			<main className="flex min-h-screen items-center justify-center bg-default p-2">
+					<Card className="max-w-120" size="xl">
+						<GoogleSignInButton>
+							Entrar com o Google
+						</GoogleSignInButton>
+						<Button className="w-full" type="button" disabled={false}>
+							Entrar
+						</Button>
+						<Button className="w-full" type="button" disabled={false} variant="primary">
+							Entrar
+						</Button>
+						<Button className="w-full" type="button" disabled={false} variant="outline">
+							Entrar
+						</Button>
+						<Button className="w-full" type="button" disabled={false} variant="ghost">
+							Entrar
+						</Button>
+						<Label htmlFor="email">Email</Label>
+						<Input id="email" placeholder="email"></Input>
+						<Input placeholder="password" type="password"></Input>
+						<Input placeholder="file" type="file" variant="default"></Input>
+					</Card>
+			</main>
+		</>
 	);
 }

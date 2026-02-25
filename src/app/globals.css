@@ -126,7 +126,8 @@
 	--bg-btn-accent: var(--primary-50);
     --fg-btn-accent: var(--primary-500);
 
-	--bg-card:    var(--neutral-0);         
+	--bg-card:    var(--neutral-0);      
+	--bg-header:    var(--neutral-0);   
 }
 
 /* dark mode override */
@@ -186,7 +187,8 @@
         --bg-btn-ghost: transparent;
         --fg-btn-ghost: var(--neutral-50);
 
-		--bg-card:    var(--neutral-800);   
+		--bg-card:    var(--neutral-800); 
+		--bg-header:    var(--neutral-900);  
 	}
 }
 
@@ -236,6 +238,7 @@
 
 	/* custom css for elements */
 	--color-card:  var(--bg-card); /* use className="bg-card" */
+	--color-header: var(--bg-header);
 
 	--color-btn-primary:    var(--bg-btn-primary); /* use className="bg-btn-primary" */
     --color-btn-primary-fg: var(--fg-btn-primary);
