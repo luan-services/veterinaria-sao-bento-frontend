@@ -1,5 +1,5 @@
 export const Navbar = () => {
     return (
-        <div>oi</div>
+        <div className="flex justify-self-center">oi</div>
     )
 }
