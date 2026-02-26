@@ -1,38 +1,16 @@
+import { Hero } from "../components/features/landing-page/Hero";
 import { Header } from "../components/layout/Header";
 
-import { Button } from "../components/ui/Button";
-import { Card } from "../components/ui/Card";
-import { GoogleSignInButton } from "../components/ui/GoogleSignInButton";
-import { Input } from "../components/ui/Input";
-import { Label } from "../components/ui/Label";
-
 export default function Home() {
-	return (
-		<>
-			<Header />
-			<main className="flex min-h-screen items-center justify-center bg-default p-2">
-					<Card className="max-w-120" size="xl">
-						<GoogleSignInButton>
-							Entrar com o Google
-						</GoogleSignInButton>
-						<Button className="w-full" type="button" disabled={false}>
-							Entrar
-						</Button>
-						<Button className="w-full" type="button" disabled={false} variant="primary">
-							Entrar
-						</Button>
-						<Button className="w-full" type="button" disabled={false} variant="outline">
-							Entrar
-						</Button>
-						<Button className="w-full" type="button" disabled={false} variant="ghost">
-							Entrar
-						</Button>
-						<Label htmlFor="email">Email</Label>
-						<Input id="email" placeholder="email"></Input>
-						<Input placeholder="password" type="password"></Input>
-						<Input placeholder="file" type="file" variant="default"></Input>
-					</Card>
+    return (
+        <>
+            <Header />
+            <main className="w-full flex flex-col min-h-screen justify-center items-center bg-default">
+				<Hero />
+				<div className="bg-muted-fg h-160 w-full">
+					OISDO
+				</div>
 			</main>
-		</>
-	);
+        </>
+    );
 }

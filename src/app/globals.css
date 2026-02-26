@@ -141,7 +141,7 @@
 		/* css mainly for text */
 		--foreground-default: var(--neutral-50);    
 		--foreground-muted:   var(--neutral-400);  
-		--foreground-brand:   var(--primary-400);
+		--foreground-brand:   var(--primary-500);
 		--foreground-danger:   var(--danger-500);
 		--foreground-alert: var(--alert-500);  
 		--foreground-success: var(--success-500); 
@@ -150,7 +150,7 @@
 		--border-default: var(--neutral-700);
 		--border-default-accent: var(--neutral-500); 
 
-		--border-primary: var(--primary-700);
+		--border-primary: var(--primary-600);
 		--border-primary-accent: var(--primary-500); 
 
 		--border-danger: var(--danger-600);
@@ -180,11 +180,11 @@
 		--bg-btn-danger:  var(--danger-600);
 		--fg-btn-danger:  var(--neutral-0);
 
-		--bg-btn-accent: var(--primary-800); 
+		--bg-btn-accent: var(--primary-600); 
         --fg-btn-accent: var(--neutral-0);
 
         --bg-btn-outline: transparent;
-        --fg-btn-outline: var(--primary-400);
+        --fg-btn-outline: var(--primary-500);
         
         --bg-btn-ghost: transparent;
         --fg-btn-ghost: var(--neutral-50);
