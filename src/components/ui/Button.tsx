@@ -6,6 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
     variant?: 'default'| 'primary' | 'danger' | 'outline' | 'ghost';
     size?: 'sm' | 'md' | 'lg' | 'xl';
+    pill?: 'true' | 'false';
 }
 
 const sizeVariants = {
@@ -23,16 +24,17 @@ const colorVariants = {
     ghost:   "bg-btn-ghost text-btn-ghost-fg border-transparent hover:bg-btn-accent hover:text-btn-accent-fg focus-visible:shadow-ring-primary",
 };
 
-export const Button = ({ children, className = "", variant = "default", size = "md", ...props }: ButtonProps) => {
+export const Button = ({ children, className = "", variant = "default", size = "md", pill = "false", ...props }: ButtonProps) => {
     
     const colors = colorVariants[variant];
     const sizing = sizeVariants[size];
+    const rounding = pill === "true" ? "rounded-full" : "rounded-md";
 
     return (
         <button 
-            className={`flex items-center justify-center rounded-md font-medium transition duration-200 border
+            className={`flex items-center justify-center font-medium transition duration-200 border
                 focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer 
-                ${colors} ${sizing} ${className}`}
+                ${colors} ${sizing} ${rounding} ${className}`}
             {...props}
         >
             {children}
