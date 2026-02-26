@@ -6,24 +6,28 @@ export const Navbar = () => {
             <NavLink
                 href="#"
                 variant="primary"
+                pill="true"
             >
                 Início
             </NavLink>
             <NavLink
                 href="#"
                 variant="primary"
+                pill="true"
             >
                 Sobre
             </NavLink>
             <NavLink
                 href="#"
                 variant="primary"
+                pill="true"
             >
                 Serviços
             </NavLink>
             <NavLink
                 href="#"
                 variant="primary"
+                pill="true"
             >
                 Contato
             </NavLink>
