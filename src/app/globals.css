@@ -136,7 +136,7 @@
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
-		--background-primary: var(--primary-400); 
+		--background-primary: var(--primary-600); 
 	
 		/* css mainly for text */
 		--foreground-default: var(--neutral-50);    
