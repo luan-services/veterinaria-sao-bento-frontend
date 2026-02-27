@@ -5,13 +5,13 @@ import { Button } from "../../ui/Button"
 
 export const Hero = () => {
     return (
-            <section className=" w-full flex h-108 sm:h-144 lg:h-168 max-w-384 items-end sm:items-center 
-                bg-[url('/hero.png')] dark:bg-[url('/herodark.png')] bg-no-repeat 
-                bg-bottom-right bg-size-[340px] sm:bg-size-[480px] md:bg-size-[600px] lg:bg-size-[800px]"
+            <section className=" w-full flex h-144 lg:h-168 max-w-384 items-center 
+                bg-[url('/herofour.png')] bg-no-repeat 
+                bg-bottom-right bg-size-[340px] sm:bg-size-[480px] md:bg-size-[600px] lg:bg-size-[700px] xl:bg-size-[800px]"
             >
-                <div className="flex flex-col max-w-80 sm:max-w-108 lg:max-w-124 p-4 sm:ml-4 lg:ml-8 xl:ml-20">
-                    <div className="bg-default/10 dark:bg-default/70 dark:sm:bg-transparent sm:bg-transparent 
-                        backdrop-blur-md sm:backdrop-blur-none p-2 rounded-md"
+                <div className="flex flex-col max-w-80 sm:max-w-108 lg:max-w-124 p-4 sm:ml-4 lg:ml-8 xl:ml-28">
+                    <div className="bg-default/10 dark:bg-default/70 dark:xl:bg-transparent xl:bg-transparent 
+                        backdrop-blur-sm xl:backdrop-blur-none p-2 rounded-md"
                     >
                         <h1 className="text-default-fg font-bold text-2xl sm:text-4xl lg:text-5xl">
                             Cuidamos do seu <span className="text-brand-fg">melhor amigo</span> com amor 
