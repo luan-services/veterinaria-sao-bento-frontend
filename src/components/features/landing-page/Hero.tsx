@@ -1,39 +1,45 @@
 
 
+import { WhatsappIcon } from "../../icons/WhatsappIcon"
 import { Button } from "../../ui/Button"
-/* dark:bg-[url('/herodarkd.png')] */
+
 export const Hero = () => {
     return (
-            <section className="w-full flex h-168 container items-center  bg-[url('/hero.png')] bg-no-repeat bg-bottom-right bg-size-[80%] sm:bg-size-[70%] md:bg-size-[75%] lg:bg-size-[50%]">
-                <Button variant="outline">sad</Button>
-                <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-12 lg:py-0">
-                    
-                    <div className="z-10 flex flex-col gap-6 max-w-xl p-4 lg:p-0 rounded-2xl lg:backdrop-blur-none">
-                        <h1 className="text-5xl lg:text-7xl font-extrabold text-default-fg leading-[1.1] tracking-tight">
-                            O Melhor Cuidado <br />
-                            <span className="text-brand-fg">Para Seu Pet</span> 
+            <section className=" w-full flex h-108 sm:h-144 lg:h-168 max-w-384 items-end sm:items-center 
+                bg-[url('/hero.png')] dark:bg-[url('/herodark.png')] bg-no-repeat 
+                bg-bottom-right bg-size-[340px] sm:bg-size-[480px] md:bg-size-[600px] lg:bg-size-[800px]"
+            >
+                <div className="flex flex-col max-w-80 sm:max-w-108 lg:max-w-124 p-4 sm:ml-4 lg:ml-8 xl:ml-20">
+                    <div className="bg-default/10 dark:bg-default/70 dark:sm:bg-transparent sm:bg-transparent 
+                        backdrop-blur-md sm:backdrop-blur-none p-2 rounded-md"
+                    >
+                        <h1 className="text-default-fg font-bold text-2xl sm:text-4xl lg:text-5xl">
+                            Cuidamos do seu <span className="text-brand-fg">melhor amigo</span> com amor 
                         </h1>
-                        
-                        <p className="text-muted-fg text-lg md:text-xl leading-relaxed">
-                            Seja para uma viagem, uma emergência ou apenas um dia de cuidados extras, nosso centro veterinário 24h é a escolha certa para o seu melhor amigo.
+                        <p className="text-muted-fg text-xs sm:text-sm lg:text-lg">
+                            De check-up à dia de cuidados e mimo, nosso centro veterinário 24h é a escolha certa para o seu pet
                         </p>
-                        
-                        <div className="flex flex-wrap items-center gap-4 pt-4">
-                            <Button 
-                                className="px-8 py-6 text-lg rounded-full" 
-                                type="button" 
-                                variant="primary"
-                            >
-                                Agendar Consulta
-                            </Button>
-                            <Button 
-                                className="px-8 py-6 text-lg rounded-full font-semibold" 
-                                type="button" 
-                                variant="ghost"
-                            >
-                                Saiba mais
-                            </Button>
-                        </div>
+                    </div>
+
+                    <div className="flex flex-col w-fit sm:flex-row gap-y-1 gap-x-3 items-center py-2">
+                        <Button 
+                            className="sm:h-11! w-full"
+                            variant="primary"
+                            pill="true"
+                        >
+                            Agendar consulta agora
+                        </Button>
+                        <span className="text-default-fg">ou</span>
+                        <Button
+                            className="sm:h-11! w-full text-[#25D366]! border-[#25D366]! hover:bg-[#25D366]! hover:text-white! gap-1"
+                            variant="outline"
+                            pill="true"
+                        >
+                            <span className="text-[#25D366] dark:text-transparent">
+                                <WhatsappIcon />
+                            </span>
+                            Contato via Whastapp
+                        </Button>
                     </div>
                 </div>
             </section>
