@@ -11,7 +11,7 @@ export const Header = () => {
 
     return (
         <header className="flex fixed w-full items-center justify-center h-16 bg-default/20 backdrop-blur-xs">
-            <div className="flex w-full container items-center justify-between px-4 sm:px-8 md:px-12">
+            <div className="flex w-full max-w-384 items-center justify-between px-4 sm:px-8 md:px-12">
                 <div className="flex">
                     <Link href="/">
                         <Image
