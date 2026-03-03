@@ -1,5 +1,5 @@
 
-
+import Link from "next/link";
 import { WhatsappIcon } from "../../icons/WhatsappIcon"
 import { Button } from "../../ui/Button"
 
@@ -22,24 +22,38 @@ export const Hero = () => {
                     </div>
 
                     <div className="flex flex-col w-fit sm:flex-row gap-y-1 gap-x-3 items-center py-2">
-                        <Button 
-                            className="sm:h-11! w-full"
-                            variant="primary"
-                            pill="true"
+                        <Link 
+                            href="/dashboard"
+                            target="_blank"
+                            className="flex w-full"
                         >
-                            Agendar consulta agora
-                        </Button>
+                            <Button 
+                                className="sm:h-11! w-full"
+                                variant="primary"
+                                pill="true"
+                            >
+                                Agendar consulta agora
+                            </Button>
+                        </Link>
                         <span className="text-default-fg">ou</span>
-                        <Button
-                            className="sm:h-11! w-full text-[#25D366]! border-[#25D366]! hover:bg-[#25D366]! hover:text-white! gap-1"
-                            variant="outline"
-                            pill="true"
+                        <Link 
+                            href="https://api.whatsapp.com/send?phone=5524998423088"
+                            target="_blank"
+                            className="flex w-full"
                         >
-                            <span className="text-[#25D366] dark:text-transparent">
-                                <WhatsappIcon />
-                            </span>
-                            Contato via Whastapp
-                        </Button>
+                            <Button
+                                className="sm:h-11! w-full text-[#25D366]! border-[#25D366]! hover:bg-[#25D366]! hover:text-white! gap-1"
+                                variant="outline"
+                                pill="true"
+                                
+                            >
+                                <span className="text-[#25D366] dark:text-transparent">
+                                    <WhatsappIcon />
+                                </span>
+                                Contato via Whastapp
+                            </Button>
+                        </Link>
+
                     </div>
                 </div>
             </section>
