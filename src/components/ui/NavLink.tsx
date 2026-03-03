@@ -21,7 +21,7 @@ const sizeVariants = {
 
 const colorVariants = {
     default: "text-muted-fg hover:text-default-fg hover:bg-primary",
-    primary: "text-muted-fg hover:text-default-fg hover:bg-primary",
+    primary: "text-muted-fg hover:text-brand-fg dark:hover:text-default-fg hover:bg-primary",
 };
 
 export const NavLink = ({ children, href, className = "", variant = "default", size = "md", pill = "false", ...props }: NavLinkProps) => {

@@ -74,6 +74,7 @@
 :root {
 	/* css for default bg */
 	--background-default: var(--neutral-50); 
+	--background-neutral: var(--neutral-0);
 	--background-primary: var(--primary-50); 
 	
 	/* css mainly for text */
@@ -128,15 +129,15 @@
     --fg-btn-accent: var(--primary-500);
 
 	--bg-card:    var(--neutral-0);      
-	--bg-header:    var(--neutral-0);   
 }
 
 /* dark mode override */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark ) {
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
-		--background-primary: var(--primary-600); 
+		--background-neutral: var(--neutral-900);
+		--background-primary: var(--primary-500); 
 	
 		/* css mainly for text */
 		--foreground-default: var(--neutral-50);    
@@ -190,7 +191,6 @@
         --fg-btn-ghost: var(--neutral-50);
 
 		--bg-card:    var(--neutral-800); 
-		--bg-header:    var(--neutral-900);  
 	}
 }
 
@@ -198,6 +198,7 @@
 @theme {
 	/* css for default bg */
 	--color-default:    var(--background-default); /* use className="bg-default" */
+	--color-neutral:    var(--background-neutral);
 	--color-primary:    var(--background-primary); 
 
 	/* css mainly for text */
@@ -241,7 +242,6 @@
 
 	/* custom css for elements */
 	--color-card:  var(--bg-card); /* use className="bg-card" */
-	--color-header: var(--bg-header);
 
 	--color-btn-primary:    var(--bg-btn-primary); /* use className="bg-btn-primary" */
     --color-btn-primary-fg: var(--fg-btn-primary);
