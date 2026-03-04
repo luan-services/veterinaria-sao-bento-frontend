@@ -9,13 +9,13 @@ import { WhatsappIcon } from "../../icons/WhatsappIcon";
 import { PhoneIconSolid } from "../../icons/PhoneIconSolid";
 import { LocationPinIconSolid } from "../../icons/LocationIconSolid";
 import { EnvelopeIconSolid } from "../../icons/EnvelopeIconSolid";
-import { ClockIconSolid } from "../../icons/ClockIconSolid";
+import { ClockIcon } from "../../icons/ClockIcon";
 import { InstagramIcon } from "../../icons/InstagramIcon";
 import { FacebookIcon } from "../../icons/FacebookIcon";
 
 export const Contact = () => {
     return (
-        <section className="w-full flex flex-col items-center justify-center bg-neutral py-16 px-4 sm:px-6 max-w-384">
+        <section className="w-full flex flex-col items-center justify-center py-16 px-4 sm:px-6 max-w-384">
             <div className="flex flex-col items-center justify-center gap-4 pb-8 text-center">
                 <Badge variant="primary">
                     Entre em contato
@@ -95,13 +95,10 @@ export const Contact = () => {
                     ></iframe>
                 </Card>
 
-                {/* LINHA 3: Minicards Base */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
-                    {/* Horário */}
                     <Card className="flex items-center gap-4">
                         <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
-                            <ClockIconSolid size={24} />
+                            <ClockIcon size={24} />
                         </div>
                         <div className="flex flex-col grow">
                             <span className="font-bold text-sm">Horários</span>
@@ -110,7 +107,6 @@ export const Contact = () => {
                         </div>
                     </Card>
 
-                    {/* E-mail */}
                     <Card className="flex items-center gap-4">
                         <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
                             <EnvelopeIconSolid size={24} />
@@ -123,7 +119,6 @@ export const Contact = () => {
                         </div>
                     </Card>
 
-                    {/* Siga-nos */}
                     <Card className="flex items-center gap-4">
                         <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
                             <InstagramIcon size={24} /> 
@@ -140,7 +135,6 @@ export const Contact = () => {
                             </div>
                         </div>
                     </Card>
-
                 </div>
             </div>
         </section>
