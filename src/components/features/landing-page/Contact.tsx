@@ -6,11 +6,10 @@ import { Badge } from "../../ui/Badge";
 import { Card } from "../../ui/Card";
 
 import { WhatsappIcon } from "../../icons/WhatsappIcon";
-import { PhoneIcon } from "../../icons/PhoneIcon";
-import { LocationPinIcon } from "../../icons/LocationPinIcon";
-import { PaperPlaneIcon } from "../../icons/PaperPlaneIcon";
-import { EnvelopeIcon } from "../../icons/EnvelopeIcon";
-import { ClockIcon } from "../../icons/ClockIcon";
+import { PhoneIconSolid } from "../../icons/PhoneIconSolid";
+import { LocationPinIconSolid } from "../../icons/LocationIconSolid";
+import { EnvelopeIconSolid } from "../../icons/EnvelopeIconSolid";
+import { ClockIconSolid } from "../../icons/ClockIconSolid";
 import { InstagramIcon } from "../../icons/InstagramIcon";
 import { FacebookIcon } from "../../icons/FacebookIcon";
 
@@ -52,7 +51,7 @@ export const Contact = () => {
                         border-none! hover:opacity-98 transition-colors"
                     >
                         <div className="bg-white/10 p-4 rounded-full">
-                            <PhoneIcon size={32} />
+                            <PhoneIconSolid size={32} />
                         </div>
                         <div className="flex flex-col grow">
                             <h3 className="font-semibold text-xl">Ligar agora</h3>
@@ -68,7 +67,7 @@ export const Contact = () => {
                         border-none! hover:opacity-98 transition-colors"
                     >
                         <div className="bg-white/10 p-4 rounded-full">
-                            <LocationPinIcon size={32} />
+                            <LocationPinIconSolid size={32} />
                         </div>
                         <div className="flex flex-col grow">
                             <h3 className="font-semibold text-xl">Visite-nos</h3>
@@ -102,7 +101,7 @@ export const Contact = () => {
                     {/* Horário */}
                     <Card className="flex items-center gap-4">
                         <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
-                            <ClockIcon size={24} />
+                            <ClockIconSolid size={24} />
                         </div>
                         <div className="flex flex-col grow">
                             <span className="font-bold text-sm">Horários</span>
@@ -114,7 +113,7 @@ export const Contact = () => {
                     {/* E-mail */}
                     <Card className="flex items-center gap-4">
                         <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
-                            <EnvelopeIcon size={24} />
+                            <EnvelopeIconSolid size={24} />
                         </div>
                         <div className="flex flex-col grow">
                             <span className="font-bold text-sm">E-mail</span>

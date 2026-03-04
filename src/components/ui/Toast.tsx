@@ -3,11 +3,10 @@
 import { ReactNode } from 'react';
 import { toastStore } from '@/src/lib/toastStore';
 import { Button } from '@/src/components/ui/Button'
-
-import { InfoIcon } from '../icons/InfoIcon';
-import { SuccessIcon } from '../icons/SuccessIcon';
-import { AlertIcon } from '../icons/AlertIcon';
-import { DangerIcon } from '../icons/DangerIcon';
+import { InfoIconSolid } from '../icons/InfoIconSolid';
+import { SuccessIconSolid } from '../icons/SuccessIconSolid';
+import { AlertIconSolid } from '../icons/AlertIconSolid';
+import { DangerIconSolid } from '../icons/DangerIconSolid';
 import { XIcon } from '../icons/XIcon';
 
 interface ToastProps {
@@ -25,22 +24,22 @@ interface ToastProps {
 const defaultIcons = {
     success: (
         <span className="text-success-fg"> 
-            <SuccessIcon size={24}/>
+            <SuccessIconSolid size={24}/>
         </span>
     ),
     danger: (
         <span className="text-danger-fg"> 
-            <DangerIcon size={24}/>
+            <DangerIconSolid size={24}/>
         </span>
     ),
     warning: (
         <span className="text-alert-fg"> 
-            <AlertIcon size={24}/>
+            <AlertIconSolid size={24}/>
         </span>
     ),
     info: (
         <span className="text-default-fg"> 
-            <InfoIcon size={24}/>
+            <InfoIconSolid size={24}/>
         </span>
     ),
 };
