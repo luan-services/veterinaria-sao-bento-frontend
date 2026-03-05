@@ -96,35 +96,35 @@ export const Contact = () => {
                 </Card>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card className="flex items-center gap-4">
-                        <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
+                    <Card className="flex items-center gap-4 shadow-xs!">
+                        <div className="bg-primary text-primary-fg p-3 rounded-full">
                             <ClockIcon size={24} />
                         </div>
                         <div className="flex flex-col grow">
-                            <span className="font-bold text-sm">Horários</span>
+                            <span className="font-semibold text-sm">Horários</span>
                             <span className="text-muted-fg text-sm">Seg - Sex: 8h às 19h.</span>
                             <span className="text-muted-fg text-xs">Plantão: Todos os dias 24h.</span>
                         </div>
                     </Card>
 
-                    <Card className="flex items-center gap-4">
-                        <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
+                    <Card className="flex items-center gap-4 shadow-xs!">
+                        <div className="bg-primary text-primary-fg p-3 rounded-full">
                             <EnvelopeIconSolid size={24} />
                         </div>
                         <div className="flex flex-col grow">
-                            <span className="font-bold text-sm">E-mail</span>
+                            <span className="font-semibold text-sm">E-mail</span>
                             <span className="text-muted-fg text-xs truncate max-w-none sm:max-w-44 lg:max-w-60">
                                 clinicavetsaobento@gmail.com
                             </span>
                         </div>
                     </Card>
 
-                    <Card className="flex items-center gap-4">
-                        <div className="bg-btn-primary text-btn-primary-fg p-3 rounded-full">
+                    <Card className="flex items-center gap-4 shadow-xs!">
+                        <div className="bg-primary text-primary-fg p-3 rounded-full">
                             <InstagramIcon size={24} /> 
                         </div>
                         <div className="flex flex-col grow">
-                            <span className="font-bold text-sm">Siga-nos nas redes sociais</span>
+                            <span className="font-semibold text-sm">Siga-nos nas redes sociais</span>
                             <div className="flex w-full gap-2 py-1.5">
                                 <Link href="#" className="text-muted-fg hover:text-brand-fg transition-colors">
                                     <InstagramIcon size={20} />

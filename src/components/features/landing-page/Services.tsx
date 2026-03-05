@@ -18,17 +18,17 @@ export const Services = () => {
                     Nossas especialidades
                 </Badge>
                 <h1 className="text-default-fg font-bold text-xl sm:text-3xl lg:text-4xl">
-                    Serviços <span className="text-brand-fg"> de referência</span> para o seu pet 
+                    Serviços de referência<span className="text-brand-fg"> para o seu pet</span>  
                 </h1>
                 <p className="text-muted-fg text-sm lg:text-base max-w-2xl">
                     Oferecemos diversos serviços de saúde e cuidado para garantir o bem-estar do seu melhor amigo.
                 </p>
             </div>
 
-            <div className="w-full max-w-6xl z-10">
+            <div className="w-full max-w-288">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <Card size="xl" className="flex flex-col gap-4 p-8! border-none shadow-sm">
-                        <div className="bg-primary text-btn-accent-fg p-4 rounded-2xl w-fit">
+                        <div className="bg-primary text-primary-fg p-4 rounded-2xl w-fit">
                             <StethoscopeIcon size={28} />
                         </div>
                         <div>
@@ -40,7 +40,7 @@ export const Services = () => {
                     </Card>
 
                     <Card size="xl" className="flex flex-col gap-4 p-8! border-none shadow-sm">
-                        <div className="bg-primary text-btn-accent-fg p-4 rounded-2xl w-fit">
+                        <div className="bg-primary text-primary-fg p-4 rounded-2xl w-fit">
                             <SyringeIcon size={28} />
                         </div>
                         <div>
@@ -52,7 +52,7 @@ export const Services = () => {
                     </Card>
 
                     <Card size="xl" className="flex flex-col gap-4 p-8! border-none shadow-sm">
-                        <div className="bg-primary text-btn-accent-fg p-4 rounded-2xl w-fit">
+                        <div className="bg-primary text-primary-fg p-4 rounded-2xl w-fit">
                             <PulseIcon size={28} />
                         </div>
                         <div>
@@ -64,7 +64,7 @@ export const Services = () => {
                     </Card>
 
                     <Card size="xl" className="flex flex-col gap-4 p-8! border-none shadow-sm">
-                        <div className="bg-primary text-btn-accent-fg p-4 rounded-2xl w-fit">
+                        <div className="bg-primary text-primary-fg p-4 rounded-2xl w-fit">
                             <HeartIcon size={28} />
                         </div>
                         <div>
@@ -76,7 +76,7 @@ export const Services = () => {
                     </Card>
 
                     <Card size="xl" className="flex flex-col gap-4 p-8! border-none shadow-sm">
-                        <div className="bg-primary text-btn-accent-fg p-4 rounded-2xl w-fit">
+                        <div className="bg-primary text-primary-fg p-4 rounded-2xl w-fit">
                             <ScissorsIcon size={28} />
                         </div>
                         <div>
@@ -88,7 +88,7 @@ export const Services = () => {
                     </Card>
 
                     <Card size="xl" className="flex flex-col gap-4 p-8! border-none shadow-sm">
-                        <div className="bg-primary text-btn-accent-fg p-4 rounded-2xl w-fit">
+                        <div className="bg-primary text-primary-fg p-4 rounded-2xl w-fit">
                             <ClockIcon size={28} />
                         </div>
                         <div>
