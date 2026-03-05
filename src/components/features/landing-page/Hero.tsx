@@ -47,9 +47,7 @@ export const Hero = () => {
                                 pill="true"
                                 
                             >
-                                <span className="text-[#25D366] dark:text-white">
-                                    <WhatsappIcon />
-                                </span>
+                                <WhatsappIcon  />
                                 Contato via Whastapp
                             </Button>
                         </Link>

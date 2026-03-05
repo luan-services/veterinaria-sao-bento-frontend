@@ -34,7 +34,7 @@ export const Contact = () => {
                     <Card size="xl" className="flex flex-col items-center text-center gap-4 bg-success-fg! text-white
                         border-none! hover:opacity-98 transition-colors"
                     >
-                        <div className="bg-white/10 p-4 rounded-full text-success-fg!">
+                        <div className="bg-white/10 p-4 rounded-full text-white">
                             <WhatsappIcon size={32} />
                         </div>
                         <div className="flex flex-col grow">
