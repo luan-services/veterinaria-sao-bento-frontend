@@ -74,14 +74,14 @@
 :root {
 	/* css for default bg */
 	--background-default: var(--neutral-50); 
-	--background-primary: var(--primary-50); 
+	--background-primary: var(--primary-50);  /* lighter primary colors for badges, navlink, etc background */
 	
-	--background-neutral: var(--neutral-0);
-	--background-footer: var(--primary-950);
+	--background-neutral: var(--neutral-0);  /* full white / dark */
+	--background-footer: var(--neutral-900);
 	
 	/* css mainly for text */
 	--foreground-default: var(--neutral-900);      
-	--foreground-primary:   var(--primary-500); 
+	--foreground-primary:   var(--primary-500); /* accent primary colors for badges, navlink, etc foreground */
 
 	--foreground-muted:   var(--neutral-500);  
 	--foreground-brand:   var(--primary-600); 
@@ -144,7 +144,7 @@
 		--background-primary: var(--primary-500); 
 
 		--background-neutral: var(--neutral-900);
-		--background-footer: var(--primary-950);
+		--background-footer: var(--neutral-950); /* #2B1315; */
 	
 		/* css mainly for text */
 		--foreground-default: var(--neutral-50);  

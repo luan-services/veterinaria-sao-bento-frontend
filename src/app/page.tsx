@@ -2,6 +2,7 @@ import { Contact } from "../components/features/landing-page/Contact";
 import { Hero } from "../components/features/landing-page/Hero";
 import { Services } from "../components/features/landing-page/Services";
 import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
 
 export default function Home() {
     return (
@@ -11,10 +12,8 @@ export default function Home() {
 				<Hero />
                 <Services />
                 <Contact />
-				<div className="bg-muted-fg h-160 w-full">
-					OISDO
-				</div>
 			</main>
+            <Footer />
         </>
     );
 }
