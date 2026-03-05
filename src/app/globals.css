@@ -74,13 +74,18 @@
 :root {
 	/* css for default bg */
 	--background-default: var(--neutral-50); 
-	--background-neutral: var(--neutral-0);
 	--background-primary: var(--primary-50); 
 	
+	--background-neutral: var(--neutral-0);
+	--background-footer: var(--primary-950);
+	
 	/* css mainly for text */
-	--foreground-default: var(--neutral-900);     
+	--foreground-default: var(--neutral-900);      
+	--foreground-primary:   var(--primary-500); 
+
 	--foreground-muted:   var(--neutral-500);  
 	--foreground-brand:   var(--primary-600); 
+
 	--foreground-danger:  var(--danger-600); 
 	--foreground-alert: var(--alert-600); 
 	--foreground-success: var(--success-600); 
@@ -128,7 +133,7 @@
 	--bg-btn-accent: var(--primary-50);
     --fg-btn-accent: var(--primary-500);
 
-	--bg-card:    var(--neutral-0);      
+	--bg-card:       var(--neutral-0);      
 }
 
 /* dark mode override */
@@ -136,13 +141,18 @@
 	:root {
 		/* css for default bg */
 		--background-default: var(--neutral-900); 
-		--background-neutral: var(--neutral-900);
 		--background-primary: var(--primary-500); 
+
+		--background-neutral: var(--neutral-900);
+		--background-footer: var(--primary-950);
 	
 		/* css mainly for text */
-		--foreground-default: var(--neutral-50);    
+		--foreground-default: var(--neutral-50);  
+		--foreground-primary: var(--neutral-0); 
+
 		--foreground-muted:   var(--neutral-400);  
 		--foreground-brand:   var(--primary-500);
+
 		--foreground-danger:   var(--danger-500);
 		--foreground-alert: var(--alert-500);  
 		--foreground-success: var(--success-500); 
@@ -190,7 +200,7 @@
         --bg-btn-ghost: transparent;
         --fg-btn-ghost: var(--neutral-50);
 
-		--bg-card:    var(--neutral-800); 
+		--bg-card:      var(--neutral-800); 
 	}
 }
 
@@ -198,13 +208,18 @@
 @theme {
 	/* css for default bg */
 	--color-default:    var(--background-default); /* use className="bg-default" */
-	--color-neutral:    var(--background-neutral);
 	--color-primary:    var(--background-primary); 
+
+	--color-neutral:    var(--background-neutral);
+	--color-footer:     var(--background-footer);
 
 	/* css mainly for text */
 	--color-default-fg: var(--foreground-default); /* use className="text-default-fg" */
+	--color-primary-fg: var(--foreground-primary);
+
 	--color-muted-fg:   var(--foreground-muted);
 	--color-brand-fg:   var(--foreground-brand);
+	
 	--color-danger-fg:  var(--foreground-danger);
 	--color-alert-fg:   var(--foreground-alert);
 	--color-success-fg: var(--foreground-success);

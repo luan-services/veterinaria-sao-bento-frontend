@@ -4,7 +4,7 @@ import React from "react";
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
     children: React.ReactNode;
-    variant?: 'default' | 'primary' | 'danger' | 'outline';
+    variant?: 'default' | 'primary';
     size?: 'sm' | 'md' | 'lg';
     pill?: 'true' | 'false';
 }
@@ -16,10 +16,8 @@ const sizeVariants = {
 };
 
 const colorVariants = {
-    primary: "bg-btn-accent text-btn-accent-fg border border-transparent",
+    primary: "bg-primary text-primary-fg border border-transparent",
     default: "bg-default text-default-fg border border-default-border",
-    danger:  "bg-btn-danger text-btn-danger-fg border border-transparent",
-    outline: "bg-transparent text-brand-fg border border-primary-border",
 };
 
 export const Badge = ({ children, className = "", variant = "primary", size = "sm", pill = "true", ...props }: BadgeProps) => {
