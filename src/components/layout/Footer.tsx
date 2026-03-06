@@ -51,7 +51,7 @@ export const Footer = () => {
                             </TextLink>
                         </nav>
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col md:col-span-2 lg:col-span-1">
                         <h3 className="text-white font-semibold text-lg mb-2">Contato</h3>
                         <div className="flex flex-col gap-4">
     
