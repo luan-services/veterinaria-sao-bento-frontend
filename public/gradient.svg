@@ -5,5 +5,5 @@
     </filter>
   </defs>
   
-  <circle cx="400" cy="400" r="250" fill="#FFC4C6" filter="url(#glow)" opacity="0.6" />
+  <circle cx="400" cy="400" r="250" fill="#FFC4C6" filter="url(#glow)" opacity="0.25" />
 </svg>

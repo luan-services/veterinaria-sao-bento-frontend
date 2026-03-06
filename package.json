@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^5.2.2",
     "better-auth": "^1.4.17",
     "cpf-cnpj-validator": "^1.0.3",
+    "embla-carousel-react": "^8.6.0",
     "next": "^16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
