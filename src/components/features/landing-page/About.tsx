@@ -24,10 +24,10 @@ export const About = () => {
                             <Badge className="self-center">
                                 Sobre nós
                             </Badge>
-                            <h1 className="text-default-fg font-bold text-2xl sm:text-4xl lg:text-5xl">
+                            <h1 className="text-default-fg font-bold text-2xl sm:text-4xl lg:text-5xl text-center lg:text-start">
                                 Trabalhando com amor há mais de <span className="text-brand-fg"> 15 anos</span>
                             </h1>
-                            <p className="text-muted-fg text-xs sm:text-sm lg:text-lg">
+                            <p className="text-muted-fg text-xs sm:text-sm lg:text-base text-center lg:text-start">
                                 Temos profissionais capacitados em diversas áreas, prontos para atender seu pet com dedicação, carinho e a competência que ele merece.
                             </p>
                         </div>

@@ -10,7 +10,7 @@ import { PhoneIcon, LocationIcon, EnvelopeIcon, ClockIcon } from "@/src/componen
 
 export const Contact = () => {
     return (
-        <section className="w-full flex flex-col items-center justify-center py-16 px-4 sm:px-6 max-w-384">
+        <section className="w-full flex flex-col items-center justify-center py-12 sm:py-16 px-4 sm:px-6 max-w-384">
             <div className="flex flex-col items-center justify-center gap-4 pb-8 text-center">
                 <Badge variant="primary">
                     Entre em contato
@@ -19,7 +19,7 @@ export const Contact = () => {
                     Alguma dúvida? 
                     <span className="text-brand-fg"> Fale conosco</span>
                 </h1>
-                <p className="text-muted-fg text-sm lg:text-base max-w-2xl">
+                <p className="text-muted-fg text-xs sm:text-sm lg:text-base max-w-2xl">
                     Atendemos você 24h por dia. Entre em contato por nosso telefone, whatsapp, e-mail ou faça uma visita.
                 </p>
             </div>

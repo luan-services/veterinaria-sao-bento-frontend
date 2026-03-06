@@ -10,8 +10,8 @@ const REVIEWS = [
 export const Comments = () => {
     return (
         <section 
-            className="w-full flex flex-col items-center justify-center py-16 px-4 sm:px-6 max-w-384 bg-no-repeat bg-position-[right_top,left_bottom]
-            bg-[url('/gradient.svg'),url('/gradient.svg')] dark:bg-[url('/gradient-dark.svg'),url('/gradient-dark.svg')] bg-size-[480px]"
+            className="w-full flex flex-col items-center justify-center py-12 sm:py-16 px-4 sm:px-6 max-w-384 bg-no-repeat bg-size-[200px] md:bg-size-[480px]
+            bg-position-[right_top,left_bottom] bg-[url('/gradient.svg'),url('/gradient.svg')] dark:bg-[url('/gradient-dark.svg'),url('/gradient-dark.svg')]"
         >
             <div className="flex flex-col items-center justify-center gap-4 pb-8 text-center">
                 <Badge variant="primary">
@@ -21,7 +21,7 @@ export const Comments = () => {
                     Avaliações dos nossos  
                     <span className="text-brand-fg"> clientes</span>
                 </h1>
-                <p className="text-muted-fg text-sm lg:text-base max-w-2xl">
+                <p className="text-muted-fg text-xs sm:text-sm lg:text-base max-w-2xl">
                     Veja o que estão dizendo sobre nosso centro veterinário.
                 </p>
             </div>
