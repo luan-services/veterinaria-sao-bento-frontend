@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { GoogleIcon } from '../icons/GoogleIcon';
+import { GoogleSignInIcon } from '../icons/brand';
 
 interface GoogleSignInButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
@@ -16,7 +16,7 @@ export const GoogleSignInButton = ({ className="", children, ...props }: GoogleS
                 hover:cursor-pointer hover:bg-default disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
             {...props}
         >
-            <GoogleIcon />
+            <GoogleSignInIcon />
             {children}
         </button>
     );

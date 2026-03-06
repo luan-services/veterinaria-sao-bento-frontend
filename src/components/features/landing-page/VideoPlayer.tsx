@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from 'react';
-import { PlayIconSolid } from '../../icons/PlayIconSolid';
+import { PlayIcon } from '@/src/components/icons/solid/';
 
 interface VideoPlayerProps {
     src: string;
@@ -42,7 +42,7 @@ export const VideoPlayer = ({ src }: VideoPlayerProps) => {
                     aria-label="Iniciar Video"
                 >
                     <span className="cursor-pointer text-brand-fg flex items-center justify-center rounded-full shadow-[0_0_0_8px_rgba(255,255,255,0.25)] transform hover:scale-105">
-                        <PlayIconSolid size={64}/>
+                        <PlayIcon size={64}/>
                     </span>
                 </button>
             )}

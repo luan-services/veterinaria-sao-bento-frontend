@@ -1,4 +1,4 @@
-export const GoogleIcon = ({ size = 20 }: { size?: number }) => {
+export const GoogleSignInIcon = ({ size = 20 }: { size?: number }) => {
     return (
         <svg
             width={size} height={size}

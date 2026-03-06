@@ -1,11 +1,9 @@
+import { TextLink } from "../ui/TextLink";
+
 import Image from "next/image";
 import sao_bento_logo_full_dark from "@/public/sao-bento-logo-full-dark.svg"
 
-import { EnvelopeIconSolid } from "../icons/EnvelopeIconSolid";
-import { LocationPinIconSolid } from "../icons/LocationIconSolid";
-import { PhoneIconSolid } from "../icons/PhoneIconSolid";
-
-import { TextLink } from "../ui/TextLink";
+import { EnvelopeIcon, LocationIcon, PhoneIcon } from "../icons/outline/";
 
 export const Footer = () => {
     return (
@@ -57,19 +55,19 @@ export const Footer = () => {
     
                             <div className="flex items-center gap-2 text-white text-sm">
                                 <span className="text-primary-fg dark:text-primary">
-                                    <LocationPinIconSolid />
+                                    <LocationIcon />
                                 </span>
                                 Avenida Almirante Júlio César de Noronha, 150 Centro, Angra dos Reis - RJ CEP: 23900-000
                             </div>
                             <div className="flex items-center gap-2 text-white text-sm">
                                 <span className="text-primary-fg dark:text-primary">
-                                    <PhoneIconSolid />
+                                    <PhoneIcon />
                                 </span>
                                 (24) 3365-0019
                             </div>
                             <div className="flex items-center gap-2 text-white text-sm">
                                 <span className="text-primary-fg dark:text-primary">
-                                    <EnvelopeIconSolid />
+                                    <EnvelopeIcon />
                                 </span>
                                 clinicavetsaobento@gmail.com
                             </div>

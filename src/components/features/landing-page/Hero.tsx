@@ -1,7 +1,8 @@
 
 import Link from "next/link";
-import { WhatsappIcon } from "../../icons/WhatsappIcon"
 import { Button } from "../../ui/Button"
+
+import { WhatsappIcon } from "@/src/components/icons/brand/"
 
 export const Hero = () => {
     return (

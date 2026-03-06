@@ -1,4 +1,4 @@
-export const PlayIconSolid = ({ size = 20 }: { size?: number }) => {
+export const PlayIcon = ({ size = 20 }: { size?: number }) => {
     return (
         <svg 
             viewBox="0 0 24 24" 

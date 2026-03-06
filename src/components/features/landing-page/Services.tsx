@@ -1,11 +1,7 @@
 import { Badge } from "../../ui/Badge";
 import { Card } from "../../ui/Card";
-import { StethoscopeIcon } from "../../icons/StethoscopeIcon";
-import { SyringeIcon } from "../../icons/SyringeIcon";
-import { PulseIcon } from "../../icons/PulseIcon";
-import { HeartIcon } from "../../icons/HeartIcon";
-import { ScissorsIcon } from "../../icons/ScissorsIcon";
-import { ClockIcon } from "../../icons/ClockIcon";
+
+import { StethoscopeIcon, SyringeIcon, PulseIcon, HeartIcon, ScissorsIcon, ClockIcon } from "@/src/components/icons/outline/";
 
 export const Services = () => {
     return (

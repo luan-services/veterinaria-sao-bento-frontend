@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useState } from "react";
-import { EyeIcon } from "../icons/EyeIcon";
-import { EyeClosedIcon } from "../icons/EyeClosedIcon";
+
+import { EyeIcon, EyeClosedIcon } from "@/src/components/icons/outline/";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     variant?: 'default' | 'primary' | 'danger';

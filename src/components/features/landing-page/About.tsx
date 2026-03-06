@@ -2,11 +2,7 @@ import { Badge } from "../../ui/Badge";
 import { Card } from "../../ui/Card";
 import { Button } from "../../ui/Button";
 import { VideoPlayer } from "./VideoPlayer";
-
-import { RibbonIcon } from "../../icons/RibbonIcon";
-import { CheckIcon } from "../../icons/CheckIcon";
-import { UsersIcon } from "../../icons/UsersIcon";
-import { ClockIcon } from "../../icons/ClockIcon";
+import { RibbonIcon, CheckIcon, UsersIcon, ClockIcon } from "../../icons/outline";
 
 export const About = () => {
     return (

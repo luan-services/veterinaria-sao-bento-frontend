@@ -5,13 +5,8 @@ import { Button } from "../../ui/Button";
 import { Badge } from "../../ui/Badge";
 import { Card } from "../../ui/Card";
 
-import { WhatsappIcon } from "../../icons/WhatsappIcon";
-import { PhoneIconSolid } from "../../icons/PhoneIconSolid";
-import { LocationPinIconSolid } from "../../icons/LocationIconSolid";
-import { EnvelopeIconSolid } from "../../icons/EnvelopeIconSolid";
-import { ClockIcon } from "../../icons/ClockIcon";
-import { InstagramIcon } from "../../icons/InstagramIcon";
-import { FacebookIcon } from "../../icons/FacebookIcon";
+import { WhatsappIcon, InstagramIcon, FacebookIcon } from "@/src/components/icons/brand/";
+import { PhoneIcon, LocationIcon, EnvelopeIcon, ClockIcon } from "@/src/components/icons/outline/";
 
 export const Contact = () => {
     return (
@@ -51,7 +46,7 @@ export const Contact = () => {
                         border-none! hover:opacity-98 transition-colors"
                     >
                         <div className="bg-white/10 p-4 rounded-full">
-                            <PhoneIconSolid size={32} />
+                            <PhoneIcon size={32} />
                         </div>
                         <div className="flex flex-col grow">
                             <h3 className="font-semibold text-xl">Ligar agora</h3>
@@ -67,7 +62,7 @@ export const Contact = () => {
                         border-none! hover:opacity-98 transition-colors"
                     >
                         <div className="bg-white/10 p-4 rounded-full">
-                            <LocationPinIconSolid size={32} />
+                            <LocationIcon size={32} />
                         </div>
                         <div className="flex flex-col grow">
                             <h3 className="font-semibold text-xl">Visite-nos</h3>
@@ -109,7 +104,7 @@ export const Contact = () => {
 
                     <Card className="flex items-center gap-4 shadow-xs!">
                         <div className="bg-primary text-primary-fg p-3 rounded-full">
-                            <EnvelopeIconSolid size={24} />
+                            <EnvelopeIcon size={24} />
                         </div>
                         <div className="flex flex-col grow">
                             <span className="font-semibold text-sm">E-mail</span>
