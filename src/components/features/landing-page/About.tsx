@@ -1,6 +1,6 @@
 import { Badge } from "../../ui/Badge";
 import { Card } from "../../ui/Card";
-import { Button } from "../../ui/Button";
+import { ButtonLink } from "../../ui/ButtonLink";
 import { VideoPlayer } from "./VideoPlayer";
 import { RibbonIcon, CheckIcon, UsersIcon, ClockIcon } from "../../icons/outline";
 
@@ -73,13 +73,14 @@ export const About = () => {
                         </Card>
                     </div>
 
-                    <Button 
+                    <ButtonLink 
+                        href="/register"
                         className="w-fit self-center mt-8" 
                         variant="primary" 
                         pill="true"
                     >
                         Cadastre-se agora
-                    </Button>
+                    </ButtonLink>
                 </div>
             </div>
         </section>

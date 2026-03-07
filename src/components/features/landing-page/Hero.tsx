@@ -1,7 +1,4 @@
-
-import Link from "next/link";
-import { Button } from "../../ui/Button"
-
+import { ButtonLink } from "../../ui/ButtonLink";
 import { WhatsappIcon } from "@/src/components/icons/brand/"
 
 export const Hero = () => {
@@ -24,36 +21,26 @@ export const Hero = () => {
                     </div>
 
                     <div className="flex flex-col w-fit sm:flex-row gap-y-1 gap-x-3 items-center py-2">
-                        <Link 
+                        <ButtonLink 
                             href="/dashboard"
                             target="_blank"
-                            className="flex w-full"
+                            className="sm:h-11! w-full"
+                            variant="primary"
+                            pill="true"
                         >
-                            <Button 
-                                className="sm:h-11! w-full"
-                                variant="primary"
-                                pill="true"
-                            >
-                                Agendar consulta agora
-                            </Button>
-                        </Link>
+                            Agendar consulta agora
+                        </ButtonLink>
                         <span className="text-default-fg">ou</span>
-                        <Link 
+                        <ButtonLink 
                             href="https://api.whatsapp.com/send?phone=5524998423088"
                             target="_blank"
-                            className="flex w-full"
+                            className="sm:h-11! w-full text-[#25D366]! border-[#25D366]! hover:bg-[#25D366]! hover:text-white! gap-1"
+                            variant="outline"
+                            pill="true"
                         >
-                            <Button
-                                className="sm:h-11! w-full text-[#25D366]! border-[#25D366]! hover:bg-[#25D366]! hover:text-white! gap-1"
-                                variant="outline"
-                                pill="true"
-                                
-                            >
-                                <WhatsappIcon  />
-                                Contato via Whastapp
-                            </Button>
-                        </Link>
-
+                            <WhatsappIcon />
+                            Contato via Whastapp
+                        </ButtonLink>
                     </div>
                 </div>
             </section>

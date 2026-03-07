@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Button } from "../../ui/Button";
+import { ButtonLink } from "../../ui/ButtonLink";
 import { Badge } from "../../ui/Badge";
 import { Card } from "../../ui/Card";
 
@@ -53,12 +53,14 @@ export const Contact = () => {
                                     <span className="text-muted-fg text-sm">(24) 99842-3088</span>
                                 </div>
                             </div>
-                            <Button 
+                            <ButtonLink 
+                                href="https://api.whatsapp.com/send?phone=5524998423088"
+                                target="_blank"
                                 size="sm" 
                                 className="w-full max-w-20 sm:max-w-32 md:max-w-full bg-[#25D366]! dark:bg-[#25D366]/80! text-white!"
                             >
                                 Chamar
-                            </Button>
+                            </ButtonLink>
                         </Card>
                         <Card className="flex flex-row md:flex-col items-center md:items-start justify-between gap-4 shadow-xs!">
                             <div className="flex items-center gap-2">
@@ -71,13 +73,15 @@ export const Contact = () => {
                                     <span className="text-muted-fg text-sm">(24) 3365-0019</span>
                                 </div>
                             </div>
-                            <Button 
+                            <ButtonLink 
+                                href="tel:2433650019"
+                                target="_blank"
                                 size="sm" 
                                 variant="default" 
                                 className="w-full max-w-20 sm:max-w-32 md:max-w-full"
                             >
                                 Ligar
-                            </Button>
+                            </ButtonLink>
                         </Card>
                         <Card className="flex flex-row md:flex-col items-center md:items-start justify-between gap-4 shadow-xs!">
                             <div className="flex items-center gap-2">
@@ -92,13 +96,15 @@ export const Contact = () => {
                                     </span>
                                 </div>
                             </div>
-                            <Button 
+                            <ButtonLink 
+                                href="https://maps.google.com/maps?q=Avenida%20Almirante%20J%C3%BAlio%20C%C3%A9sar%20de%20Noronha%2C%20150%20-%20Centro%2C%20Angra%20dos%20Reis%20-%20RJ%2C%2023900-000&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                target="_blank"
                                 size="sm" 
                                 variant="outline" 
                                 className="w-full max-w-20 sm:max-w-32 md:max-w-full"
                             >
                                 Mapa
-                            </Button>
+                            </ButtonLink>
                         </Card>
                     </div>
                 </div>
