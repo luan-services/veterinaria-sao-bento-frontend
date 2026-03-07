@@ -16,9 +16,9 @@ export const Footer = () => {
                             alt="Logo"
                             className="w-full max-w-28 sm:max-w-32"
                         />
-                        <p className="text-white font-semibold text-base sm:text-xl">
+                        <h1 className="text-white font-semibold text-base sm:text-xl">
                             Centro Veterinário São Bento
-                        </p>
+                        </h1>
                         <p className="text-white text-xs">
                             De check-up à dia de cuidados e mimo, nosso centro veterinário 24h é a escolha certa para o seu pet
                         </p>
@@ -27,21 +27,28 @@ export const Footer = () => {
                         <h3 className="text-white font-semibold text-lg mb-2">Navegação</h3>
                         <nav className="flex flex-col w-fit gap-2">
                             <TextLink 
-                                href="/sobre"
+                                href="#inicio"
+                                size="md"
+                                className="text-white"
+                            >
+                                Início
+                            </TextLink>
+                            <TextLink 
+                                href="#sobre"
                                 size="md"
                                 className="text-white"
                             >
                                 Sobre Nós
                             </TextLink>
                             <TextLink 
-                                href="/servicos"
+                                href="#servicos"
                                 size="md"
                                 className="text-white"
                             >
                                 Serviços
                             </TextLink>
                             <TextLink 
-                                href="/contato"
+                                href="#contato"
                                 size="md"
                                 className="text-white"
                             >
@@ -74,15 +81,15 @@ export const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full border-b-1 border-default-accent-border my-4"></div>
+                <div className="w-full border-b border-default-accent-border my-4"></div>
                 <div className="flex flex-wrap w-full justify-between gap-2">
-                    <h1 className="text-white text-xs">
+                    <p className="text-white text-xs">
                         © 2026 Centro Veterinário São Bento. Todos os direitos reservados.
-                    </h1>
+                    </p>
                     <nav className="flex gap-x-4">
                         <TextLink 
                             size="sm"
-                            href="#"
+                            href="/privacy-police"
                             variant="default"
                             className="text-white!"
                         >
@@ -90,7 +97,7 @@ export const Footer = () => {
                         </TextLink>
                         <TextLink 
                             size="sm"
-                            href="#"
+                            href="/terms-of-use"
                             variant="default"
                             className="text-white!"
                         >
