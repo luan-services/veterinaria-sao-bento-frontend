@@ -7,8 +7,8 @@ import { WhatsappIcon } from "@/src/components/icons/brand/"
 export const Hero = () => {
     return (
             <section className=" w-full flex h-144 lg:h-168 max-w-384 items-center 
-                bg-[url('/herofour.png')] bg-no-repeat 
-                bg-bottom-right bg-size-[340px] sm:bg-size-[480px] md:bg-size-[600px] lg:bg-size-[700px] xl:bg-size-[800px]"
+                bg-[url('/hero.png')] dark:bg-[url('/hero-dark.png')] bg-no-repeat 
+                bg-bottom-right bg-size-[340px] sm:bg-size-[480px] md:bg-size-[600px] lg:bg-size-[760px] xl:bg-size-[880px]"
             >
                 <div className="flex flex-col max-w-80 sm:max-w-108 lg:max-w-124 p-4 sm:ml-4 lg:ml-8 xl:ml-28">
                     <div className="bg-default/10 dark:bg-default/70 dark:xl:bg-transparent xl:bg-transparent 
