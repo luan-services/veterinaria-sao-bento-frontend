@@ -6,8 +6,10 @@ import { RibbonIcon, CheckIcon, UsersIcon, ClockIcon } from "../../icons/outline
 
 export const About = () => {
     return (
-        <section className="w-full bg-neutral py-16 sm:py-24 px-4 sm:px-12 lg:px-16 max-w-384 bg-no-repeat
-            bg-[url('/paws.png')] dark:bg-[url('/paws-dark.png')] bg-size-[640px] sm:bg-size-[800px] bg-bottom lg:bg-bottom-left"
+        <section 
+            id="sobre"
+            className="w-full bg-neutral py-16 sm:py-24 px-4 sm:px-12 lg:px-16 max-w-384 bg-no-repeat bg-[url('/paws.png')]
+            dark:bg-[url('/paws-dark.png')] bg-size-[640px] sm:bg-size-[800px] bg-bottom lg:bg-bottom-left"
         >
             <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center lg:justify-around">
 

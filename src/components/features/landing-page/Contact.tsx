@@ -9,7 +9,10 @@ import { PhoneIcon, LocationIcon, EnvelopeIcon, ClockIcon } from "@/src/componen
 
 export const Contact = () => {
     return (
-        <section className="w-full flex flex-col items-center justify-center py-12 sm:py-16 px-4 sm:px-6 max-w-384">
+        <section 
+            id="contato"
+            className="w-full flex flex-col items-center justify-center py-12 sm:py-16 px-4 sm:px-6 max-w-384"
+        >
             <div className="flex flex-col items-center justify-center gap-4 pb-8 text-center">
                 <Badge variant="primary">
                     Entre em contato

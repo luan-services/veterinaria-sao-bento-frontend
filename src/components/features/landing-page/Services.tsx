@@ -6,6 +6,7 @@ import { StethoscopeIcon, SyringeIcon, PulseIcon, HeartIcon, ScissorsIcon, Clock
 export const Services = () => {
     return (
         <section 
+            id="servicos"
             className="w-full flex flex-col items-center justify-center py-12 sm:py-16 px-4 sm:px-6
             bg-[url('/grid-light.svg')] dark:bg-[url('/grid-dark.svg')] bg-size-[24px]"
         >

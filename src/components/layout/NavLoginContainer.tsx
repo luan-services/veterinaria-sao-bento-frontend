@@ -57,6 +57,7 @@ export const NavLoginContainer = () => {
         <div className="flex gap-2">
             <Button 
                 onClick={() => router.push("/dashboard")}
+                size="sm"
                 variant="primary"
                 pill="true"
             >
@@ -64,6 +65,7 @@ export const NavLoginContainer = () => {
             </Button>
             <Button
                 onClick={handleLogout} 
+                size="sm"
                 variant="ghost"
                 pill="true"
             >
