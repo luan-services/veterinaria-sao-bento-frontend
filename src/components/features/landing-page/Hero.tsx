@@ -1,5 +1,6 @@
 import { ButtonLink } from "../../ui/ButtonLink";
 import { WhatsappIcon } from "@/src/components/icons/brand/"
+import { ScheduleIcon } from "@/src/components/icons/outline/";
 
 export const Hero = () => {
     return (
@@ -20,21 +21,22 @@ export const Hero = () => {
                         </p>
                     </div>
 
-                    <div className="flex flex-col w-fit sm:flex-row gap-y-1 gap-x-3 items-center py-2">
+                    <div className="flex flex-col w-fit sm:flex-row gap-y-1 gap-x-2 items-center py-2">
                         <ButtonLink 
                             href="/dashboard"
                             target="_blank"
-                            className="sm:h-11! w-full"
+                            className="sm:h-11! w-full gap-1"
                             variant="primary"
                             pill="true"
                         >
-                            Agendar consulta agora
+                            <ScheduleIcon size={20}/>
+                            Agendar uma consulta
                         </ButtonLink>
                         <span className="text-default-fg">ou</span>
                         <ButtonLink 
                             href="https://api.whatsapp.com/send?phone=5524998423088"
                             target="_blank"
-                            className="sm:h-11! w-full text-[#25D366]! border-[#25D366]! hover:bg-[#25D366]! hover:text-white! gap-1"
+                            className="sm:h-11! w-full text-[#25D366]! border-[#25D366]! bg-default! hover:bg-[#25D366]! hover:text-white! gap-1"
                             variant="outline"
                             pill="true"
                         >

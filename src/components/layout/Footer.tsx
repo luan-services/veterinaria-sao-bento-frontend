@@ -92,7 +92,7 @@ export const Footer = () => {
                     >
                         <TextLink 
                             size="sm"
-                            href="/privacy-police"
+                            href="/privacy-policy"
                             variant="default"
                             className="text-white!"
                         >
