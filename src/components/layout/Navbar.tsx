@@ -2,7 +2,10 @@ import { NavLink } from "../ui/NavLink"
 
 export const Navbar = () => {
     return (
-        <div className="hidden md:flex md:gap-2 lg:gap-4 justify-self-center justify-between">
+        <nav 
+            className="hidden md:flex md:gap-2 lg:gap-4 justify-self-center justify-between"
+            aria-label="Menu Principal"
+        >
             <NavLink
                 href="#inicio"
                 variant="primary"
@@ -31,6 +34,6 @@ export const Navbar = () => {
             >
                 Contato
             </NavLink>
-        </div>
+        </nav>
     )
 }

@@ -17,10 +17,10 @@ export const Contact = () => {
                 <Badge variant="primary">
                     Entre em contato
                 </Badge>
-                <h1 className="text-default-fg font-bold text-xl sm:text-3xl lg:text-4xl">
+                <h2 className="text-default-fg font-bold text-xl sm:text-3xl lg:text-4xl">
                     Alguma dúvida? 
                     <span className="text-brand-fg"> Fale conosco</span>
-                </h1>
+                </h2>
                 <p className="text-muted-fg text-xs sm:text-sm lg:text-base max-w-2xl">
                     Atendemos você 24h por dia. Entre em contato por nosso telefone, whatsapp, e-mail ou faça uma visita.
                 </p>
@@ -144,10 +144,18 @@ export const Contact = () => {
                         <div className="flex flex-col grow">
                             <span className="font-semibold text-sm">Siga-nos nas redes sociais</span>
                             <div className="flex w-full gap-2 py-1.5">
-                                <Link href="#" className="text-muted-fg hover:text-brand-fg transition-colors">
+                                <Link 
+                                    href="#" 
+                                    aria-label="Visite nosso Instagram"  /* must have on any link that has no text */
+                                    className="text-muted-fg hover:text-brand-fg transition-colors"
+                                >
                                     <InstagramIcon size={20} />
                                 </Link>
-                                <Link href="#" className="text-muted-fg hover:text-brand-fg transition-colors">
+                                <Link
+                                    href="#"
+                                    aria-label="Visite nosso Facebook" /* must have on any link that has no text */
+                                    className="text-muted-fg hover:text-brand-fg transition-colors"
+                                >
                                     <FacebookIcon size={20} />
                                 </Link>
                             </div>

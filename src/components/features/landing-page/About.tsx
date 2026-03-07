@@ -8,8 +8,8 @@ export const About = () => {
     return (
         <section 
             id="sobre"
-            className="w-full bg-neutral py-16 sm:py-24 px-4 sm:px-12 lg:px-16 max-w-384 bg-no-repeat bg-[url('/paws.png')]
-            dark:bg-[url('/paws-dark.png')] bg-size-[640px] sm:bg-size-[800px] bg-bottom lg:bg-bottom-left"
+            className="w-full bg-neutral py-16 sm:py-24 px-4 sm:px-12 lg:px-16 max-w-384 bg-no-repeat bg-[url('/paws.webp')]
+            dark:bg-[url('/paws-dark.webp')] bg-size-[640px] sm:bg-size-[800px] bg-bottom lg:bg-bottom-left"
         >
             <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center lg:justify-around">
 
@@ -26,9 +26,9 @@ export const About = () => {
                             <Badge className="self-center">
                                 Sobre nós
                             </Badge>
-                            <h1 className="text-default-fg font-bold text-2xl sm:text-4xl lg:text-5xl text-center lg:text-start">
+                            <h2 className="text-default-fg font-bold text-2xl sm:text-4xl lg:text-5xl text-center lg:text-start">
                                 Trabalhando com amor há mais de <span className="text-brand-fg"> 15 anos</span>
-                            </h1>
+                            </h2>
                             <p className="text-muted-fg text-xs sm:text-sm lg:text-base text-center lg:text-start">
                                 Temos profissionais capacitados em diversas áreas, prontos para atender seu pet com dedicação, carinho e a competência que ele merece.
                             </p>

@@ -17,10 +17,10 @@ export const Comments = () => {
                 <Badge variant="primary">
                     Comentários
                 </Badge>
-                <h1 className="text-default-fg font-bold text-xl sm:text-3xl lg:text-4xl">
+                <h2 className="text-default-fg font-bold text-xl sm:text-3xl lg:text-4xl">
                     Avaliações dos nossos  
                     <span className="text-brand-fg"> clientes</span>
-                </h1>
+                </h2>
                 <p className="text-muted-fg text-xs sm:text-sm lg:text-base max-w-2xl">
                     Veja o que estão dizendo sobre nosso centro veterinário.
                 </p>

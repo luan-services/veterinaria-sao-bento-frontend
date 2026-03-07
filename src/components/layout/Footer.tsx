@@ -13,7 +13,7 @@ export const Footer = () => {
                     <div className="flex flex-col w-full gap-4 md:col-span-3 lg:col-span-1">
                         <Image
                             src={sao_bento_logo_full_dark}
-                            alt="Logo"
+                            alt="Logo do Centro Veterinário São Bento"
                             className="w-full max-w-28 sm:max-w-32"
                         />
                         <h1 className="text-white font-semibold text-base sm:text-xl">
@@ -86,7 +86,10 @@ export const Footer = () => {
                     <p className="text-white text-xs">
                         © 2026 Centro Veterinário São Bento. Todos os direitos reservados.
                     </p>
-                    <nav className="flex gap-x-4">
+                    <nav 
+                        aria-label="Menu do Rodapé"
+                        className="flex gap-x-4"
+                    >
                         <TextLink 
                             size="sm"
                             href="/privacy-police"

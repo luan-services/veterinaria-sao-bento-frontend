@@ -30,13 +30,20 @@ export const CommentsCarousel = ({ reviews }: CarouselProps) => {
             
             <button 
                 onClick={scrollPrev}
+                aria-label="Ver comentário anterior"
                 className="flex items-center justify-center rounded-full p-2 text-brand-fg cursor-pointer active:scale-95 transition"
-                aria-label="Comentário Anterior"
             >
                 <ArrowLeftIcon size={36}/>
             </button>
 
-            <div className="overflow-hidden w-full max-w-124 bg-card border-default-border border cursor-grab active:cursor-grabbing rounded-lg" ref={emblaRef}>
+            <div 
+                className="overflow-hidden w-full max-w-124 bg-card border-default-border border cursor-grab active:cursor-grabbing rounded-lg" 
+                role="region"
+                aria-roledescription="carousel"
+                aria-label="Carrossel de depoimentos de clientes"
+                ref={emblaRef}
+                
+            >
                 <div className="flex items-center -ml-4 sm:-ml-6">
                     {reviews.map((review) => (
                         <div 
@@ -59,7 +66,7 @@ export const CommentsCarousel = ({ reviews }: CarouselProps) => {
             <button 
                 onClick={scrollNext}
                 className="flex items-center justify-center rounded-full p-2 text-brand-fg cursor-pointer active:scale-95 transition"
-                aria-label="Próximo Comentário"
+                aria-label="Ver próximo Comentário"
             >
                 <ArrowRightIcon size={36}/>
             </button>

@@ -28,7 +28,7 @@ export const VideoPlayer = ({ src }: VideoPlayerProps) => {
                 ref={videoRef}
                 className="w-full h-full object-cover object-center cursor-pointer"
                 playsInline 
-                preload="auto"
+                preload="metadata"
                 onClick={togglePlay}
             >
                 <source src={src} type="video/mp4" />

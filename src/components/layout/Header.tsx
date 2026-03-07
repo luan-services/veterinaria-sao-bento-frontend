@@ -16,12 +16,12 @@ export const Header = () => {
                     <Link href="#inicio">
                         <Image
                             src={sao_bento_logo_full}
-                            alt="Logo"
+                            alt="Logo do Centro Veterinário São Bento"
                             className="dark:hidden w-full max-w-24 lg:max-w-28"
                         />
                         <Image
                             src={sao_bento_logo_full_dark}
-                            alt="Logo"
+                            alt="Logo do Centro Veterinário São Bento"
                             className="hidden dark:block w-full max-w-24 lg:max-w-28"
                         />
                     </Link>
