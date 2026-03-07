@@ -1,9 +1,10 @@
-/* this component uses next/link, for plain react it might need some changes */
 "use client"
+
+/* this component uses next/link, for plain react it might need some changes */
 
 import Link, {LinkProps } from "next/link";
 
-interface TextLinkProps extends LinkProps {
+interface TextLinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>, LinkProps {
     children: React.ReactNode;
     className?: string;
     variant?: 'default'| 'muted' | 'primary' | 'danger';

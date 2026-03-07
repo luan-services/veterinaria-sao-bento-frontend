@@ -1,13 +1,17 @@
-"use client";
-
 import React from "react";
+import Link, { LinkProps } from "next/link";
+
+/* use this when you need an anchor with our Button component exactly CSS */
 
 /* buttons should be used only for actions not related to navigation, like login buttons, logout buttons, etc.
 link buttons are anchors (or Link component on next) and they should be used almost always when you just need to travel to a
 new page, it is better for SEO */
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+/* this component uses next/link, for plain react it might need some changes */
+
+interface LinkButtonProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>, LinkProps {
     children: React.ReactNode;
+    className?: string;
     variant?: 'default'| 'primary' | 'danger' | 'outline' | 'ghost';
     size?: 'sm' | 'md' | 'lg' | 'xl';
     pill?: 'true' | 'false';
@@ -28,20 +32,21 @@ const colorVariants = {
     ghost:   "bg-btn-ghost text-btn-ghost-fg border-transparent hover:bg-btn-accent hover:text-btn-accent-fg focus-visible:shadow-ring-primary",
 };
 
-export const Button = ({ children, className = "", variant = "default", size = "md", pill = "false", ...props }: ButtonProps) => {
+export const ButtonLink = ({ children, href, className = "", variant = "default", size = "md", pill = "false", ...props }: LinkButtonProps) => {
     
     const colors = colorVariants[variant];
     const sizing = sizeVariants[size];
     const rounding = pill === "true" ? "rounded-full" : "rounded-md";
 
     return (
-        <button 
-            className={`flex items-center justify-center font-medium transition duration-200 border
+        <Link 
+            href={href}
+            className={`flex items-center justify-center text-center font-medium transition duration-200 border
                 focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer 
                 ${colors} ${sizing} ${rounding} ${className}`}
             {...props}
         >
             {children}
-        </button>
+        </Link>
     );
 };
