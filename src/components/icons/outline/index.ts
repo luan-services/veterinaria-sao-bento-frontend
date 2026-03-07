@@ -1,4 +1,5 @@
 export * from "./CheckIcon"
+export * from "./ArrowCtoIcon"
 export * from "./ClockIcon"
 export * from "./EnvelopeIcon"
 export * from "./EyeClosedIcon"
