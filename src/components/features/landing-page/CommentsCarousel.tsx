@@ -30,25 +30,25 @@ export const CommentsCarousel = ({ reviews }: CarouselProps) => {
             
             <button 
                 onClick={scrollPrev}
-                className="flex items-center justify-center rounded-full bg-white/80 p-2 text-brand-fg cursor-pointer active:scale-95 transition"
+                className="flex items-center justify-center rounded-full p-2 text-brand-fg cursor-pointer active:scale-95 transition"
                 aria-label="Comentário Anterior"
             >
-                <ArrowLeftIcon size={40}/>
+                <ArrowLeftIcon size={36}/>
             </button>
 
-            <div className="overflow-hidden w-full max-w-124" ref={emblaRef}>
-                <div className="flex items-center">
+            <div className="overflow-hidden w-full max-w-124 bg-card border-default-border border cursor-grab active:cursor-grabbing rounded-lg" ref={emblaRef}>
+                <div className="flex items-center -ml-4 sm:-ml-6">
                     {reviews.map((review) => (
                         <div 
-                            key={review.id} 
-                            className="flex-[0_0_100%] min-w-0 h-full"
+                            key={review.id}
+                            className="flex-[0_0_100%] min-w-0 pl-4 sm:pl-6"
                         >
-                            <div className="">
-                                <p className="text-gray-600 dark:text-gray-300 italic mb-4">
+                            <div className="p-4 sm:p-6">
+                                <p className="text-xs sm:text-sm text-default-fg italic mb-2">
                                     "{review.text}"
                                 </p>
-                                <p className="font-semibold text-default-fg">
-                                    - {review.name}
+                                <p className="text-xs sm:text-sm font-medium text-muted-fg text-right">
+                                - {review.name}
                                 </p>
                             </div>
                         </div>
@@ -58,10 +58,10 @@ export const CommentsCarousel = ({ reviews }: CarouselProps) => {
 
             <button 
                 onClick={scrollNext}
-                className="flex items-center justify-center rounded-full bg-white/80 p-2 text-brand-fg cursor-pointer active:scale-95 transition"
+                className="flex items-center justify-center rounded-full p-2 text-brand-fg cursor-pointer active:scale-95 transition"
                 aria-label="Próximo Comentário"
             >
-                <ArrowRightIcon size={40}/>
+                <ArrowRightIcon size={36}/>
             </button>
         </div>
     );
