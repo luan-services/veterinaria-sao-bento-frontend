@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 import { Button } from "../../ui/Button";
@@ -25,75 +24,88 @@ export const Contact = () => {
             </div>
 
             <div className="w-full max-w-6xl flex flex-col gap-6">
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card size="xl" className="flex flex-col items-center text-center gap-4 bg-success-fg! text-white
-                        border-none! hover:opacity-98 transition-colors"
-                    >
-                        <div className="bg-white/10 p-4 rounded-full text-white">
-                            <WhatsappIcon size={32} />
-                        </div>
-                        <div className="flex flex-col grow">
-                            <h3 className="font-semibold text-xl">WhatsApp</h3>
-                            <p className=" text-sm">Envie-nos uma mensagem no WhatsApp.</p>
-                            <span className="font-semibold text-lg">(24) 99842-3088</span>
-                        </div>
-                        <Button className="w-full bg-white! text-success-fg!">
-                            Chamar no WhatsApp
-                        </Button>
+                    <Card className="md:col-span-2 p-0! rounded-xl! overflow-hidden h-88 md:h-auto grow">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Avenida%20Almirante%20J%C3%BAlio%20C%C3%A9sar%20de%20Noronha%2C%20150%20-%20Centro%2C%20Angra%20dos%20Reis%20-%20RJ%2C%2023900-000&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style={{ border: 0, borderRadius: 'var(--radius-sm)' }} 
+                            allowFullScreen={false} 
+                            loading="lazy" 
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Mapa de Localização"
+                        ></iframe>
                     </Card>
-
-                    <Card size="xl" className="flex flex-col items-center text-center gap-4 bg-btn-primary! text-white
-                        border-none! hover:opacity-98 transition-colors"
-                    >
-                        <div className="bg-white/10 p-4 rounded-full">
-                            <PhoneIcon size={32} />
-                        </div>
-                        <div className="flex flex-col grow">
-                            <h3 className="font-semibold text-xl">Ligar agora</h3>
-                            <p className="text-sm">Ou, se preferir, fale por ligação.</p>
-                            <span className="font-semibold text-lg">(24) 3365-0019</span>
-                        </div>
-                        <Button className="w-full bg-white! text-brand-fg!">
-                            Ligar Agora
-                        </Button>
-                    </Card>
-
-                    <Card size="xl" className="flex flex-col items-center text-center gap-4 bg-muted-fg! text-white
-                        border-none! hover:opacity-98 transition-colors"
-                    >
-                        <div className="bg-white/10 p-4 rounded-full">
-                            <LocationIcon size={32} />
-                        </div>
-                        <div className="flex flex-col grow">
-                            <h3 className="font-semibold text-xl">Visite-nos</h3>
-                            <div className="text-sm mt-2 flex flex-col">
-                                Avenida Almirante Júlio César de Noronha, 150 - Centro, Angra dos Reis, Rio de Janeiro, Brazil 
-                                23900-000.
+                    <div className="flex flex-col gap-6 justify-between">
+                        <Card className="flex flex-row md:flex-col items-center md:items-start justify-between gap-4 shadow-xs!">
+                            <div className="flex items-center gap-2">
+                                <div className="bg-[#25D366] dark:bg-[#25D366]/40 text-white p-2.5 sm:p-3 rounded-full">
+                                    <span className="sm:hidden"><WhatsappIcon size={20} /></span>
+                                    <span className="hidden sm:inline"><WhatsappIcon size={24} /></span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="font-semibold text-sm">WhatsApp</span>
+                                    <span className="text-muted-fg text-sm">(24) 99842-3088</span>
+                                </div>
                             </div>
-                        </div>
-                        <Button className="w-full mt-2 bg-white! text-muted-fg!">
-                            Ver no Maps
-                        </Button>
-                    </Card>
+                            <Button 
+                                size="sm" 
+                                className="w-full max-w-20 sm:max-w-32 md:max-w-full bg-[#25D366]! dark:bg-[#25D366]/80! text-white!"
+                            >
+                                Chamar
+                            </Button>
+                        </Card>
+                        <Card className="flex flex-row md:flex-col items-center md:items-start justify-between gap-4 shadow-xs!">
+                            <div className="flex items-center gap-2">
+                                <div className="bg-default text-muted-fg p-2.5 sm:p-3 rounded-full">
+                                    <span className="sm:hidden"><PhoneIcon size={20} /></span>
+                                    <span className="hidden sm:inline"><PhoneIcon size={24} /></span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="font-semibold text-sm">Telefone</span>
+                                    <span className="text-muted-fg text-sm">(24) 3365-0019</span>
+                                </div>
+                            </div>
+                            <Button 
+                                size="sm" 
+                                variant="default" 
+                                className="w-full max-w-20 sm:max-w-32 md:max-w-full"
+                            >
+                                Ligar
+                            </Button>
+                        </Card>
+                        <Card className="flex flex-row md:flex-col items-center md:items-start justify-between gap-4 shadow-xs!">
+                            <div className="flex items-center gap-2">
+                                <div className="bg-primary dark:bg-primary/20 text-primary-fg dark:text-brand-fg p-2.5 sm:p-3 rounded-full">
+                                    <span className="sm:hidden"><LocationIcon size={20} /></span>
+                                    <span className="hidden sm:inline"><LocationIcon size={24} /></span>
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="font-semibold text-sm">Visite-nos</span>
+                                    <span className="text-muted-fg text-xs">
+                                        Av. Almirante Júlio César de Noronha, 150 - Centro
+                                    </span>
+                                </div>
+                            </div>
+                            <Button 
+                                size="sm" 
+                                variant="outline" 
+                                className="w-full max-w-20 sm:max-w-32 md:max-w-full"
+                            >
+                                Mapa
+                            </Button>
+                        </Card>
+                    </div>
                 </div>
 
-                <Card size="sm" className="w-full p-0! rounded-xl! overflow-hidden h-80 sm:h-112">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=Avenida%20Almirante%20J%C3%BAlio%20C%C3%A9sar%20de%20Noronha%2C%20150%20-%20Centro%2C%20Angra%20dos%20Reis%20-%20RJ%2C%2023900-000&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="100%" 
-                        style={{ border: 0, borderRadius: 'var(--radius-sm)' }} 
-                        allowFullScreen={false} 
-                        loading="lazy" 
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Mapa de Localização"
-                    ></iframe>
-                </Card>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card className="flex items-center gap-4 shadow-xs!">
-                        <div className="bg-primary text-primary-fg p-3 rounded-full">
-                            <ClockIcon size={24} />
+                    <Card className="flex items-center gap-3 sm:gap-4 shadow-xs!">
+                        <div className="bg-primary text-primary-fg p-2.5 sm:p-3 rounded-full">
+                            <span className="sm:hidden"><ClockIcon size={20} /></span>
+                            <span className="hidden sm:inline"><ClockIcon size={24} /></span>
+                            
                         </div>
                         <div className="flex flex-col grow">
                             <span className="font-semibold text-sm">Horários</span>
@@ -103,8 +115,9 @@ export const Contact = () => {
                     </Card>
 
                     <Card className="flex items-center gap-4 shadow-xs!">
-                        <div className="bg-primary text-primary-fg p-3 rounded-full">
-                            <EnvelopeIcon size={24} />
+                        <div className="bg-primary text-primary-fg p-2.5 sm:p-3 rounded-full">
+                            <span className="sm:hidden"><EnvelopeIcon size={20} /></span>
+                            <span className="hidden sm:inline"><EnvelopeIcon size={24} /></span>
                         </div>
                         <div className="flex flex-col grow">
                             <span className="font-semibold text-sm">E-mail</span>
@@ -115,8 +128,9 @@ export const Contact = () => {
                     </Card>
 
                     <Card className="flex items-center gap-4 shadow-xs!">
-                        <div className="bg-primary text-primary-fg p-3 rounded-full">
-                            <InstagramIcon size={24} /> 
+                        <div className="bg-primary text-primary-fg p-2.5 sm:p-3 rounded-full">
+                            <span className="sm:hidden"><InstagramIcon size={20} /></span>
+                            <span className="hidden sm:inline"><InstagramIcon size={24} /></span>
                         </div>
                         <div className="flex flex-col grow">
                             <span className="font-semibold text-sm">Siga-nos nas redes sociais</span>
