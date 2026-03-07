@@ -1,14 +1,12 @@
 "use client"
 
 import { useSession, signOut } from "@/src/lib/auth-client";
-import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "../ui/Button";
+import { ButtonLink } from "../ui/ButtonLink";
 import { SpinnerIcon } from "../icons/SpinnerIcon";
 
 export const NavLoginContainer = () => {
-
-    const router = useRouter();
 
     const { data: session, isPending, refetch } = useSession(); /* this better auth hook searches on the backend for an active session */
     
@@ -42,27 +40,27 @@ export const NavLoginContainer = () => {
     if (!session) { /* if there is no active session could render a forbidden page here */
         return (
             <div>   
-                <Button 
-                    onClick={() => router.push("/login")}
+                <ButtonLink 
+                    href="/login"
                     variant="primary"
                     pill="true"
                 >
                     Entrar
-                </Button>
+                </ButtonLink>
             </div>
         );
     }
 
     return (
         <div className="flex gap-2">
-            <Button 
-                onClick={() => router.push("/dashboard")}
+            <ButtonLink 
+                href="/dashboard"
                 size="sm"
                 variant="primary"
                 pill="true"
             >
                 Minha Área
-            </Button>
+            </ButtonLink>
             <Button
                 onClick={handleLogout} 
                 size="sm"
