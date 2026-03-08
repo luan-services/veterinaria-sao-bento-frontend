@@ -7,6 +7,8 @@ import { Cto } from "../components/features/landing-page/Cto";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 
+/* testing cloudflare deploy */
+
 export default function Home() {
     return (
         <>
