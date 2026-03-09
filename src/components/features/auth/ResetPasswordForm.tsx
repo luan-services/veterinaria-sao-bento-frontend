@@ -64,6 +64,7 @@ export const ResetPasswordForm = ({handleReset}: ResetPasswordFormProps) => {
                             id="password"
                             type="password"
                             placeholder="••••••••"
+                            autoComplete="new-password"
                             {...field}
                             variant={errors.password ? "danger" : "default"}
                         />
@@ -83,6 +84,7 @@ export const ResetPasswordForm = ({handleReset}: ResetPasswordFormProps) => {
                             id="confirmPassword"
                             type="password"
                             placeholder="••••••••"
+                            autoComplete="new-password"
                             {...field}
                             variant={errors.confirmPassword ? "danger" : "default"}
                         />

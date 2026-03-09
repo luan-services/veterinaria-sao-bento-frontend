@@ -117,6 +117,7 @@ export function RegisterForm() {
                             id="name"
                             type="text" 
                             placeholder="Ex: Vitor"
+                            autoComplete="given-name"
                             {...field}
                             variant={errors.name ? "danger" : "default"}
                         />
@@ -136,6 +137,7 @@ export function RegisterForm() {
                             id="lastName"
                             type="text"
                             placeholder="Ex: Nascimento" 
+                            autoComplete="family-name"
                             {...field}
                             variant={errors.lastName ? "danger" : "default"}
                         />
@@ -155,6 +157,7 @@ export function RegisterForm() {
                             id="email" 
                             type="email"
                             placeholder="seu@email.com"
+                            autoComplete="email"
                             {...field}
                             variant={errors.email ? "danger" : "default"}
                         />
@@ -174,6 +177,7 @@ export function RegisterForm() {
                             id="password"
                             type="password"
                             placeholder="••••••••"
+                            autoComplete="new-password"
                             {...field}
                             variant={errors.password ? "danger" : "default"}
                         />
@@ -193,6 +197,7 @@ export function RegisterForm() {
                             id="confirmPassword"
                             type="password"
                             placeholder="••••••••"
+                            autoComplete="new-password"
                             {...field}
                             variant={errors.confirmPassword ? "danger" : "default"}
                         />
@@ -212,6 +217,7 @@ export function RegisterForm() {
                             id="phone"
                             type="tel"
                             placeholder="(00) 00000-0000 ou 00000000000"
+                            autoComplete="tel"
                             {...field}
                             variant={errors.phone ? "danger" : "default"}
                         />

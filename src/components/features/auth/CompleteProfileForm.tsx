@@ -57,6 +57,7 @@ export const CompleteProfileForm = ({handleUpdate}: CompleteProfileFormProps) =>
                             id="phone"
                             type="tel"
                             placeholder="(00) 00000-0000"
+                            autoComplete="tel"
                             {...field}
                             variant={errors.phone ? "danger" : "default"}
                         />
