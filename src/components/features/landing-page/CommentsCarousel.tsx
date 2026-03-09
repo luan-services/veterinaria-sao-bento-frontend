@@ -44,7 +44,8 @@ export const CommentsCarousel = ({ reviews }: CarouselProps) => {
                 ref={emblaRef}
                 
             >
-                <div className="flex items-center -ml-4 sm:-ml-6">
+                <div className="flex items-center -ml-4 sm:-ml-6 touch-pan-y touch-pinch-zoom">
+                    {/* must add touch-pan-y touch-pinch-zoom to the carousel main container */ }
                     {reviews.map((review) => (
                         <div 
                             key={review.id}
