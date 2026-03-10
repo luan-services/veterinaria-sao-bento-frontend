@@ -49,7 +49,7 @@ export function LoginForm() {
                             setLoading(false);
                             return;
                         }
-                        toast.danger(translateError(ctx.error.code)); /* ctx is the backend response from better auth routes */
+                        toast.danger(translateError(ctx.error.code || ctx.error.message)); /* ctx is the backend response from better auth routes */
                         setLoading(false);
                     }
                 }

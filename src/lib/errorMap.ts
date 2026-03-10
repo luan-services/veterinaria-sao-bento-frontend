@@ -31,6 +31,9 @@ const errorTranslations: Record<string, string> = {
 
 	// better auth errors (message)
 	"User already exists. Use another email." : "Usuário já existe. Utilize outro e-mail.",
+
+	// this one is specific for better auth rate limiter 
+	"Too many requests. Please try again later." : "Muitas tentativas enviadas. Por favor tente novamente mais tarde.",
 	
 	// custom better auth.ts instance custom error (code/message)
 	THIS_CPF_ALREADY_EXISTS: "Esse CPF já está cadastrado.",

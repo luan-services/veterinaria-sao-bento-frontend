@@ -92,7 +92,7 @@ export function RegisterForm() {
                     router.push(`/check-email?email=${safeEmail}`);
                 },
                 onError: (ctx) => {
-                    toast.danger(translateError(ctx.error.code));
+                    toast.danger(translateError(ctx.error.code || ctx.error.message));
                     setLoading(false);
                 }
             }

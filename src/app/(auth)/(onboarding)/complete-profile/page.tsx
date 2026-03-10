@@ -61,7 +61,7 @@ export default function CompleteProfilePage() {
         },
         {
             onError: (ctx) => {
-                toast.danger(translateError(ctx.error.message));
+                toast.danger(translateError(ctx.error.code || ctx.error.message));
             },
             onSuccess: async () => {
                 await refetch();
