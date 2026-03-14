@@ -2,7 +2,7 @@ import { Badge } from "../../ui/Badge";
 import { Card } from "../../ui/Card";
 import { ButtonLink } from "../../ui/ButtonLink";
 import { VideoPlayer } from "./VideoPlayer";
-import { RibbonIcon, CheckIcon, UsersIcon, ClockIcon } from "../../icons/outline";
+import { RibbonIcon, CheckShieldIcon, UsersIcon, ClockIcon } from "../../icons/outline";
 
 export const About = () => {
     return (
@@ -55,7 +55,7 @@ export const About = () => {
                         </Card>
                         <Card className="flex items-center gap-2 hover:border-brand-fg transition-colors duration-200 p-4">
                             <div className="bg-primary dark:bg-primary/20 text-primary-fg dark:text-brand-fg p-2.5 rounded-full">
-                                <CheckIcon size={20} />
+                                <CheckShieldIcon size={20} />
                             </div>
                             <div className="flex flex-col">
                                 <h3 className="font-bold text-sm text-default-fg">Diagnóstico Preciso</h3>
