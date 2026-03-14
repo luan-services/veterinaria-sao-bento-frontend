@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <AuthGuard>
             <div className="min-h-screen w-full flex">
                 <SidebarContainer/>
-                <main className="min-h-screen flex shrink">
+                <main className="min-h-screen w-full flex">
                         {children}
                 </main>
             </div>
