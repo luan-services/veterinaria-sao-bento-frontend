@@ -5,6 +5,16 @@ import { useState } from "react";
 
 import { EyeIcon, EyeClosedIcon } from "@/src/components/icons/outline/";
 
+/* this component has its own internalValue state, so it can work as an uncontrolled component (it works when we dont pass 
+value + onChange props to it)
+
+!!! on React, best alternative to use this input is to use like a native controlled select element: putting inside a form, 
+adding 'name' to it, and handling the value and onchage with states. 
+
+if you don't need to interact with the data in real-time, like displaying error texts, adding masks to the input, realtime 
+validation, you don't need it to be CONTROLLED at all. if you only care about validation after the user clicks "Submit", you
+can pretty much let the form handle its values, like adding a submit fuction and extracting the form data onSubmit */
+
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     variant?: 'default' | 'primary' | 'danger';
 }
