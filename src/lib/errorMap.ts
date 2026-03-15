@@ -61,6 +61,7 @@ const errorTranslations: Record<string, string> = {
 	"Pet not found" : "Pet não encontrado.",
 	"You are not allowed to update this pet" : "Você não tem permissão para alterar esse pet.",
 	"You are not allowed to delete this pet" : "Você não tem permissão para deletar esse pet.",
+	"Cannot delete pet with upcoming appointments. Please cancel them first." : "Não é possível deletar pets com agendamentos marcados. Por favor cancele-os primeiro."
 };
 
 export const translateError = (text: string): string => {
