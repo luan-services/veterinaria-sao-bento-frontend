@@ -55,6 +55,12 @@ const errorTranslations: Record<string, string> = {
     "A record with this unique field already exists" : "Não foi possível completar a solicitação.", /* not translating these */
     "Foreign Key constraint failed, a related record was not found or cannot be deleted" : "Não foi possível completar a solicitação.",
     "The requested resource could not be found" : "Não foi possível completar a solicitação.",
+
+	// pets
+	"Maximun pet per user limit reached" : "Limite máximo de pets por usuário antigido.",
+	"Pet not found" : "Pet não encontrado.",
+	"You are not allowed to update this pet" : "Você não tem permissão para alterar esse pet.",
+	"You are not allowed to delete this pet" : "Você não tem permissão para deletar esse pet.",
 };
 
 export const translateError = (text: string): string => {
