@@ -204,7 +204,7 @@ export const CreatePetForm = ({ onSuccess, onCancel }: CreatePetFormProps) => {
             </div>
 
             <div className="flex justify-end gap-3 pt-4">
-                <Button type="button" variant="ghost" onClick={onCancel}>
+                <Button type="button" variant="outline-default" onClick={onCancel}>
                     Cancelar
                 </Button>
                 <Button

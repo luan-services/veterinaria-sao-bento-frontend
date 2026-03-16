@@ -5,9 +5,9 @@ import { SidebarContainer } from "@/src/components/features/dashboard/SidebarCon
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     return (
         <AuthGuard>
-            <div className="min-h-screen w-full flex">
+            <div className="min-h-screen w-full flex bg-default">
                 <SidebarContainer/>
-                <main className="min-h-screen w-full flex">
+                <main className="min-h-screen w-full flex max-w-384">
                         {children}
                 </main>
             </div>
