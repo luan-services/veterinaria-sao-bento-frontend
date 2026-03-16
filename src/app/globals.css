@@ -127,11 +127,15 @@
     --bg-btn-outline: transparent;
     --fg-btn-outline: var(--primary-500);
 
+
     --bg-btn-ghost: transparent;
     --fg-btn-ghost: var(--neutral-900);
 	
 	--bg-btn-accent: var(--primary-50);
     --fg-btn-accent: var(--primary-500);
+	
+	--bg-btn-accent-default: var(--neutral-100);
+    --fg-btn-accent-default: var(--neutral-900);  
 
 	--bg-card:       var(--neutral-0);      
 }
@@ -193,6 +197,9 @@
 
 		--bg-btn-accent: var(--primary-600); 
         --fg-btn-accent: var(--neutral-0);
+
+		--bg-btn-accent-default: var(--neutral-50);
+    	--fg-btn-accent-default: var(--neutral-900);  
 
         --bg-btn-outline: transparent;
         --fg-btn-outline: var(--primary-500);
@@ -272,6 +279,9 @@
 
 	--color-btn-accent:     var(--bg-btn-accent); 
     --color-btn-accent-fg:  var(--fg-btn-accent);
+
+	--color-btn-accent-default:     var(--bg-btn-accent-default); 
+	--color-btn-accent-default-fg:  var(--fg-btn-accent-default); 
 
     --color-btn-ghost:      var(--bg-btn-ghost); 
     --color-btn-ghost-fg:   var(--fg-btn-ghost);

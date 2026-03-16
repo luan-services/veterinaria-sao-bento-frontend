@@ -8,7 +8,7 @@ new page, it is better for SEO */
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    variant?: 'default'| 'primary' | 'danger' | 'outline' | 'ghost';
+    variant?: 'default'| 'primary' | 'danger' | 'outline' | 'outline-default' | 'ghost' | 'ghost-default';
     size?: 'sm' | 'md' | 'lg' | 'xl';
     pill?: 'true' | 'false';
 }
@@ -25,7 +25,9 @@ const colorVariants = {
     primary: "bg-btn-primary text-btn-primary-fg border-transparent hover:opacity-90 focus-visible:shadow-ring-primary",
     danger:  "bg-btn-danger text-btn-danger-fg border-transparent hover:opacity-90 focus-visible:shadow-ring-danger",
     outline: "bg-btn-outline text-btn-outline-fg border-primary-border hover:bg-btn-accent hover:text-btn-accent-fg focus-visible:shadow-ring-primary",
+    "outline-default": "bg-btn-outline text-default-fg border-default-border hover:bg-btn-accent-default hover:text-btn-accent-default-fg focus-visible:shadow-ring-gray",
     ghost:   "bg-btn-ghost text-btn-ghost-fg border-transparent hover:bg-btn-accent hover:text-btn-accent-fg focus-visible:shadow-ring-primary",
+    "ghost-default": "bg-btn-ghost text-default-fg border-transparent hover:bg-btn-accent-default hover:text-btn-accent-default-fg focus-visible:shadow-ring-gray",
 };
 
 export const Button = ({ children, className = "", variant = "default", size = "md", pill = "false", ...props }: ButtonProps) => {
