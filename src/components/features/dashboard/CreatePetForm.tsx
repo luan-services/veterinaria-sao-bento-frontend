@@ -30,6 +30,7 @@ const createPetSchema = z.object({
         .min(1, "O nome do pet é obrigatório.")
         .max(60, "O nome deve ter no máximo 60 caracteres."),
     species: z.enum(["DOG", "CAT", "RAT", "FISH", "BIRD", "CHICKEN", "OTHER"]),
+    gender: z.enum(["MALE", "FEMALE"]),
     breed: z.string()
         .max(60, "A raça deve ter no máximo 60 caracteres.")
         .optional(),
@@ -53,12 +54,19 @@ const speciesOptions = [
     { value: "OTHER", label: "Outro" },
 ];
 
+const genderOptions = [
+    { value: "MALE", label: "Macho" },
+    { value: "FEMALE", label: "Fêmea" },
+];
+
+
 export const CreatePetForm = ({ onSuccess, onCancel }: CreatePetFormProps) => {
     const { control, handleSubmit, formState: { errors, isSubmitting } } = useForm<CreatePetFormData>({
         resolver: zodResolver(createPetSchema),
         defaultValues: {
             name: "",
             species: undefined,
+            gender: undefined,
             breed: "",
             birthDate: undefined, 
         },
@@ -137,6 +145,27 @@ export const CreatePetForm = ({ onSuccess, onCancel }: CreatePetFormProps) => {
                     )}
                 />
                 {errors.species && <span className="text-danger-fg text-sm">{errors.species.message}</span>}
+            </div>
+
+            <div>
+                <Label htmlFor="gender">Gênero</Label>
+                <Controller
+                    name="gender"
+                    control={control}
+                    render={({ field: { value, onChange, name, onBlur } }) => (
+                        <Select
+                            id="gender"
+                            name={name}
+                            placeholder="Selecione o gênero..."
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            options={genderOptions}
+                            variant={errors.species ? "danger" : "default"}
+                        />
+                    )}
+                />
+                {errors.gender && <span className="text-danger-fg text-sm">{errors.gender.message}</span>}
             </div>
                     
             <div>
