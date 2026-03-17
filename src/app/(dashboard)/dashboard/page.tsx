@@ -1,10 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-
+import { useSession } from "@/src/lib/auth-client";
 import { translateTable } from "@/src/lib/tableMap";
 
+import Image from "next/image";
+import pet_avatar_placeholder from "@/public/pet-avatar-placeholder.webp"
+
 import { Button } from "@/src/components/ui/Button";
+import { TextButton } from "@/src/components/ui/TextButton";
+import { ButtonLink } from "@/src/components/ui/ButtonLink";
 import { Badge } from "@/src/components/ui/Badge";
 import { Dialog } from "@/src/components/ui/Dialog";
 import { CreatePetForm } from "@/src/components/features/dashboard/CreatePetForm";
@@ -25,6 +30,9 @@ interface Pet {
 }
 
 export default function DashboardPage() {
+
+    const { data: session, error } = useSession();
+    
     const [pets, setPets] = useState<Pet[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [fetchError, setFetchError] = useState(false);
@@ -119,7 +127,7 @@ export default function DashboardPage() {
         <div className="w-full flex flex-col p-4 md:p-6 ">
             <div className="w-full flex justify-between items-center flex-wrap gap-y-2">
                 <h1 className="text-default-fg font-bold text-xl sm:text-2xl lg:text-4xl text-center lg:text-start">
-                    Bem-vindo, [nome].
+                    Bem-vindo, {session?.user.name}!
                 </h1>
                 <Button 
                     variant="primary" 
@@ -131,7 +139,7 @@ export default function DashboardPage() {
                 </Button>
             </div>
             
-            <p className="text-muted-fg text-sm py-4 max-w-164">
+            <p className="text-muted-fg text-xs sm:text-sm py-4 max-w-164">
                 Esta é sua área do cliente. Aqui você pode ver detalhes sobre seus pets cadastrados, criar novos pets e agendar
                 consultas para eles. No momento você 
                 {pets.length > 0 ? ` tem ${pets.length} pet${pets.length === 1 ? "" : "s"}.` : " ainda não tem pets cadastrados."}
@@ -184,46 +192,67 @@ export default function DashboardPage() {
             
             {/* must update the pet display here */}
             {pets.length !== 0 && 
-                <div className="flex flex-wrap gap-4 p-4 h-full border-2 border-dashed border-default-border rounded-xl">
-                    {pets.map((pet) => (
-                        <Card 
-                            key={pet.id}
-                            className="max-w-64! max-h-88!"
-                            size="lg"
-                        >
-                            <div className="flex justify-between items-start pb-1">
-                                <h3 className="font-medium text-lg text-default-fg">{pet.name}</h3>
+                <div className="border-2 border-dashed border-default-border rounded-xl h-full">
+                    <div className="flex w-full max-w-184 flex-wrap justify-self-center justify-center p-4 gap-4">
+                        {pets.map((pet) => (
+                            <Card 
+                                key={pet.id}
+                                className="max-w-56!"
+                                size="lg"
+                            >
 
-                                <Badge 
-                                    variant="primary" 
-                                    size="sm" 
-                                    pill="true"
-                                >
-                                    {translateTable(pet.species)}
-                                </Badge>
-                            </div>
+                                <Image 
+                                    className="max-w-20 justify-self-center rounded-full"
+                                    src={pet_avatar_placeholder}
+                                    alt="Foto de perfil do pet"
+                                />
+                                    
 
-                            <p className="text-sm text-muted-fg flex">
-                                Raça: {pet.breed ? pet.breed : "Não informado."}
-                            </p>
-                            <p className="text-sm text-muted-fg text-end flex">
-                                Genero: {translateTable(pet.gender)}
-                            </p>
-                            
-                            <div className="flex justify-end items-end">
-                                <Button
-                                    className="border-danger-border! hover:bg-transparent! text-danger-fg! hover:text-danger-fg! dark:hover:text-danger-fg!"
-                                    variant="outline"
-                                    size="sm"
-                                    onClick={() => openDeleteDialog(pet)}
-                                >
-                                    Deletar
-                                </Button>
-                            </div>
+                                <div className="flex flex-col gap-1 py-2">
+                                    <Badge 
+                                        className="w-fit self-end"
+                                        variant="primary" 
+                                        size="sm" 
+                                        pill="true"
+                                    >
+                                        {translateTable(pet.species)}
+                                    </Badge>
+                                    <h3 className="font-medium text-lg text-default-fg truncate">{pet.name}</h3>
+                                </div>
 
-                        </Card>
-                    ))}
-                </div> 
+                                <p className="text-sm text-muted-fg flex truncate">
+                                    Raça: {pet.breed ? pet.breed : "Não informado."}
+                                </p>
+                                <p className="text-sm text-muted-fg text-end flex">
+                                    Genero: {translateTable(pet.gender)}
+                                </p>
+                                
+                                <div className="flex flex-col pt-8 pb-2">
+                                    <ButtonLink
+                                        variant="primary"
+                                        size="sm"
+                                        href={`/dashboard/schedule?petId=${pet.id}`}
+                                    >
+                                        Agendar consulta
+                                    </ButtonLink>
+                                </div>
+
+                                <div className="flex justify-center">
+                                    <TextButton
+                                        className="w-fit!"
+                                        variant="danger"
+                                        size="sm"
+                                        onClick={() => openDeleteDialog(pet)}
+                                    >
+                                        Remover
+                                    </TextButton>
+                                </div>
+
+
+                            </Card>
+                        ))}
+                    </div> 
+                </div>
             }
 
             <Dialog
@@ -250,7 +279,7 @@ export default function DashboardPage() {
                     <p className="text-muted-fg py-4">
                         Tem certeza que deseja remover
                         {" "}
-                        <span className="font-medium text-default-fg">
+                        <span className="font-medium text-default-fg wrap-break-word">
                             {petToDelete?.name}
                         </span>
                         ?
