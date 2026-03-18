@@ -137,14 +137,14 @@ export const Select = ({ options, value, onChange, placeholder, variant = "defau
     const selectedOption = selectedOptionIndex >= 0 ? options[selectedOptionIndex] : undefined;
 
     return (
-        <div className={`relative w-full ${className}`} ref={containerRef}>
+        <div className={`relative w-full`} ref={containerRef}>
             {/* if name doesn't exists, forms can't manage the hidden input data, so there is no point in rendering it */}
             {name && <input type="hidden" name={name} value={internalValue || ""} />}
             <button
                 type="button"
                 className={`flex w-full items-center justify-between rounded-md border bg-transparent text-default-fg cursor-pointer
                     transition duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-default
-                    ${colors} ${sizing} ${!selectedOption ? "text-muted-fg" : ""}`}
+                    ${className} ${colors} ${sizing} ${!selectedOption ? "text-muted-fg" : ""}`}
                 onClick={handleToggleSelect}
                 onKeyDown={handleKeyDown}
                 role="combobox"
