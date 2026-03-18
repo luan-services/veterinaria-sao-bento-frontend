@@ -14,6 +14,12 @@ the timezone from the date object before sending to the backend
 
 must install: npm i date-fns react-day-picker
 
+this component is strictly CONTROLLED, it won't work on form submits unless it is intercepted and you manually set its value,
+it does work on react hook form with '<Controller>' tho.
+
+id is passed down to the button, one option would be creating a hidden input in the feature to let it use id and name (to
+work natively on forms)
+
 usage
 
 <DatePicker
@@ -29,6 +35,7 @@ export interface DatePickerProps {
     onChange?: (date: Date | undefined) => void;
     placeholder?: string;
     variant?: "default" | "primary" | "danger";
+    id?: string;
     className?: string;
     disabled?: boolean;
     disabledBefore?: Date;
@@ -41,7 +48,7 @@ const variantStyles = {
     danger:  "border-danger-border focus:border-danger-border focus:shadow-ring-danger",
 };
 
-export const DatePicker = ({ value, onChange, placeholder, variant = "default", className = "", disabled = false, disabledBefore, disabledAfter }: DatePickerProps) => {
+export const DatePicker = ({ value, onChange, placeholder, variant = "default", className = "", disabled = false, disabledBefore, disabledAfter, id = "" }: DatePickerProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [placement, setPlacement] = useState<"bottom" | "top">("bottom"); 
     const [currentMonth, setCurrentMonth] = useState<Date>(value || new Date());
@@ -133,6 +140,7 @@ export const DatePicker = ({ value, onChange, placeholder, variant = "default", 
     return (
         <div className={`relative w-full ${className}`} ref={containerRef}>
             <button
+                id={id}
                 type="button"
                 disabled={disabled}
                 className={`flex h-12 w-full items-center justify-between rounded-md border bg-transparent px-4 text-sm text-default-fg cursor-pointer
