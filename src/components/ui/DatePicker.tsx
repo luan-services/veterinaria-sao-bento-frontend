@@ -180,6 +180,7 @@ export const DatePicker = ({ value, onChange, placeholder, variant = "default", 
                     classNames={{
                         day_button: `${defaultClassNames.day_button} hover:bg-default! text-default-fg! transition-colors! disabled:cursor-not-allowed!`,
                         today: `${defaultClassNames.today} text-muted-fg! font-bold!`,
+                        month: `${defaultClassNames.month} text-default-fg! font-bold!`,
                         selected: `${defaultClassNames.selected} text-brand-fg! text-sm!`,
                         chevron: `${defaultClassNames.chevron} fill-current w-6`,
                         outside: `${defaultClassNames.outside} text-muted-fg!`,
