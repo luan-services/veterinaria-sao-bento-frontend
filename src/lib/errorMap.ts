@@ -61,7 +61,55 @@ const errorTranslations: Record<string, string> = {
 	"Pet not found" : "Pet não encontrado.",
 	"You are not allowed to update this pet" : "Você não tem permissão para alterar esse pet.",
 	"You are not allowed to delete this pet" : "Você não tem permissão para deletar esse pet.",
-	"Cannot delete pet with upcoming appointments. Please cancel them first." : "Não é possível deletar pets com agendamentos marcados. Por favor cancele-os primeiro."
+	"Cannot delete pet with upcoming appointments. Please cancel them first." : "Não é possível deletar pets com agendamentos marcados. Por favor cancele-os primeiro.",
+
+	    // appointments
+    "You have too many pending appointments. Please wait for confirmation or cancel some" :
+        "Você possui muitos agendamentos pendentes. Aguarde a confirmação ou cancele alguns.",
+
+    "This pet already has an appointment at this time." :
+        "Este pet já possui um agendamento neste horário.",
+
+    "Professional not found" :
+        "Profissional não encontrado.",
+
+    "This professional only performs bath and grooming services." :
+        "Este profissional realiza apenas serviços de banho e tosa.",
+
+    "This professional cannot perform bath and grooming services." :
+        "Este profissional não pode realizar serviços de banho e tosa.",
+
+    "Appointment not found" :
+        "Agendamento não encontrado.",
+
+    "Appointments can only be cancelled at least ${CANCEL_APPOINTMENT_TIME_LIMIT} hours in advance" :
+        "Os agendamentos só podem ser cancelados com pelo menos ${CANCEL_APPOINTMENT_TIME_LIMIT} horas de antecedência.",
+
+    "This appointment is already confirmed. Contact the clinic to cancel it" :
+        "Este agendamento já foi confirmado. Entre em contato com a clínica para cancelá-lo.",
+
+    "This appointment cannot be cancelled anymore" :
+        "Este agendamento não pode mais ser cancelado.",
+
+    "Only cancelled appointments can be deleted" :
+        "Apenas agendamentos cancelados podem ser excluídos.",
+
+    // route access / auth
+    "You are not allowed to access this route" :
+        "Você não tem permissão para acessar esta rota.",
+
+    "Forbbiden" :
+        "Acesso negado.",
+
+    // professionals
+    "You are not allowed to create Professionals" :
+        "Você não tem permissão para criar profissionais.",
+
+    "You are not allowed to update Professionals" :
+        "Você não tem permissão para atualizar profissionais.",
+
+    "You are not allowed to delete Professionals" :
+        "Você não tem permissão para excluir profissionais."
 };
 
 export const translateError = (text: string): string => {
