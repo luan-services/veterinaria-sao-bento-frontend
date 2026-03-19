@@ -13,8 +13,8 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { cpf } from 'cpf-cnpj-validator'; 
 import * as z from "zod";
-import { toast } from "@/src/lib/toastStore";
-import { translateError } from "@/src/lib/errorMap";
+import { toast } from "@/src/lib/toast-store";
+import { translateError } from "@/src/lib/error-map";
 
 /* makes a zod schema almost identical to the backend one, with a few changes */
 const registerSchema = z.object({

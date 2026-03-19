@@ -13,7 +13,7 @@ import { Input } from "@/src/components/ui/Input";
 import { Button } from "@/src/components/ui/Button";
 import { Label } from "@/src/components/ui/Label";
 
-import { toast } from "@/src/lib/toastStore";
+import { toast } from "@/src/lib/toast-store";
 
 /* birthDate is now a Date object because of our custom DatePicker, that means it will convert the date to our timezone,
 in this case, we will need to strip the timezone before sending it to the backend. 

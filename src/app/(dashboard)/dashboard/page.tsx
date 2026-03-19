@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSession } from "@/src/lib/auth-client";
-import { translateTable } from "@/src/lib/tableMap";
+import { translateTable } from "@/src/lib/table-map";
 
 import Image from "next/image";
 import pet_avatar_placeholder from "@/public/pet-avatar-placeholder.webp"
@@ -15,9 +15,9 @@ import { Dialog } from "@/src/components/ui/Dialog";
 import { CreatePetForm } from "@/src/components/features/dashboard/CreatePetForm";
 
 import { SpinnerIcon } from "@/src/components/icons/SpinnerIcon";
-import { toast } from "@/src/lib/toastStore";
+import { toast } from "@/src/lib/toast-store";
 import { XIcon } from "@/src/components/icons/outline";
-import { translateError } from "@/src/lib/errorMap";
+import { translateError } from "@/src/lib/error-map";
 import { Card } from "@/src/components/ui/Card";
 
 interface Pet {

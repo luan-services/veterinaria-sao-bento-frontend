@@ -1,7 +1,7 @@
 'use client';
 
 import { useSyncExternalStore, useState, useRef, useLayoutEffect, useCallback } from 'react';
-import { toastStore } from '@/src/lib/toastStore';
+import { toastStore } from '@/src/lib/toast-store';
 import { Toast } from '@/src/components/ui/Toast'; 
 
 const emptyToasts: any[] = [];

@@ -1,7 +1,7 @@
 "use client"
 
 import { ReactNode } from 'react';
-import { toastStore } from '@/src/lib/toastStore';
+import { toastStore } from '@/src/lib/toast-store';
 import { Button } from '@/src/components/ui/Button'
 
 import { InfoIcon, SuccessIcon, AlertIcon, DangerIcon  } from '@/src/components/icons/solid/';

@@ -7,8 +7,8 @@ import { Select } from "@/src/components/ui/Select"
 import { Label } from "@/src/components/ui/Label"
 
 import { parseBrasiliaDate, isSlotInPast, getAppointmentsCountForSlot } from "@/src/lib/scheduling"
-import { toast } from "@/src/lib/toastStore"
-import { translateError } from "@/src/lib/errorMap"
+import { toast } from "@/src/lib/toast-store"
+import { translateError } from "@/src/lib/error-map"
 
 const serviceTypes = [
     { value: "CONSULTATION", label: "Consulta" },

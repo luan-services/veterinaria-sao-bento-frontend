@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { signIn, sendVerificationEmail } from "@/src/lib/auth-client";
 import { useRouter } from "next/navigation";
-import { toast } from "@/src/lib/toastStore";
-import { translateError } from "@/src/lib/errorMap";
+import { toast } from "@/src/lib/toast-store";
+import { translateError } from "@/src/lib/error-map";
 
 import { Input } from "@/src/components/ui/Input";
 import { Button } from "@/src/components/ui/Button";

@@ -11,8 +11,8 @@ import { ScheduleAppointmentForm } from "@/src/components/features/dashboard/Sch
 import { SpinnerIcon } from "@/src/components/icons/SpinnerIcon"
 
 import { parseBrasiliaDate, getTodayInBrasilia } from "@/src/lib/scheduling"
-import { toast } from "@/src/lib/toastStore"
-import { translateError } from "@/src/lib/errorMap"
+import { toast } from "@/src/lib/toast-store"
+import { translateError } from "@/src/lib/error-map"
 import { Dialog } from "@/src/components/ui/Dialog"
 
 interface Pet {

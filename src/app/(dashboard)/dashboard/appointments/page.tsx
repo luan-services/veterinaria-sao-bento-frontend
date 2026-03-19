@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import { useSession } from "@/src/lib/auth-client";
-import { translateTable } from "@/src/lib/tableMap";
+import { translateTable } from "@/src/lib/table-map";
 
 import { Button } from "@/src/components/ui/Button";
 import { Badge } from "@/src/components/ui/Badge";
@@ -11,9 +11,9 @@ import { Card } from "@/src/components/ui/Card";
 import { Select } from "@/src/components/ui/Select";
 
 import { SpinnerIcon } from "@/src/components/icons/SpinnerIcon";
-import { toast } from "@/src/lib/toastStore";
+import { toast } from "@/src/lib/toast-store";
 import { XIcon } from "@/src/components/icons/outline";
-import { translateError } from "@/src/lib/errorMap";
+import { translateError } from "@/src/lib/error-map";
 
 interface Appointment {
     id: string;

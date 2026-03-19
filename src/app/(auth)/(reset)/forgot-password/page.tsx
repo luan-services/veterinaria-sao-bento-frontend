@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { requestPasswordReset } from "@/src/lib/auth-client";
-import { toast } from "@/src/lib/toastStore";
-import { translateError } from "@/src/lib/errorMap";
+import { toast } from "@/src/lib/toast-store";
+import { translateError } from "@/src/lib/error-map";
 
 import Image from "next/image";
 import sao_bento_logo from "@/public/sao-bento-logo.svg"
