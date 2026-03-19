@@ -186,8 +186,8 @@
 		/* -------------------------------------------- */
 
 		/* custom css for components bg and fg */
-		--bg-btn-default: var(--neutral-50);
-		--fg-btn-default: var(--neutral-900);
+		--bg-btn-default: var(--neutral-600);
+		--fg-btn-default: var(--neutral-0);
 
 		--bg-btn-primary: var(--primary-600);
 		--fg-btn-primary: var(--neutral-0);
@@ -198,8 +198,8 @@
 		--bg-btn-accent: var(--primary-600); 
         --fg-btn-accent: var(--neutral-0);
 
-		--bg-btn-accent-default: var(--neutral-50);
-    	--fg-btn-accent-default: var(--neutral-900);  
+		--bg-btn-accent-default: var(--neutral-600);
+    	--fg-btn-accent-default: var(--neutral-0);  
 
         --bg-btn-outline: transparent;
         --fg-btn-outline: var(--primary-500);
