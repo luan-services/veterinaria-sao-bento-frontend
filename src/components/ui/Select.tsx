@@ -31,6 +31,8 @@ export interface SelectProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
     placeholder?: string;
     variant?: "default" | "primary" | "danger";
     name?: string;
+    selectClassName?: string;
+    dropdownClassName?: string;
 }
 
 const variantStyles = {
@@ -39,7 +41,7 @@ const variantStyles = {
     danger:  "border-danger-border focus:border-danger-border focus:shadow-ring-danger",
 };
 
-export const Select = ({ options, value, onChange, placeholder, variant = "default", className = "", name, ...props }: SelectProps) => {
+export const Select = ({ options, value, onChange, placeholder, variant = "default", className = "", selectClassName = "", dropdownClassName = "", name, ...props }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [highlightedIndex, setHighlightedIndex] = useState(-1);
     
@@ -137,14 +139,14 @@ export const Select = ({ options, value, onChange, placeholder, variant = "defau
     const selectedOption = selectedOptionIndex >= 0 ? options[selectedOptionIndex] : undefined;
 
     return (
-        <div className={`relative w-full`} ref={containerRef}>
+        <div className={`relative w-full ${className}`} ref={containerRef}>
             {/* if name doesn't exists, forms can't manage the hidden input data, so there is no point in rendering it */}
             {name && <input type="hidden" name={name} value={internalValue || ""} />}
             <button
                 type="button"
                 className={`flex w-full items-center justify-between rounded-md border bg-transparent text-default-fg cursor-pointer
                     transition duration-200 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-default
-                    ${className} ${colors} ${sizing} ${!selectedOption ? "text-muted-fg" : ""}`}
+                    ${selectClassName} ${colors} ${sizing} ${!selectedOption ? "text-muted-fg" : ""}`}
                 onClick={handleToggleSelect}
                 onKeyDown={handleKeyDown}
                 role="combobox"
@@ -174,7 +176,7 @@ export const Select = ({ options, value, onChange, placeholder, variant = "defau
                     ref={listRef}
                     id={`${name || 'select'}-listbox`}
                     role="listbox" 
-                    className="max-h-60 overflow-auto px-1 text-default-fg py-1 focus:outline-none"
+                    className={`${dropdownClassName} max-h-60 overflow-auto px-1 text-default-fg py-1 focus:outline-none`}
                 >
                     {options.length > 0 ? (
                         options.map((option, index) => {
